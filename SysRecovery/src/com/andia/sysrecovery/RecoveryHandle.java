@@ -24,6 +24,9 @@ public class RecoveryHandle {
 	public static final int modeFullUpdate = 0;
 	public static final int modeFullUpdateAndClear = 1;
 	public static final int modePartialUpdate = 2;
+
+	//public static final String mount_Filename = "/mnt/media_rw/59E2-C2BB";
+	public static final String mount_Filename = "/mnt/media_rw/8A13-A472";
 	
 	/*
 	Environment.getDataDirectory() = /data
@@ -50,7 +53,7 @@ public class RecoveryHandle {
 		
 		if(strdir.equalsIgnoreCase("USB"))
 		{
-			fileDir = new File("/mnt/media_rw/59E2-C2BB");
+			fileDir = new File(mount_Filename);
 		}
 		
 		if(strdir.equalsIgnoreCase("SD"))
@@ -68,19 +71,20 @@ public class RecoveryHandle {
 			File file = files[i];
 			String filePath = file.getName();
 			//filePath = "vcm30t30-20141111.andiabsp.zip";
-		    if(filePath.endsWith(".zip")&&filePath.startsWith(modeType,0)) // Condition to check vcm30t30-xxxxx-xxxxx.zip file 
-		    {
-		    	recoveryfile = file;
-		    	break;
-		    }
+			if(filePath.endsWith(".zip")&&filePath.startsWith(modeType,0)) // Condition to check vcm30t30-xxxxx-xxxxx.zip file 
+			{
+				recoveryfile = file;
+				break;
+			}
 		      
 		}
 		//recoveryfile = new File("vcm30t30-20141111.andiabsp.zip");
 		if(recoveryfile == null)
 			return null;
+
 		updateName = recoveryfile.getName();
 		return recoveryfile.getName();	
-	}
+	} // END of getRecoveryFile
 	
 	public void StartRecovery(final Context mycontext,final String strdir,final int updatemode) {
 		//step1: copy recovery zip file to /cache 
@@ -110,11 +114,11 @@ public class RecoveryHandle {
 			}
 		}).start();
 		
-		}
+	} // END of StartRecovery
 	
 	public void RebootRecovery(Context mycontext,int updatemode) {
 		RebootnRecovery(mycontext,updatemode);
-		}
+	}
 	
 	/*copy ota_update zip file from usb drive to system cache folder*/
 	private void copyRecoveryfile(Context mycontext,String strdir) {
@@ -124,7 +128,7 @@ public class RecoveryHandle {
 		
 		if(strdir.equalsIgnoreCase("USB"))
 		{
-			fileDir = new File("/mnt/media_rw/59E2-C2BB");
+			fileDir = new File(mount_Filename);
 		}
 		
 		if(strdir.equalsIgnoreCase("SD"))
