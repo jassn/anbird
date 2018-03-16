@@ -1,6 +1,19 @@
 # anbird
 
 
+
+### i.mx6 sabre board
+
+* [i.mx sabre board](https://www.nxp.com/support/developer-resources/hardware-development-tools/sabre-development-system/sabre-board-for-smart-devices-based-on-the-i.mx-6quad-applications-processors:RD-IMX6Q-SABRE)
+
+
+* [i.mx SABRE SDB](https://www.nxp.com/SABRESDB)
+
+
+
+
+
+
 ### 深入理解Android：Wi-Fi，NFC和GPS
 
 * [chapter 01](http://blog.csdn.net/innost/article/details/20292347)
@@ -19,6 +32,8 @@
 
 * [wpa_supplicant](https://w1.fi/)
 
+
+### 赤手空拳也要用 wpa_supplicant 接通無線網路
 * [newtopia](https://newtoypia.blogspot.tw/2014/09/wireless.html)
 
 
