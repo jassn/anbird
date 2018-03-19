@@ -42,27 +42,22 @@ public class RecoveryHandle {
 
 		File mount_dir = new File("/mnt/media_rw");
 		if (mount_dir == null) {
-			Log.d("jason", "ERROR to new File");
+			Log.e("sysrecovery", "ERROR to new File");
+			return null;
 		}
 
 		File[] list = mount_dir.listFiles();
-		Log.d("jason-47", "length = " + list.length);
+		Log.d("sysrecovery", "length = " + list.length);
 		if (list.length == 0) {
 			// Prompt for use to insert USB disk.
-			Log.d("sysrecovery", "ERROR: No USB Disk mounted!");
+			Log.e("sysrecovery", "ERROR: No USB Disk mounted!");
+			return null;
 		}
 
 		for (int i=0; i<list.length; i++) {
 			fname = list[i].toString();
-			Log.d("jason", fname);
+			Log.d("sysrecovery", "USB is mounted at " + fname);
 		}
-
-/*
-		for (File fname: list) {
-			Log.d("jason", fname.getName());
-		}
-*/
-
 
 		return new File(fname);
 	}

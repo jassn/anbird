@@ -1,6 +1,40 @@
 
 
 
+### How to test
+1. no USB inserted, then start app.
+2. use different USB disks.
+3. verify the version number after OTA update.
+
+
+
+### Android API
+* [RecoverySystem API](https://developer.android.com/reference/android/os/RecoverySystem.html)
+
+
+
+### Task List
+- [x] Use any USB Disks for update.
+- [ ] why cannot enter RECOVERY MODE using "adb reboot recovery"??
+- [ ] What happens if supplying an incorrect file?
+
+
+
+
+### Incremental update
+* [Android OTA升级原理](http://blog.csdn.net/ylyuanlu/article/details/44457691)
+
+* cd /nmopt/Antec_imx6dl/out/target/product/sabresd_6dq/obj/PACKAGING/target_files_intermediates
+
+
+* build/tools/releasetools/ota_from_target_files.py \
+-i ~/Music/sabresd_6dq-target_files-20180317.zip \
+~/Music/sabresd_6dq-target_files-20180318.zip \
+~/Music/incre-ota.zip
+
+
+
+
 ### code from i.MX
 
 
