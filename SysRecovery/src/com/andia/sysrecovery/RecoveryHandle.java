@@ -25,8 +25,6 @@ public class RecoveryHandle {
 	public static final int modeFullUpdateAndClear = 1;
 	public static final int modePartialUpdate = 2;
 
-	//public static final String mount_Filename = "/mnt/media_rw/59E2-C2BB";
-	public static final String mount_Filename = "/mnt/media_rw/8A13-A472";
 	
 	/*
 	Environment.getDataDirectory() = /data
@@ -37,6 +35,37 @@ public class RecoveryHandle {
 	context.getExternalCacheDir() = /mnt/sdcard/Android/data/com.mt.mtpp/cache
 	context.getFilesDir() = /data/data/com.mt.mtpp/files
 	*/
+
+
+	private File get_USB_Directory() {
+		String fname = null;
+
+		File mount_dir = new File("/mnt/media_rw");
+		if (mount_dir == null) {
+			Log.d("jason", "ERROR to new File");
+		}
+
+		File[] list = mount_dir.listFiles();
+		Log.d("jason-47", "length = " + list.length);
+		if (list.length == 0) {
+			// Prompt for use to insert USB disk.
+			Log.d("sysrecovery", "ERROR: No USB Disk mounted!");
+		}
+
+		for (int i=0; i<list.length; i++) {
+			fname = list[i].toString();
+			Log.d("jason", fname);
+		}
+
+/*
+		for (File fname: list) {
+			Log.d("jason", fname.getName());
+		}
+*/
+
+
+		return new File(fname);
+	}
 
 	public String getRecoveryFile(int updatemode,String strdir) {
 		
@@ -53,7 +82,7 @@ public class RecoveryHandle {
 		
 		if(strdir.equalsIgnoreCase("USB"))
 		{
-			fileDir = new File(mount_Filename);
+			fileDir = get_USB_Directory();
 		}
 		
 		if(strdir.equalsIgnoreCase("SD"))
@@ -128,7 +157,7 @@ public class RecoveryHandle {
 		
 		if(strdir.equalsIgnoreCase("USB"))
 		{
-			fileDir = new File(mount_Filename);
+			fileDir = get_USB_Directory();
 		}
 		
 		if(strdir.equalsIgnoreCase("SD"))
