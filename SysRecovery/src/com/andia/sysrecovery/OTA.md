@@ -4,7 +4,8 @@
 
 * [Android系统的三种启动模式](http://blog.csdn.net/ylyuanlu/article/details/44457691)
 
-
+###
+* [make otapackage - voidcn](http://www.voidcn.com/article/p-uwwrguaj-tv.html)
 
 
 ### To generate incremental OTA from 0319 to 0320
