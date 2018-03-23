@@ -16,7 +16,7 @@
 * git checkout -b \<local_branch> \<remote>/\<branch>
 
 If you already have a local branch and want to set it to a remote branch you just pulled down...
-* git branch -u
+* git branch -u \<remote>/\<branch>
 
 To see what tracking branches...
 * git fetch --all
