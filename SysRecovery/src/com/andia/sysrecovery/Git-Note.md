@@ -1,6 +1,10 @@
 
 # Notes on git VCS
 
+
+## 2.4 Undoing Things
+
+
 ## 3.5 Remote Branches
 
 ### Pushing
@@ -22,4 +26,17 @@
 ### Deleting Remote Branches
 
 ## 3.6 Git Branching - Rebasing
+
+
+### Others
+* git log --stat
+* git log -p
+
+
+## References
+https://blog.gogojimmy.net/2012/02/29/git-scenario/
+
+https://blog.wu-boy.com/2013/08/git-rebase-stash-tip/
+
+https://gitbook.tw/chapters/using-git/restore-hard-reset-commit.html
 
