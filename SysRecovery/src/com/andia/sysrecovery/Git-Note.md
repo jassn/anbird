@@ -9,14 +9,16 @@
 
 ### Pushing
 * git push \<remote> \<branch>
-  
+* git push \<remote> \<local_branch>:\<remote_branch>
+* Example: git push *origin* \<branch>
+
 ### Tracking Branches
 * git checkout -b \<local_branch> \<remote>/\<branch>
 
-#### If you already have a local branch and want to set it to a remote branch you just pulled down...
+If you already have a local branch and want to set it to a remote branch you just pulled down...
 * git branch -u
 
-#### To see what tracking branches...
+To see what tracking branches...
 * git fetch --all
 * git branch -vv
 * git merge
