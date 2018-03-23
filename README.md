@@ -2,6 +2,21 @@
 
 
 
+
+### online drawing tool
+* [visual paradigm](https://online.visual-paradigm.com/tutorials/)
+
+
+
+
+###
+* [JAVA Tutorial](https://www.tutorialspoint.com/javaexamples/java_arrays.htm)
+
+
+
+
+
+
 ### i.mx6 sabre board
 
 * [i.mx sabre board](https://www.nxp.com/support/developer-resources/hardware-development-tools/sabre-development-system/sabre-board-for-smart-devices-based-on-the-i.mx-6quad-applications-processors:RD-IMX6Q-SABRE)
