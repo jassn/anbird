@@ -10,6 +10,29 @@ mVersion=2.16,mSerialNumber=4C530001181116102423,mConfigurations=[
 
 * [android usb解析（二）UsbHostManager(and6.0)](https://blog.csdn.net/kc58236582/article/details/54691334)
 
+**************************
+* frameworks/base/services/usb/java/com/android/server/usb/UsbService.java
+* Class **UsbService**
+* systemReady call monitorUsbHostBus (by thread)
+* monitorUsbHostBus call into JNI.
+
+```java
+public class UsbService extends IUsbManager.Stub {
+
+    public static class Lifecycle extends SystemService {
+        private UsbService mUsbService;
+
+        @Override
+        public void onBootPhase(int phase) {
+            if (phase == SystemService.PHASE_ACTIVITY_MANAGER_READY) {
+                mUsbService.systemReady();
+            } else if (phase == SystemService.PHASE_BOOT_COMPLETED) {
+                mUsbService.bootCompleted();
+            }
+        }
+    }
+}
+```
 
 **************************
 * JNI call usb_host_run.  
@@ -33,6 +56,7 @@ static void android_server_UsbHostManager_monitorUsbHostBus(JNIEnv* /* env */, j
 
 **************************
 * system/core/libusbhost/usbhost.c
+* **usb_host_run** call usb_host_load
 
 ```cpp
 void usb_host_run(struct usb_host_context *context,
@@ -54,6 +78,9 @@ void usb_host_run(struct usb_host_context *context,
 
 
 **************************
+* usb_host_load call find_existing_devices
+* find_existing_devices call find_existing_devices_bus
+* find_existing_devices_bus call added_cb()
 * added_cb is actually **usb_device_added** in JNI.
 
 ```cpp
