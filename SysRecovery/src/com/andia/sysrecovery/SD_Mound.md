@@ -10,9 +10,10 @@ brw------- 1 root root 8,   1 1970-01-01 00:00 public:8:1
 ***
 
 ### USB Serial on Linux
-* [Linux的USB-Serial驱动](https://blog.csdn.net/gangyanliang/article/details/8276978)  
+* [Linux的USB-Serial驱动 - gangyanliang](https://blog.csdn.net/gangyanliang/article/details/8276978)  
 
-    code in (kernel)/drivers/usb/core/usb.c
+#### Linux系统初始化阶段
+1. code in (kernel)/drivers/usb/core/usb.c
 ```c
     static int __init usb_init(void)
     {
