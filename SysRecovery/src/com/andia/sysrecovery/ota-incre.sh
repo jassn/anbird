@@ -96,34 +96,43 @@ PRODUCT=sabresd_6dq
     
 ## PREV_NUM=20180319
 if [ "x$PREV_NUM" = "x" ]; then
-    PREV_NUM=20180322
+    PREV_NUM=20180324
 fi
 
-CURR_NUM=20180323
+CURR_NUM=20180325
 
 PREV_PATH=$BASE_PATH/dist-$PREV_NUM
 CURR_PATH=$BASE_PATH/dist-$CURR_NUM
 
 PREV_TARGET=$PREV_PATH/$PRODUCT-target_files-$PREV_NUM.zip
 CURR_TARGET=$CURR_PATH/$PRODUCT-target_files-$CURR_NUM.zip
-FULL_OTA=$BASE_PATH/$PRODUCT-ota-$CURR_NUM-jj.zip
 INCRE_OTA=$BASE_PATH/$PRODUCT-incre-$PREV_NUM-to-$CURR_NUM.zip
+FULL_OTA=$BASE_PATH/$PRODUCT-ota-$CURR_NUM-dist.zip
 
+
+###########################################
+## Generate Incremental OTA package
+###########################################
+if [ -d $PREV_TARGET ]; then
+	echo -e "PREV_TARGET does not exist!"
+    exit 1
+fi
 
 echo -e "Old ...... $PREV_TARGET"
 echo -e "New ...... $CURR_TARGET"
-echo -e "${COLOR_GREEN}
+echo -e "${COLOR_GREEN}"
 echo -e "Generating incremental OTA ...... ${INCRE_OTA}${COLOR_RESET}"
 
 build/tools/releasetools/ota_from_target_files.py \
--i $PREV_TARGET $CURR_TARGET $INCRE_OTA
+-i $PREV_TARGET $CURR_TARGET ${INCRE_OTA}
 
 ##
+## Generate Full OTA package
 ##
-echo -e "${COLOR_GREEN}"
-echo -e "Generating Full OTA ...... ${FULL_OTA}${COLOR_RESET}"
-build/tools/releasetools/ota_from_target_files.py \
-$CURR_TARGET $FULL_OTA
+#echo -e "${COLOR_GREEN}"
+#echo -e "Generating Full OTA ...... ${FULL_OTA}${COLOR_RESET}"
+#build/tools/releasetools/ota_from_target_files.py \
+#$CURR_TARGET $FULL_OTA
 
 
 
