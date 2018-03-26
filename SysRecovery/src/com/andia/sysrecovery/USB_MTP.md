@@ -12,8 +12,9 @@ mVersion=2.16,mSerialNumber=4C530001181116102423,mConfigurations=[
 
 
 **************************
-
-* HAL of UsbHostManager
+* JNI call usb_host_run.  
+* HAL of UsbHostManager.
+* usb_device_added is registered as usb_device_added_cb.
 
 ```cpp
 static void android_server_UsbHostManager_monitorUsbHostBus(JNIEnv* /* env */, jobject thiz)
@@ -53,7 +54,7 @@ void usb_host_run(struct usb_host_context *context,
 
 
 **************************
-* added_cb is actually **endUsbDeviceAdded**
+* added_cb is actually **usb_device_added** in JNI.
 
 ```cpp
 static int find_existing_devices_bus(char *busname,
@@ -81,25 +82,24 @@ static int find_existing_devices_bus(char *busname,
 ```
 **************************
 
-* frameworks/base/services/usb/java/com/android/server/usb
+* **usb_device_added** call endUsbDeviceAdded().
+
+```cpp
+static int usb_device_added(const char *devname, void* client_data) {
+    /*  code omitted ... */
+    env->CallVoidMethod(thiz, method_endUsbDeviceAdded);
+}
+```
+
+**************************
+* **endUsbDeviceAdded** is a JNI callback.
+* frameworks/base/services/usb/java/com/android/server/usb/UsbHostManager.java
 
 ```java
-
     /* Called from JNI in monitorUsbHostBus() to finish adding a new device */
     private void endUsbDeviceAdded() {
-        if (DEBUG) {
-            Slog.d(TAG, "usb:UsbHostManager.endUsbDeviceAdded()");
-        }
-        if (mNewInterface != null) {
-            mNewInterface.setEndpoints(
-                    mNewEndpoints.toArray(new UsbEndpoint[mNewEndpoints.size()]));
-        }
-        if (mNewConfiguration != null) {
-            mNewConfiguration.setInterfaces(
-                    mNewInterfaces.toArray(new UsbInterface[mNewInterfaces.size()]));
-        }
-
         synchronized (mLock) {
+            /*  code omitted ... */
             if (mNewDevice != null) {
                 mNewDevice.setConfigurations(
                         mNewConfigurations.toArray(new UsbConfiguration[mNewConfigurations.size()]));
