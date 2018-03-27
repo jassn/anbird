@@ -10,10 +10,10 @@ mVersion=2.16,mSerialNumber=4C530001181116102423,mConfigurations=[
 
 * [android usb解析（二）UsbHostManager(and6.0)](https://blog.csdn.net/kc58236582/article/details/54691334)
 
-**************************
+--------
 ## UsbHostManager Initial
 * frameworks/base/services/usb/java/com/android/server/usb/UsbService.java
-* **UsbService** CTOR to new UsbHostManager.
+* **UsbService** CTOR to new **UsbHostManager**.
 
 ```java
     public UsbService(Context context) {
@@ -23,15 +23,15 @@ mVersion=2.16,mSerialNumber=4C530001181116102423,mConfigurations=[
     }
 ```
 
-**************************
-* UsbService.systemReady call UsbHostManager.systemReady
+--------
+* i**UsbService.systemReady** call UsbHostManager.systemReady
 * UsbHostManager.systemReady call monitorUsbHostBus (via thread)
 * monitorUsbHostBus call into JNI.
 
 
-**************************
+------------------------------------------------------------------------------------------
 ## UsbHostManager HAL
-* JNI call usb_host_run.  
+* JNI call `usb_host_run`.  
 * usb_device_added is registered as usb_device_added_cb.
 
 ```cpp
@@ -49,7 +49,7 @@ static void android_server_UsbHostManager_monitorUsbHostBus(JNIEnv* /* env */, j
 
 ```
 
-**************************
+--------
 * system/core/libusbhost/usbhost.c
 * **usb_host_run** call usb_host_load
 
