@@ -24,15 +24,16 @@ mVersion=2.16,mSerialNumber=4C530001181116102423,mConfigurations=[
 ```
 
 --------
-* i**UsbService.systemReady** call UsbHostManager.systemReady
+* **UsbService.systemReady** call UsbHostManager.systemReady
 * UsbHostManager.systemReady call monitorUsbHostBus (via thread)
-* monitorUsbHostBus call into JNI.
+* `monitorUsbHostBus` call into JNI.
 
 
 ------------------------------------------------------------------------------------------
 ## UsbHostManager HAL
+* frameworks/base/services/core/jni
 * JNI call `usb_host_run`.  
-* usb_device_added is registered as usb_device_added_cb.
+* **usb_device_added** is registered as usb_device_added_cb.
 
 ```cpp
 static void android_server_UsbHostManager_monitorUsbHostBus(JNIEnv* /* env */, jobject thiz)
@@ -46,11 +47,31 @@ static void android_server_UsbHostManager_monitorUsbHostBus(JNIEnv* /* env */, j
     usb_host_run(context, usb_device_added, usb_device_removed, NULL, (void *)thiz);
 }
 
-
 ```
 
 --------
-* system/core/libusbhost/usbhost.c
+* **usb_host_init** in system/core/libusbhost/usbhost.c
+
+```cpp
+struct usb_host_context *usb_host_init()
+{
+    struct usb_host_context *context = calloc(1, sizeof(struct usb_host_context));
+    if (!context) {
+        fprintf(stderr, "out of memory in usb_host_context\n");
+        return NULL;
+    }
+    context->fd = inotify_init();
+    if (context->fd < 0) {
+        fprintf(stderr, "inotify_init failed\n");
+        free(context);
+        return NULL;
+    }
+    return context;
+}
+```
+
+
+--------
 * **usb_host_run** call usb_host_load
 
 ```cpp
@@ -102,8 +123,8 @@ static int find_existing_devices_bus(char *busname,
     return done;
 }
 ```
-**************************
-
+-------------------------------------------
+* frameworks/base/services/core/jni
 * **usb_device_added** call endUsbDeviceAdded().
 
 ```cpp
@@ -143,7 +164,32 @@ static int usb_device_added(const char *devname, void* client_data) {
 
 ```
 
-***********************************
+-----------------------------------------------
+## UsbManager to use usb device
+
+
+
+
+
+
+
+-----------------------------------------------
+## USB 3G dongle
+
+01-01 00:03:10.364 W/ContextImpl(  508): Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcast:877 com.android.server.usb.UsbSettingsManager.deviceAttached:739 com.android.server.usb.UsbHostManager.endUsbDeviceAdded:225 com.android.server.usb.UsbHostManager.monitorUsbHostBus:-2 com.android.server.usb.UsbHostManager.-wrap0:-1
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------
+
 
 ## System UI
 * [android 6.0 SystemUI源码分析](https://blog.csdn.net/zhudaozhuan/article/details/50816086)
