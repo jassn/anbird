@@ -8,7 +8,13 @@ mVersion=2.16,mSerialNumber=4C530001181116102423,mConfigurations=[
 * The log is printed from *frameworks/base/services/usb/java/com/android/server/usb*  
 * [endUsbDeviceAdded](https://github.com/jassn/droid-7.1/blob/aca7f816112c15a136764d84396852adfe62f7ff/frameworks/base/services/usb/java/com/android/server/usb/UsbHostManager.java#L224)
 
-* [android usb解析（二）UsbHostManager(and6.0)](https://blog.csdn.net/kc58236582/article/details/54691334)
+* [android usb解析（二）UsbHostManager (android-6.0)](https://blog.csdn.net/kc58236582/article/details/54691334)
+
+* [Android6.0 otg插入U盘 流程](https://blog.csdn.net/lqxandroid2012/article/details/71108584)
+
+* [Android磁盘管理-系统源码分析 - gzshun](https://blog.csdn.net/gzshun/article/details/7096763)
+
+
 
 --------
 ## UsbHostManager Initial
@@ -92,10 +98,9 @@ void usb_host_run(struct usb_host_context *context,
 } /* usb_host_run() */
 ```
 
-
-**************************
-* usb_host_load call find_existing_devices
-* find_existing_devices call find_existing_devices_bus
+-------
+* usb_host_load call ... find_existing_devices
+* find_existing_devices call ... find_existing_devices_bus
 * find_existing_devices_bus call added_cb()
 * added_cb is actually **usb_device_added** in JNI.
 
