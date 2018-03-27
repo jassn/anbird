@@ -38,7 +38,28 @@ mListeners ...
 # Mount Service
 * [Android-7.0 Vold, mounted by kernel](https://blog.csdn.net/qq_31530015/article/details/53325101)
 
+-----------------------------------------------------
+## Kernel Initiate Mount Request
+1. NetlinkListener::onDataAvailable  
+   _system/core/libsysutils/src/NetlinkListener.cpp_
 
+2. NetlinkHandler::onEvent  
+_system/vold/NetlinkHandler.cpp_
+  
+3. vm->handleBlockEvent  
+  
+4. disk->create()  
+_system/vold/Disk.cpp_
+```cpp
+status_t Disk::create() {
+    CHECK(!mCreated);
+    mCreated = true;
+    notifyEvent(ResponseCode::DiskCreated, StringPrintf("%d", mFlags));
+    readMetadata();
+    readPartitions();
+    return OK;
+}
+```
 -----------------------------------------------------
 ## References
 * [Android USB Host 使用详解（U盘）](https://blog.csdn.net/glouds/article/details/40260805)
