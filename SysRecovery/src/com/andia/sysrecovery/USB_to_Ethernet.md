@@ -69,7 +69,6 @@ public boolean onEvent(int code, String raw, String[] cooked) {
 _frameworks/opt/net/ethernet/java/com/android/server/ethernet/EthernetNetworkFactory.java_
 ```java
 public void interfaceAdded(String iface) {
-    Log.d(TAG, "jsn, line.178");
     maybeTrackInterface(iface);
 }
 ```
@@ -116,4 +115,7 @@ _frameworks/base/services/core/java/com/android/server/NetworkManagementService.
 # Others
 ## Good diagram.
 * [Android热插拔事件处理流程--Vold](https://blog.csdn.net/myarrow/article/details/8246716)
+
+* [Android5.0以太网流程源码情景分析](https://blog.csdn.net/tankai19880619/article/details/44559419)
+
 
