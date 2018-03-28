@@ -60,7 +60,10 @@
 * [Android进入Recovery模式流程分析](http://ljgabc.github.io/2014/11/14/2014-11-14-Android%E8%BF%9B%E5%85%A5Recovery%E6%A8%A1%E5%BC%8F%E6%B5%81%E7%A8%8B%E5%88%86%E6%9E%90/)
 
 
+* [Android Recovery升级原理](https://blog.csdn.net/q1183345443/article/details/78042785)
 
+
+-----------------------------------------------------
 ### git usage
 
 * [Git Checkout](https://www.atlassian.com/git/tutorials/using-branches/git-checkout)
@@ -69,6 +72,7 @@
 
 
 
+-----------------------------------------------------
 ### Others
 
 * [Using SWUpdate to upgrade your system](https://boundarydevices.com/using-swupdate-upgrade-system/)

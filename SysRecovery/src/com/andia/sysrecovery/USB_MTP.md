@@ -14,6 +14,9 @@ mVersion=2.16,mSerialNumber=4C530001181116102423,mConfigurations=[
 
 * [Android磁盘管理-系统源码分析 - gzshun](https://blog.csdn.net/gzshun/article/details/7096763)
 
+* [Android 7.0 Vold工作流程 - ZhangJian](https://blog.csdn.net/Gaugamela/article/details/52484058)
+
+* [Android 7.0 Vold 进程工作机制分析之整体流程](https://blog.csdn.net/qq_31530015/article/details/53324819)
 
 
 --------
