@@ -46,9 +46,10 @@ mListeners ...
 2. NetlinkHandler::onEvent  
 _system/vold/NetlinkHandler.cpp_
   
-3. vm->handleBlockEvent  
+3. `vm->handleBlockEvent`  
+_system/vold/VolumeManager.cpp_
   
-4. disk->create()  
+4. `disk->create()`  
 _system/vold/Disk.cpp_
 ```cpp
 status_t Disk::create() {
