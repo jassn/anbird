@@ -113,9 +113,20 @@ _frameworks/base/services/core/java/com/android/server/NetworkManagementService.
 ```
 
 # Others
-## Good diagram.
+### Good diagram.
 * [Android热插拔事件处理流程--Vold](https://blog.csdn.net/myarrow/article/details/8246716)
 
+### Others
 * [Android5.0以太网流程源码情景分析](https://blog.csdn.net/tankai19880619/article/details/44559419)
+
+* [Android4.4 framework网络管理](https://blog.csdn.net/iampisfan/article/details/51043151)
+
+* [Android -- 网络模块中NetworkFactory与NetworkAgent的通信机制](https://blog.csdn.net/u012805129/article/details/71522620)
+
+
+
+
+
+
 
 
