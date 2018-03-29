@@ -1,10 +1,14 @@
-Aso 3G Dongle Status list
+# 3G Dongle Status list
+
+--------------------------------------
 
 /build/core/pathmap.mk
 
 /device/nvidia/vcm30t30/init.vcm30t30.rc
 /device/nvidia/vcm30t30/start_cdc
 /device/nvidia/vcm30t30/vcm30t30.mk
+
+--------------------------------------
 
 /frameworks/base/android.mk
 /frameworks/base/core/java/android/content/Context.java
@@ -15,9 +19,17 @@ Aso 3G Dongle Status list
 /frameworks/base/ethernet/java/android/net/ethernet/EthernetDevInfo.java
 /frameworks/base/ethernet/java/android/net/ethernet/EthernetManager.java
 /frameworks/base/ethernet/java/android/net/ethernet/IEthernetManager.aidl
-/frameworks/base/services/java/com/android/server/ConnectivityService.java
-/frameworks/base/services/java/com/android/server/EthernetService.java
+
+* frameworks/base/services/java/com/android/server/ConnectivityService.java  
+ConnectivityService.java was moved to _frameworks/base/services/core/java/com/android/server_
+
+
+* frameworks/base/services/java/com/android/server/EthernetService.java
+EthernetService.java was moved to _frameworks/opt/net/ethernet/java/com/android/server/ethernet_
+
+
 /frameworks/base/services/java/com/android/server/SystemServer.java
+
 
 /kernel/arch/arm/configs/tegra_vcm30t30_android_defconfig
 /packages/apps/Settings/res/drawable/ic_settings_ethernet.xml
@@ -30,11 +42,11 @@ Aso 3G Dongle Status list
 /packages/apps/Settings/src/com/android/settings/ethernet/EthernetDialog.java
 /packages/apps/Settings/src/com/android/settings/ethernet/EthernetSettings.java
 
-* system/core/libnetutils/Android.mk
-[Done] - do nothing on i.mx6
+* system/core/libnetutils/Android.mk  
+[Done] - do nothing on i.mx6  
 
-* system/core/libnetutils/dhcp_utils.c
-- this file was removed in Android 7.1
+* system/core/libnetutils/dhcp_utils.c  
+this file was removed in Android 7.1  
 
 
 
