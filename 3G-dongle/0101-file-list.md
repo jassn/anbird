@@ -59,19 +59,19 @@ __EthernetService.java__ was moved to _frameworks/opt/net/ethernet/java/com/andr
 ---------------------------------------------
 ## Add a new item to Settings
 
-/packages/apps/Settings/res/drawable/ic_settings_ethernet.xml
-/packages/apps/Settings/res/drawable/ic_settings_ethernet_img.png
+/packages/apps/Settings/res/drawable/ic_settings_ethernet.xml  
+/packages/apps/Settings/res/drawable/ic_settings_ethernet_img.png  
 
 
-* packages/apps/Settings/res/layout/ethernet_dialog.xml
+* packages/apps/Settings/res/layout/ethernet_dialog.xml  
 This file depends on strings.xml
 
 
-* packages/apps/Settings/res/values/strings.xml
+* packages/apps/Settings/res/values/strings.xml  
 partly added.
 
 
-* packages/apps/Settings/res/xml/ethernet_settings.xml
+* packages/apps/Settings/res/xml/ethernet_settings.xml  
 __[Done]__ Just copy this file to the same folder.  
 ref by AndroidManifest.xml
 
@@ -85,9 +85,9 @@ Compare to 7.1 --> _packages/apps/Settings/AndroidManifest.xml_
 
 ----------------------------------------------
 
-/packages/apps/Settings/src/com/android/settings/Settings.java
-/packages/apps/Settings/src/com/android/settings/ethernet/EthernetDialog.java
-/packages/apps/Settings/src/com/android/settings/ethernet/EthernetSettings.java
+/packages/apps/Settings/src/com/android/settings/Settings.java  
+/packages/apps/Settings/src/com/android/settings/ethernet/EthernetDialog.java  
+/packages/apps/Settings/src/com/android/settings/ethernet/EthernetSettings.java  
 
 
 * system/core/libnetutils/Android.mk  
@@ -95,7 +95,7 @@ __[Done]__ - do nothing on i.mx6
 
 
 * system/core/libnetutils/dhcp_utils.c  
-this file was removed in Android 7.1  
+This file was removed in Android 7.1  
 
 
 
