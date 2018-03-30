@@ -15,6 +15,7 @@
        android:icon="@drawable/ic_settings_ethernet" />
 ```
 
+__[What]__ is the usage of __id/ethernet_settings__ ?
 
 
 ## File list
@@ -68,19 +69,20 @@ This file depends on strings.xml
 
 
 * packages/apps/Settings/res/values/strings.xml  
-partly added.
-
+__[Done]__  
 
 * packages/apps/Settings/res/xml/ethernet_settings.xml  
 __[Done]__ Just copy this file to the same folder.  
-ref by AndroidManifest.xml
+ref by AndroidManifest.xml  
 
 
 
 * packages/apps/Settings/res/xml/settings_headers.xml
 this file was removed in Android 7.1  
 __ethernet_settings__ was put after WirelessSrttings and before DEVICE category.  
-Compare to 7.1 --> _packages/apps/Settings/AndroidManifest.xml_
+Compare to 7.1 --> _packages/apps/Settings/AndroidManifest.xml_  
+
+__[What]__ is the usage of __ethernet_settings__ ?
 
 
 ----------------------------------------------
