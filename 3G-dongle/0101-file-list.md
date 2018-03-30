@@ -1,4 +1,4 @@
-# 3G Dongle Status list
+# 3G Dongle - Status List
 
 
 ## Trace code 
@@ -17,7 +17,7 @@
 
 
 
-## file list
+## File list
 --------------------------------------
 
 /build/core/pathmap.mk
