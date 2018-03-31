@@ -61,7 +61,8 @@ __EthernetService.java__ was moved to _frameworks/opt/net/ethernet/java/com/andr
 ## Add a new item to Settings
 
 /packages/apps/Settings/res/drawable/ic_settings_ethernet.xml  
-/packages/apps/Settings/res/drawable/ic_settings_ethernet_img.png  
+
+* /packages/apps/Settings/res/drawable/ic_settings_ethernet_img.png  
 
 
 * packages/apps/Settings/res/layout/ethernet_dialog.xml  
@@ -81,8 +82,7 @@ ref by AndroidManifest.xml
 this file was removed in Android 7.1  
 __ethernet_settings__ was put after WirelessSrttings and before DEVICE category.  
 Compare to 7.1 --> _packages/apps/Settings/AndroidManifest.xml_  
-
-__[What]__ is the usage of __ethernet_settings__ ?
+__[What]__ is the usage of __ethernet_settings__ ?  
 
 
 ----------------------------------------------
