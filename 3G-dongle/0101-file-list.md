@@ -60,37 +60,67 @@ __EthernetService.java__ was moved to _frameworks/opt/net/ethernet/java/com/andr
 ---------------------------------------------
 ## Add a new item to Settings
 
-/packages/apps/Settings/res/drawable/ic_settings_ethernet.xml  
+### packages/apps/Settings/res
 
-* /packages/apps/Settings/res/drawable/ic_settings_ethernet_img.png  
+packages/apps/Settings/res/drawable/ic_settings_ethernet.xml  
+
+packages/apps/Settings/res/drawable/ic_settings_ethernet_img.png  
 
 
-* packages/apps/Settings/res/layout/ethernet_dialog.xml  
+packages/apps/Settings/res/layout/ethernet_dialog.xml  
 This file depends on strings.xml
 
 
-* packages/apps/Settings/res/values/strings.xml  
+packages/apps/Settings/res/values/strings.xml  
 __[Done]__  
 
-* packages/apps/Settings/res/xml/ethernet_settings.xml  
+packages/apps/Settings/res/xml/ethernet_settings.xml  
 __[Done]__ Just copy this file to the same folder.  
 ref by AndroidManifest.xml  
 
 
 
-* packages/apps/Settings/res/xml/settings_headers.xml
+packages/apps/Settings/res/xml/settings_headers.xml
 this file was removed in Android 7.1  
 __ethernet_settings__ was put after WirelessSrttings and before DEVICE category.  
 Compare to 7.1 --> _packages/apps/Settings/AndroidManifest.xml_  
-__[What]__ is the usage of __ethernet_settings__ ?  
+* __[What]__ is the usage of __ethernet_settings__ ?  
+* __[How]__ to replace `datausage.DataUsageSummary` ?
+
+```xml        
+        <activity android:name="Settings$T3gUsageSummaryActivity"
+                android:label="@string/eth_radio_ctrl_title"
+                android:icon="@drawable/ic_settings_ethernet"
+                android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <intent-filter android:priority="1">
+                <action android:name="com.android.settings.action.SETTINGS" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                android:value="com.android.settings.category.wireless" />
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.datausage.DataUsageSummary" />
+        </activity>
+```
 
 
 ----------------------------------------------
 
-/packages/apps/Settings/src/com/android/settings/Settings.java  
-/packages/apps/Settings/src/com/android/settings/ethernet/EthernetDialog.java  
-/packages/apps/Settings/src/com/android/settings/ethernet/EthernetSettings.java  
+### packages/apps/Settings/res
 
+packages/apps/Settings/src/com/android/settings/Settings.java  
+
+packages/apps/Settings/src/com/android/settings/ethernet/EthernetDialog.java  
+
+packages/apps/Settings/src/com/android/settings/ethernet/EthernetSettings.java  
+
+
+----------------------------------------------
+### system/core/libnetutils
 
 * system/core/libnetutils/Android.mk  
 __[Done]__ - do nothing on i.mx6  
