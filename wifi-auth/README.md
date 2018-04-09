@@ -1,9 +1,24 @@
 
 
 
+## Adding debug log for wpa_supplicant
+wpa_printf(MSG_WARNING, "debug string);
 
 
-## set timeout to 2 seconds, ASUS hotspot can send ERROR_AUTHENTICATING.
+------------------------------------
+
+## download executable for test
+adb remount
+adb push wpa_supplicant /system/bin
+
+
+
+
+-------------------------------------
+
+## Set timeout to 2 seconds, the  hotspot of mobile phone can send ERROR_AUTHENTICATING.
+
+_external/wpa_supplicant_8__
 
 ```cpp
 void wpa_supplicant_req_auth_timeout(struct wpa_supplicant *wpa_s,
@@ -31,7 +46,7 @@ void wpa_supplicant_req_auth_timeout(struct wpa_supplicant *wpa_s,
 
 
 
-## trace ERROR_AUTHENTICATING
+## Trace ...... ERROR_AUTHENTICATING
 
 _frameworks/opt/net_
 
