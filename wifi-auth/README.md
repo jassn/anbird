@@ -114,11 +114,14 @@ _frameworks/opt/net_
 
 
 
+* [Linux Netlink基本使用](http://www.android5.online/Android/androidjc/androidkf/gykf/201603/10274.html)
 
 
 
 
+#### external/libnl  
 
+* [etlink 库 -- 官方开发者教程中文版](http://blog.guorongfei.com/2015/02/15/libnl-translation-part7/)
 
 
 
