@@ -21,6 +21,47 @@ adb push wpa_supplicant /system/bin
 
 _external/wpa_supplicant_8_
 
+* wpa_supplicant_rx_eapol
+* It's OK if timeout is set to 4 seconds.
+
+```cpp
+void wpa_supplicant_rx_eapol(void *ctx, const u8 *src_addr,
+                 const u8 *buf, size_t len)
+{
+    struct wpa_supplicant *wpa_s = ctx;
+
+    wpa_dbg(wpa_s, MSG_DEBUG, "RX EAPOL from " MACSTR, MAC2STR(src_addr));
+    wpa_hexdump(MSG_MSGDUMP, "RX EAPOL", buf, len);
+    
+    /* code omitted ...... */
+    
+    
+    if (wpa_s->eapol_received == 0 &&
+        (!(wpa_s->drv_flags & WPA_DRIVER_FLAGS_4WAY_HANDSHAKE) ||
+         !wpa_key_mgmt_wpa_psk(wpa_s->key_mgmt) ||
+         wpa_s->wpa_state != WPA_COMPLETED) &&
+        (wpa_s->current_ssid == NULL ||
+         wpa_s->current_ssid->mode != IEEE80211_MODE_IBSS)) {
+        /* Timeout for completing IEEE 802.1X and WPA authentication */
+        int timeout = 10;
+
+        if (wpa_key_mgmt_wpa_ieee8021x(wpa_s->key_mgmt) ||
+            wpa_s->key_mgmt == WPA_KEY_MGMT_IEEE8021X_NO_WPA ||
+            wpa_s->key_mgmt == WPA_KEY_MGMT_WPS) {
+            /* Use longer timeout for IEEE 802.1X/EAP */
+            timeout = 70;
+        }
+
+        wpa_printf(MSG_WARNING, "js3n.3354 ........ timeout = %d", timeout);
+        wpa_supplicant_req_auth_timeout(wpa_s, timeout, 0);
+    }
+
+}
+
+```
+
+* wpa_supplicant_req_auth_timeout
+
 ```cpp
 void wpa_supplicant_req_auth_timeout(struct wpa_supplicant *wpa_s,
                      int sec, int usec)
@@ -32,10 +73,6 @@ void wpa_supplicant_req_auth_timeout(struct wpa_supplicant *wpa_s,
     wpa_dbg(wpa_s, MSG_INFO, "Setting authentication timeout: %d sec "
         "%d usec", sec, usec);
 
-#if 1
-    sec = 2;
-    wpa_printf(MSG_WARNING, "js3n.register %d sec ... Line.232", sec);
-#endif
 
     eloop_cancel_timeout(wpa_supplicant_timeout, wpa_s, NULL);
     eloop_register_timeout(sec, usec, wpa_supplicant_timeout, wpa_s, NULL);
