@@ -1,6 +1,6 @@
 # How does ERROR_AUTHENTICATING get noticed ?
 
-## trace ... Authentication with   
+## Trace ... Authentication with   
 
 **wpa_supplicant_timeout** send message to upper layer.
 
@@ -11,7 +11,10 @@ static void wpa_supplicant_timeout(void *eloop_ctx, void *timeout_ctx)
         MAC2STR(bssid));
 }
 ```
+The remaining part of `wpa_supplicant_timeout` will change state to DISCONNECT directly, and set **locally_generated** to 1.  
 
+
+---------------------------------
 
 frameworks/opt/net/wifi/service/
 java/com/android/server/wifi/WifiMonitor.java   
