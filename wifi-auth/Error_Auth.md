@@ -2,6 +2,17 @@
 
 ## trace ... Authentication with   
 
+**wpa_supplicant_timeout** send message to upper layer.
+
+```cpp
+static void wpa_supplicant_timeout(void *eloop_ctx, void *timeout_ctx)
+{
+    wpa_msg(wpa_s, MSG_INFO, "Authentication with " MACSTR " timed out.",
+        MAC2STR(bssid));
+}
+```
+
+
 frameworks/opt/net/wifi/service/
 java/com/android/server/wifi/WifiMonitor.java   
 
@@ -63,7 +74,7 @@ case WifiMonitor.SUPPLICANT_STATE_CHANGE_EVENT:
 
 ----------------------------------------
 
-
+# NOTICE: following could be wrong.
 
 
 
