@@ -6,19 +6,62 @@ frameworks/opt/net/wifi/service/
 java/com/android/server/wifi/WifiMonitor.java   
 
 ```java
-private static final String AUTH_EVENT_PREFIX_STR = "Authentication with";
+    /* EAP authentication timeout events */
+    private static final String AUTH_EVENT_PREFIX_STR = "Authentication with";
+    private static final String AUTH_TIMEOUT_STR = "timed out.";
+```
+WifiMonitor send message **AUTHENTICATION_FAILURE_EVENT**
+```java
+private boolean dispatchEvent(String eventStr, String iface) {
+        if (!eventStr.startsWith(EVENT_PREFIX_STR)) {
+            if (eventStr.startsWith(WPS_SUCCESS_STR)) {
+                sendMessage(iface, WPS_SUCCESS_EVENT);
+            } else if (eventStr.startsWith(AUTH_EVENT_PREFIX_STR) &&
+                    eventStr.endsWith(AUTH_TIMEOUT_STR)) {
+                sendMessage(iface, AUTHENTICATION_FAILURE_EVENT);
+	    } else {
+                if (DBG) Log.w(TAG, "couldn't identify event type - " + eventStr);
+            }
+            eventLogCounter++;
+            return false;
+        }
+}
+
+```
+
+Recv by SupplicantStateTracker.java  
+and set **mAuthFailureInSupplicantBroadcast** to true.
+```java
+    class DefaultState extends State {
+        @Override
+        public boolean processMessage(Message message) {
+            if (true) Log.d(TAG, getName() + message.toString() + "\n");
+            switch (message.what) {
+                case WifiMonitor.AUTHENTICATION_FAILURE_EVENT:
+                    mAuthFailureInSupplicantBroadcast = true;
+                    Slog.d(TAG, "jssn, mAuthFailureInSupplicantBroadcast ... true \n");
+                    break;
+            }
+            return HANDLED;
+        }
+    }
+```
+Wait for next state change event, then call **sendSupplicantStateChangedBroadcast**
+
+```java
+case WifiMonitor.SUPPLICANT_STATE_CHANGE_EVENT:
+    StateChangeResult stateChangeResult = (StateChangeResult) message.obj;
+    SupplicantState state = stateChangeResult.state;
+
+    sendSupplicantStateChangedBroadcast(state, mAuthFailureInSupplicantBroadcast);
+    mAuthFailureInSupplicantBroadcast = false;
+    transitionOnSupplicantStateChange(stateChangeResult);
+    break;
 ```
 
 
 
-
-
-
-
-
-
-
-
+----------------------------------------
 
 
 
