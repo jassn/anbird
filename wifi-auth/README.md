@@ -13,6 +13,11 @@ adb remount
 adb push wpa_supplicant /system/bin  
 
 
+## for framework
+cd out/target/product/sabresd_6dq/system/framework  
+adb remount  
+adb push wifi-service.jar /system/framework  
+
 
 
 -------------------------------------
