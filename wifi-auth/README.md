@@ -24,10 +24,20 @@ adb push wifi-service.jar /system/framework
 
 ## Set timeout to 2 seconds, then hotspot of mobile phone can send ERROR_AUTHENTICATING.
 
-_external/wpa_supplicant_8_
+_external/wpa_supplicant_8/wpa_supplicant/wpa_supplicant.c_
+
 
 * wpa_supplicant_rx_eapol
-* It's OK if timeout is set to 4 seconds.
+* One solution is to set _timeout_ to 4 seconds or shorter as below ...
+
+```cpp
+    timeout=3;
+    wpa_printf(MSG_WARNING, "js3n.wpa.%d ........ 15:04 timeout = %d", __LINE__, timeout);
+              wpa_supplicant_req_auth_timeout(wpa_s, timeout, 0);
+```
+
+
+Take a look at part of *wpa_supplicant_rx_eapol*
 
 ```cpp
 void wpa_supplicant_rx_eapol(void *ctx, const u8 *src_addr,
@@ -66,6 +76,8 @@ void wpa_supplicant_rx_eapol(void *ctx, const u8 *src_addr,
 ```
 
 * wpa_supplicant_req_auth_timeout
+
+* `wpa_supplicant_timeout` callback was registered.
 
 ```cpp
 void wpa_supplicant_req_auth_timeout(struct wpa_supplicant *wpa_s,
