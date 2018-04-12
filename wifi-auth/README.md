@@ -7,22 +7,40 @@ wpa_printf(MSG_WARNING, "debug string);
 ```
 
 ------------------------------------
+## Download modifications to target device
 
-## download executable for test
+### download executable for test
+cd out/target/product/sabresd_6dq/system/bin/
 adb remount  
 adb push wpa_supplicant /system/bin  
 
 
-## for framework
+### download executable for framework
 cd out/target/product/sabresd_6dq/system/framework  
 adb remount  
 adb push wifi-service.jar /system/framework  
 
 
+### download apk for test
+adb push <Luxg...apk> /system/app
+
+
+--------------------------------------
+## Reboot target and running
+
+### check log
+adb reboot
+adb logcat -v | grep SupplicantState
+
+```
+01-01 00:07:39.523 I/SupplicantState( 1101): ERROR_AUTHENTICATING
+```
+
+
 
 -------------------------------------
 
-## Set timeout to 2 seconds, then hotspot of mobile phone can send ERROR_AUTHENTICATING.
+## Set timeout to 3 seconds, then hotspot of mobile phone can send ERROR_AUTHENTICATING.
 
 _external/wpa_supplicant_8/wpa_supplicant/wpa_supplicant.c_
 
@@ -32,12 +50,11 @@ _external/wpa_supplicant_8/wpa_supplicant/wpa_supplicant.c_
 
 ```cpp
     timeout=3;
-    wpa_printf(MSG_WARNING, "js3n.wpa.%d ........ 15:04 timeout = %d", __LINE__, timeout);
-              wpa_supplicant_req_auth_timeout(wpa_s, timeout, 0);
+    wpa_supplicant_req_auth_timeout(wpa_s, timeout, 0);
 ```
 
 
-Take a look at part of *wpa_supplicant_rx_eapol*
+Take a look at **wpa_supplicant_rx_eapol** partly.
 
 ```cpp
 void wpa_supplicant_rx_eapol(void *ctx, const u8 *src_addr,
