@@ -24,7 +24,55 @@ java/com/android/server/wifi/WifiMonitor.java
     private static final String AUTH_EVENT_PREFIX_STR = "Authentication with";
     private static final String AUTH_TIMEOUT_STR = "timed out.";
 ```
+
+
+
+MonitorThread::run() call **dispatchEvent**
+
+```java
+    private class MonitorThread extends Thread {
+        public void run() {
+            //noinspection InfiniteLoopStatement
+            for (;;) {
+                String eventStr = mWifiNative.waitForEvent();
+
+                if (dispatchEvent(eventStr)) {
+                    if (DBG) Log.d(TAG, "Disconnecting from the supplicant, no more events");
+                    break;
+                }
+            }
+        }
+    }
+
+```
+
+
 WifiMonitor send message **AUTHENTICATION_FAILURE_EVENT**
+
+```java
+    private synchronized boolean dispatchEvent(String eventStr) {
+        String iface;
+        // IFNAME=wlan0 ANQP-QUERY-DONE addr=18:cf:5e:26:a4:88 result=SUCCESS
+        if (eventStr.startsWith("IFNAME=")) {
+            int space = eventStr.indexOf(' ');
+            if (space != -1) {
+                iface = eventStr.substring(7, space);
+                eventStr = eventStr.substring(space + 1);
+            }
+        }
+
+        if (dispatchEvent(eventStr, iface)) {
+            mConnected = false;
+            return true;
+        }
+        return false;
+    }
+
+```
+
+
+Dispatching event to interface
+
 ```java
 private boolean dispatchEvent(String eventStr, String iface) {
         if (!eventStr.startsWith(EVENT_PREFIX_STR)) {
