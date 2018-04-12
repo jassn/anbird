@@ -14,7 +14,57 @@ static void wpa_supplicant_timeout(void *eloop_ctx, void *timeout_ctx)
 The remaining part of `wpa_supplicant_timeout` will change state to DISCONNECT directly, and set **locally_generated** to 1.  
 
 
+wpa_msg call wpa_msg_cb, which is `wpa_supplicant_ctrl_iface_msg_cb`.  ..
+
+```cpp
+void wpa_msg(void *ctx, int level, const char *fmt, ...)
+{
+    if (wpa_msg_cb)
+        wpa_msg_cb(ctx, level, WPA_MSG_PER_INTERFACE, buf, len);
+}
+
+static void wpa_supplicant_ctrl_iface_msg_cb(void *ctx, int level,
+                         enum wpa_msg_type type,
+                         const char *txt, size_t len)
+{
+
+            wpa_supplicant_ctrl_iface_send(
+                wpa_s,
+                type != WPA_MSG_PER_INTERFACE ?
+                NULL : wpa_s->ifname,
+                gpriv->sock, &gpriv->ctrl_dst, level,
+                txt, len, NULL, gpriv);
+
+	/*  ......  or  ......  **/
+
+            wpa_supplicant_ctrl_iface_send(wpa_s, NULL, priv->sock,
+                               &priv->ctrl_dst, level,
+                               txt, len, priv, NULL);
+
+}
+
+```
+
+
+
+
+then
+```cpp
+static void wpa_supplicant_ctrl_iface_send(struct wpa_supplicant *wpa_s,
+                       const char *ifname, int sock,
+                       struct dl_list *ctrl_dst,
+                       int level, const char *buf,
+                       size_t len,
+                       struct ctrl_iface_priv *priv,
+                       struct ctrl_iface_global_priv *gp)
+{
+}
+```
+
+
 ---------------------------------
+
+## Java Framework
 
 frameworks/opt/net/wifi/service/
 java/com/android/server/wifi/WifiMonitor.java   
