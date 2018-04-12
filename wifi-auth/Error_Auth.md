@@ -77,7 +77,8 @@ case WifiMonitor.SUPPLICANT_STATE_CHANGE_EVENT:
 
 ----------------------------------------
 
-# NOTICE: following could be wrong.
+NOTICE: following could be wrong.
+=================================
 
 
 

@@ -12,17 +12,17 @@ wpa_printf(MSG_WARNING, "debug string);
 ### download executable for test
 cd out/target/product/sabresd_6dq/system/bin/
 adb remount  
-adb push wpa_supplicant /system/bin  
+adb push **wpa_supplicant** /system/bin  
 
 
 ### download executable for framework
 cd out/target/product/sabresd_6dq/system/framework  
 adb remount  
-adb push wifi-service.jar /system/framework  
+adb push **wifi-service.jar** /system/framework  
 
 
 ### download apk for test
-adb push <Luxg...apk> /system/app
+adb push **Luxg...apk** /system/app
 
 
 --------------------------------------
