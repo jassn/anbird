@@ -42,6 +42,16 @@ interface | EthernetManager | EthAskeyManager
 * [Android-7.0 Settings中添加一个菜单选项](https://blog.csdn.net/qq_25804863/article/details/50229461)
 
 
+
+-----------------------------------------------------
+## TODO
+
+* how to develop without flashing all images?
+
+
+
+
+
 -----------------------------------------------------
 
 

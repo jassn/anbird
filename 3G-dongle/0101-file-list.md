@@ -23,9 +23,9 @@ __[What]__ is the usage of __id/ethernet_settings__ ?
 
 /build/core/pathmap.mk
 
-/device/nvidia/vcm30t30/init.vcm30t30.rc
-/device/nvidia/vcm30t30/start_cdc
-/device/nvidia/vcm30t30/vcm30t30.mk
+/device/nvidia/vcm30t30/init.vcm30t30.rc  
+/device/nvidia/vcm30t30/start_cdc  
+/device/nvidia/vcm30t30/vcm30t30.mk  
 
 --------------------------------------
 

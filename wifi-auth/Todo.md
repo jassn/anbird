@@ -24,3 +24,14 @@ Other Todo
 
 * How to enable more debug messages?
 
+- see src/utils/wpa_debug.c
+
+```cpp
+/*  wpa_supplicant/main.c  */
+int main(int argc, char *argv[])
+{
+	params.wpa_debug_level = MSG_DEBUG;
+}
+
+```
+

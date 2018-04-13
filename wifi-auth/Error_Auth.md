@@ -14,9 +14,10 @@ static void wpa_supplicant_timeout(void *eloop_ctx, void *timeout_ctx)
 The remaining part of `wpa_supplicant_timeout` will change state to DISCONNECT directly, and set **locally_generated** to 1.  
 
 
-wpa_msg call wpa_msg_cb, which is `wpa_supplicant_ctrl_iface_msg_cb`.  ..
+*wpa_msg* call wpa_msg_cb, which is `wpa_supplicant_ctrl_iface_msg_cb`.   
 
 ```cpp
+/*  wpa_supplicant_8/src/utils/wpa_debug.c  */
 void wpa_msg(void *ctx, int level, const char *fmt, ...)
 {
     if (wpa_msg_cb)
