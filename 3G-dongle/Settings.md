@@ -44,3 +44,16 @@ _packages/apps/Settings/AndroidManifest.xml_
 ```
 -------------------------------
 
+
+Reference
+=========
+
+* [Settings中添加一个菜单选项](https://blog.csdn.net/qq_25804863/article/details/50229461)
+
+
+* [Android 7.0 settings 总结](https://blog.csdn.net/w690333243/article/details/58603571)
+
+* [飞行模式下打开wifi](https://blog.csdn.net/lfx_xianxian/article/details/50847455)
+
+* [Settings 裡面新增一個類別選項](http://mf99coding.logdown.com/posts/175706-how-to-add-an-option-in-the-settings-page-along-with-a-switch)
+

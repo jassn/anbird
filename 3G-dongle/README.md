@@ -37,6 +37,35 @@ interface | EthernetManager | EthAskeyManager
 
 -----------------------------------------------------
 
+## [2018-4-17]
+google: ethpreference
+
+https://blog.csdn.net/shan0xiao0xi/article/details/17116667
+https://github.com/hongyunwu/android4.4-settings/blob/master/src/com/android/settings/ethernet/EthernetSettings.java
+
+
+
+
+
+-----------------------------------------------------
+## [2018-4-17]
+
+ninja: Entering directory `.'
+[  0% 5/1250] Aidl: framework <= frameworks/base/ethernet/java/android/net/ethernet/IEthernetManager.aidl
+FAILED: /bin/bash -c "out/host/linux-x86/bin/aidl -dout/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/ethernet/java/android/net/ethernet/IEthernetManager.P -b  -Iframeworks/base -Iframeworks/base/src -Isystem/update_engine/binder_bindings -Iframeworks/base/core/java -Iframeworks/base/graphics/java -Iframeworks/base/location/java -Iframeworks/base/media/java -Iframeworks/base/media/mca/effect/java -Iframeworks/base/media/mca/filterfw/java -Iframeworks/base/media/mca/filterpacks/java -Iframeworks/base/drm/java -Iframeworks/base/opengl/java -Iframeworks/base/sax/java -Iframeworks/base/telecomm/java -Iframeworks/base/telephony/java -Iframeworks/base/wifi/java -Iframeworks/base/keystore/java -Iframeworks/base/rs/java -Iframeworks/native/aidl/binder -Iframeworks/av/camera/aidl -Iframeworks/native/aidl/gui -Isystem/netd/server/binder -Iframeworks/base/core/java -Iframeworks/base/graphics/java -Iframeworks/base/location/java -Iframeworks/base/media/java -Iframeworks/base/media/mca/effect/java -Iframeworks/base/media/mca/filterfw/java -Iframeworks/base/media/mca/filterpacks/java -Iframeworks/base/drm/java -Iframeworks/base/opengl/java -Iframeworks/base/sax/java -Iframeworks/base/telecomm/java -Iframeworks/base/telephony/java -Iframeworks/base/wifi/java -Iframeworks/base/keystore/java -Iframeworks/base/rs/java frameworks/base/ethernet/java/android/net/ethernet/IEthernetManager.aidl out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/ethernet/java/android/net/ethernet/IEthernetManager.java"
+
+frameworks/base/ethernet/java/android/net/ethernet/IEthernetManager.aidl:19: couldn't find import for class android.net.ethernet.EthernetDevInfo
+
+## Fixed by adding "ethernet" to 
+/nmopt/Antec_imx6dl/build/core/pathmap.mk
+
+-----------------------------------------------------
+
+
+
+
+
+
 ## How to add a new item to Settings?
 
 * [Android-7.0 Settings中添加一个菜单选项](https://blog.csdn.net/qq_25804863/article/details/50229461)
