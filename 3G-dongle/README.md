@@ -1,5 +1,25 @@
 
 
+## Comparison of Android ethernet service with Ethernet askey 3G.
+
+Items | Android-7.1 Ethernet | Askey-4.4 | 3G Dongle 
+----- | ---------------- | --------- | ----------
+EthernetManager.java | frameworks/base/core/java/android/net | framework/base/ethernet/java/android/net/ethernet
+EthernetService.java | frameworks/opt/net/ethernet | frameworks/base/services/java/com/android/server
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
+
+
+
+-----------------------------------------------------
+
+
+
+
+
+
+
+
 
 
 ## How to add a new item to Settings?
