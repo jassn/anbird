@@ -6,8 +6,28 @@ File  | Location             | Remark
 **EthAskeyService.java** | frameworks/base/services/java/com/android/server | getState
 
 -------------------------------------------------------
+## IEthernetManager.aidl
+**IEthAskeyManager.aidl** - frameworks/base/core/java/android/net/ethernet/
+```java
+interface IEthAskeyManager
+{
+    List<EthernetDevInfo> getDeviceNameList();
+    void setState(int state);
+    int getState( );
+    ......
+}
+```
 
-# SystemServer.java
+**Android.mk** - framework/base
+```java
+core/java/android/net/ethernet/IEthAskeyManager.aidl
+```
+
+
+
+-------------------------------------------------------
+
+## SystemServer.java
 
 frameworks/base/services/java/com/android/server
 ```java
