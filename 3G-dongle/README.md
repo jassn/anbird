@@ -1,4 +1,17 @@
 
+## Todo List
+- [ ] add **EthernetDataTracker.java** to 
+frameworks/base/core/java/android/net/ethernet ??  
+many error messages!  
+See if this java source can be found in /qwrk??  
+- [ ] How to start AIDL service gracefully? like wifi-service?
+- [x] getState().
+
+-----------------------------------------------------
+
+
+
+
 ## String rename because they are conflict with AOSP
 frameworks/base/services/java/com/android/server
 
@@ -18,8 +31,6 @@ File | Android-4.4 Askey | Android-7.1 Ethernet | 3G Dongle
 EthernetManager.java  | framework/base/ethernet/java/android/net/ethernet | frameworks/base/core/java/android/net
 EthernetService.java  | frameworks/base/services/java/com/android/server | frameworks/opt/net/ethernet | frameworks/base/services/java
 IEthernetManager.aidl | framework/base/ethernet | frameworks/base/core/java/android/net | ~IEthAskeyManager.aidl~
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
 
 
 
