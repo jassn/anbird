@@ -1,4 +1,15 @@
 
+## String rename because they are conflict with AOSP
+frameworks/base/services/java/com/android/server
+
+Items | Android-7.1 Ethernet | New 3G Dongle 
+----- | -------------------- | --------------
+file | EthernetService.java | EthAskeyService.java
+
+
+
+
+
 
 ## Comparison of Android ethernet service with Ethernet askey 3G.
 
