@@ -17,4 +17,19 @@ frameworks/base/services/java/com/android/server
    mSystemServiceManager.startService(ETHERNET_SERVICE_CLASS);
 ```
 
+References
+==========
+
+google "aidl null object reference"  
+
+* [unable to start service intent](https://stackoverflow.com/questions/3439356/unable-to-start-service-intent)
+
+
+* [AIDL初识](https://www.jianshu.com/p/c1a5dd10ad78)
+
+
+* [Android：学习AIDL，这一篇文章就够了(上)](https://blog.csdn.net/luoyanglizi/article/details/51980630)
+
+
+
 

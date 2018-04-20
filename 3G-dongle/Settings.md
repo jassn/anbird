@@ -57,3 +57,12 @@ Reference
 
 * [Settings 裡面新增一個類別選項](http://mf99coding.logdown.com/posts/175706-how-to-add-an-option-in-the-settings-page-along-with-a-switch)
 
+
+* [积跬步至千里系列之九--Android系统设置(二)](https://blog.csdn.net/sdjzyuxinburen/article/details/50652003)
+
+* [Android Settings 中添加item 解决方案](https://www.jianshu.com/p/5318da3aced4)
+
+* [Android Activity加载Fragment的一般简易方法](https://blog.csdn.net/zhangphil/article/details/49942519)
+
+
+
