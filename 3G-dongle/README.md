@@ -2,23 +2,24 @@
 
 ## Comparison of Android ethernet service with Ethernet askey 3G.
 
-File | Askey-4.4 | Android-7.1 Ethernet | 3G Dongle 
+File | Android-4.4 Askey | Android-7.1 Ethernet | 3G Dongle 
 ----- | ---------------- | --------- | ----------
 EthernetManager.java  | framework/base/ethernet/java/android/net/ethernet | frameworks/base/core/java/android/net
-EthernetService.java  | frameworks/base/services/java/com/android/server | frameworks/opt/net/ethernet
-IEthernetManager.aidl | framework/base/ethernet | frameworks/base/core/java/android/net | IEthAskeyManager.aidl
+EthernetService.java  | frameworks/base/services/java/com/android/server | frameworks/opt/net/ethernet | frameworks/base/services/java
+IEthernetManager.aidl | framework/base/ethernet | frameworks/base/core/java/android/net | ~IEthAskeyManager.aidl~
 Content from cell 1 | Content from cell 2
 Content in the first column | Content in the second column
 
 
 
 -----------------------------------------------------
-## String rename
+## String rename because they are conflict with AOSP
 
 Items | Android-7.1 Ethernet | New 3G Dongle 
 ----- | -------------------- | --------------
-eth | ETHERNET_SERVICE | ETHASKEY_SERVICE
-
+var | ETHERNET_SERVICE | ETHASKEY_SERVICE
+file | IEthernetManager.aidl | IEthAskeytManager.aidl
+interface | EthernetManager | EthAskeyManager
 
 
 
