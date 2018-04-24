@@ -1,5 +1,6 @@
 
 ## Todo List
+- [ ] addressRemoved of EthernetDataTracker.java
 - [ ] ppp-related.
 - [ ] no this file on the target: **/system/bin/dhcpcd**.  
 - [ ] dhcp (libnet), how to wait for cdc property to complete?  
@@ -10,6 +11,7 @@ many error messages!
 See if this java source can be found in /qwrk??  
 - [ ] How to start AIDL service gracefully? like wifi-service?
 - [ ] iperf.
+- [ ] bluetooth: no sound.
 - [x] getState().
 
 -----------------------------------------------------
