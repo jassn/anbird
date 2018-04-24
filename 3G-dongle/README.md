@@ -1,16 +1,52 @@
 
 ## Todo List
+- [ ] ppp-related.
+- [ ] no this file on the target: **/system/bin/dhcpcd**.  
+- [ ] dhcp (libnet), how to wait for cdc property to complete?  
+Look for the equivalence of **wait_for_property** in *frameworks/base/service/net*.
 - [ ] add **EthernetDataTracker.java** to 
 frameworks/base/core/java/android/net/ethernet ??  
 many error messages!  
 See if this java source can be found in /qwrk??  
 - [ ] How to start AIDL service gracefully? like wifi-service?
+- [ ] iperf.
 - [x] getState().
 
 -----------------------------------------------------
+## wait for property
 
+* see also: system/netd
 
+```cpp
+/*
+ * Wait for a system property to be assigned a specified value.
+ * If desired_value is NULL, then just wait for the property to
+ * be created with any value. maxwait is the maximum amount of
+ * time in seconds to wait before giving up.
+ */
+static int wait_for_property(const char *name, const char *desired_value, int maxwait)
+{
+    char value[PROPERTY_VALUE_MAX] = {'\0'};
+    int maxnaps = (maxwait * 1000) / NAP_TIME;
 
+    if (maxnaps < 1) {
+        maxnaps = 1;
+    }
+
+    while (maxnaps-- > 0) {
+        usleep(NAP_TIME * 1000);
+        if (property_get(name, value, NULL)) {
+            if (desired_value == NULL ||
+                    strcmp(value, desired_value) == 0) {
+                return 0;
+            }
+        }
+    }
+    return -1; /* failure */
+}
+```
+
+-----------------------------------------------------
 
 ## String rename because they are conflict with AOSP
 frameworks/base/services/java/com/android/server
