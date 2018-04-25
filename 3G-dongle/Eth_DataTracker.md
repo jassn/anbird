@@ -1,7 +1,17 @@
-# Ethernet Data Tracker
+# Ethernet Data Tracker on Android-4.2
 
 - [ ] How to register **interfaceAdded** of EthernetDataTracker ?
 - [x] Who call **interfaceAdded** ?
+
+
+------------------------------------
+## NetworkStateTracker
+* framework/base/core
+
+```java
+public interface NetworkStateTracker {
+```
+
 
 
 ------------------------------------
