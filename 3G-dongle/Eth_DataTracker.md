@@ -1,6 +1,38 @@
 # Ethernet Data Tracker
 
-- [ ] who call **interfaceAdded** ?
+- [ ] How to register **interfaceAdded** of EthernetDataTracker ?
+- [x] Who call **interfaceAdded** ?
+
+
+------------------------------------
+
+## Who call *interfaceAdded* ?
+When 3G dongle is plugged in,
+`onEvent` receives **usb0** for `notifyInterfaceAdded`.
+
+* frameworks/base/services/java/com/android/server/
+NetworkManagementService.java
+
+```java
+        @Override
+        public boolean onEvent(int code, String raw, String[] cooked) {
+            switch (code) {
+            case NetdResponseCode.InterfaceChange:
+                    /*
+                     * a network interface change occured
+                     * Format: "NNN Iface added <name>"
+                     *         "NNN Iface removed <name>"
+                     *         "NNN Iface changed <name> <up/down>"
+                     *         "NNN Iface linkstatus <name> <up/down>"
+                     */
+                    if (cooked.length < 4 || !cooked[1].equals("Iface")) {
+                        throw new IllegalStateException(
+                                String.format("Invalid event from daemon (%s)", raw));
+                    }
+                    if (cooked[2].equals("added")) {
+                        notifyInterfaceAdded(cooked[3]);
+                        return true;
+```
 
 ----------------------------------------------
 ## trace android-4.2
