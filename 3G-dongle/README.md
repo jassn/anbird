@@ -1,4 +1,9 @@
 
+## Work of 2018-4-25
+- [ ] run EthernetDataTracker.getInstance.
+- [ ] run EthernetDataTracker.interfaceAdded, interfaceRemoved, interfaceLinkStateChanged
+
+-----------------------------
 ## Todo List
 - [ ] addressRemoved of EthernetDataTracker.java
 - [ ] ppp-related.
