@@ -1,8 +1,23 @@
 # Ethernet Data Tracker on Android-4.2
 
-- [ ] Who call **startMonitoring**?
+- [ ] **startMonitoring** is called from somewhere of framework. 
 - [ ] How to register **interfaceAdded** of EthernetDataTracker ?
 - [x] Who call **interfaceAdded** ?
+
+------------------------------------------
+## startMonitoring - Begin monitoring connectivity
+
+Items | Android-4.2  | Android-7.1.1
+----- | -------------------- | --------------
+class | EthernetDataTracker | EthernetNetworkFactory
+func | startMonitoring | start
+
+
+
+------------------------------------------
+* Reference to Android-7.1.1
+grep **Started tracking interface** in
+frameworks/opt/net/ethernet/java/com/android/server/ethernet
 
 
 ```java
