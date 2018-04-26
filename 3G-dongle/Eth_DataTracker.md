@@ -1,7 +1,27 @@
 # Ethernet Data Tracker on Android-4.2
 
+- [ ] Who call **startMonitoring**?
 - [ ] How to register **interfaceAdded** of EthernetDataTracker ?
 - [x] Who call **interfaceAdded** ?
+
+
+```java
+    public void startMonitoring(Context context, Handler target) {
+        mContext = context;
+        mCsHandler = target;
+
+        // register for notifications from NetworkManagement Service
+        IBinder b = ServiceManager.getService(Context.NETWORKMANAGEMENT_SERVICE);
+        mNMService = INetworkManagementService.Stub.asInterface(b);
+
+        mEthManage = EthernetManager.getInstance();
+
+        if (mEthManage == null)
+            Log.e("SHUGE", "mEthManage is nulllllllllllllllllllllllllllllllllllll");
+        else
+            Log.e("SHUGE", "mEthManage is OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK");
+        mInterfaceObserver = new InterfaceObserver(this);
+```
 
 
 ------------------------------------
