@@ -5,12 +5,52 @@
 - [x] Who call **interfaceAdded** ?
 
 ------------------------------------------
+## interfaceAdded
+
+```java
+   private static class InterfaceObserver extends INetworkManagementEventObserver.Stub {
+        private EthernetDataTracker mTracker;
+
+        public void interfaceAdded(String iface) {
+            mTracker.interfaceAdded(iface);
+        }
+    }
+    
+    private void interfaceAdded(String iface) {
+        /**  It will add an new interface to EthernetService and check it.  **/
+        if(!mEthManage.addInterfaceToService(iface))
+            return;
+
+        /**  The first adding interface will be reconnect.  **/
+        synchronized(mIface) {
+            if(!mIface.isEmpty())
+                return;
+            mIface = iface;
+        }
+
+        NetworkUtils.enableInterface(mIface);
+        reconnect();
+    }
+
+```
+
+
+
+------------------------------------------
+## maybeTrackInterface
+* /frameworks/opt/net/ethernet/java/com/android/server
+
+
+
+
+
+------------------------------------------
 ## startMonitoring - Begin monitoring connectivity
 
 Items | Android-4.2  | Android-7.1.1
 ----- | -------------------- | --------------
 class | EthernetDataTracker | EthernetNetworkFactory
-func | startMonitoring | start
+method | startMonitoring | start
 
 
 
