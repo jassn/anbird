@@ -1,9 +1,18 @@
 
+## Work of 2018-4-30
+- [ ] sendStateBroadcast
+- [ ] onReceive and BroadcastReceiver.
+- [ ] Look for pppoe which was added by annett.
+- [ ] pppoe
+- [ ] EVENT_STATE_CHANGED ??
+
+
+-----------------------------------------------------
 ## Work of 2018-4-25
-- [ ] run EthernetDataTracker.getInstance.
+- [x] run EthernetDataTracker.getInstance.
 - [ ] run EthernetDataTracker.interfaceAdded, interfaceRemoved, interfaceLinkStateChanged
 
------------------------------
+-----------------------------------------------------
 ## Todo List
 - [ ] addressRemoved of EthernetDataTracker.java
 - [ ] ppp-related.
