@@ -1,7 +1,7 @@
 
 ## Work of 2018-4-30
-- [ ] sendStateBroadcast
-- [ ] onReceive and BroadcastReceiver.
+- [ ] **sendStateBroadcast** should be added in proper places to send broadcast.
+- [x] **onReceive** is test OK if use "android.net.wifi.STATE_CHANGE" in EthAskeyService.java.
 - [ ] Look for pppoe which was added by annett.
 - [ ] pppoe
 - [ ] EVENT_STATE_CHANGED ??
