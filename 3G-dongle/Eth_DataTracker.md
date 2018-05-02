@@ -4,6 +4,78 @@
 - [ ] How to register **interfaceAdded** of EthernetDataTracker ?
 - [x] Who call **interfaceAdded** ?
 
+
+------------------------------------------
+## who send broadcast? and when ?
+
+* interfaceAdded call reconnect
+* reconnect call ConnectNetwork
+* ConnectNetwork call runDhcp.
+* runDhcp call sendStateBroadcast
+```java
+    private void runDhcp() {
+        Thread dhcpThread = new Thread(new Runnable() {
+            public void run() {
+                synchronized(this) {
+                       sendStateBroadcast(EthAskeyManager.EVENT_CONFIGURATION_SUCCEEDED);
+                       return;
+                }
+            } // run
+        }, "ETH_DHCP");
+        dhcpThread.start();
+    }
+```
+
+* **sendStateBroadcast** sends NETWORK_STATE_CHANGED_ACTION.
+```java
+    private void sendStateBroadcast(int event) {
+        Intent intent = new Intent(EthAskeyManager.NETWORK_STATE_CHANGED_ACTION);
+        intent.addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY_BEFORE_BOOT
+                                    | Intent.FLAG_RECEIVER_REPLACE_PENDING);
+        intent.putExtra(EthAskeyManager.EXTRA_NETWORK_INFO, mNetworkInfo);
+        intent.putExtra(EthAskeyManager.EXTRA_LINK_PROPERTIES,
+                            new LinkProperties (mLinkProperties));
+        intent.putExtra(EthAskeyManager.EXTRA_ETHERNET_STATE, event);
+        mContext.sendStickyBroadcast(intent);
+    }
+```
+
+* **handleReceive** receives `NETWORK_STATE_CHANGED_ACTION` from broadcast.
+```java
+    public EthAskeyService(Context context) {
+        mContext = context;
+        mDeviceMap = new HashMap<String, EthernetDevInfo>();
+
+        IBinder b = ServiceManager.getService(Context.NETWORKMANAGEMENT_SERVICE);
+        mNMService = INetworkManagementService.Stub.asInterface(b);
+        mTracker = EthernetDataTracker.getInstance();
+
+        mEthStateReceiver = new BroadcastReceiver(){
+        @Override
+        public void onReceive(Context context, Intent intent) {
+                handleReceive(context, intent);
+            }
+        };
+        mFilter = new IntentFilter();
+        mFilter.addAction(EthAskeyManager.NETWORK_STATE_CHANGED_ACTION);
+
+        context.registerReceiver(mEthStateReceiver, mFilter);
+    }
+```
+* and the message should be registered in
+frameworks/base/core/res/AndroidManifest.xml
+```java
+<protected-broadcast android:name="android.net.ethernet.STATE_CHANGE" />
+```
+
+
+
+
+
+
+
+
+
 ------------------------------------------
 ## interfaceAdded
 
