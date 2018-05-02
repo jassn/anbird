@@ -1,5 +1,53 @@
 # Settings of Android 7.1
 
+## Trace ...... setEnabled
+packages/apps/Settings/src/com/android/settings/ethernet
+```java
+    private void setEthEnabled(final boolean enable) {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... unused){
+                try {
+                    if ((mEthManager.isConfigured() != true) && (enable == true)){
+                        publishProgress();
+                    }else{
+                        mEthManager.setEnabled(enable);
+                    }
+                    Thread.sleep(500);
+                }catch(Exception e){
+                }
+                return null;
+            }
+        }
+    }
+```
+EthernetManager.java
+```java
+    public void setEnabled(boolean enable) {
+        try {
+            mService.setState(enable ? ETHERNET_STATE_ENABLED:ETHERNET_STATE_DISABLED);
+        } catch (RemoteException e) {
+            Slog.i(TAG,"Can not set new state");
+        }
+    }
+```
+EthernetService.java
+```java
+    public synchronized void setState(int state) {
+        if (mEthState != state) {
+            mEthState = state;
+            if (state == EthAskeyManager.ETHERNET_STATE_DISABLED) {
+                persistEnabled(false);
+                mTracker.teardown();
+            } else if (state == EthAskeyManager.ETHERNET_STATE_ENABLED){
+                persistEnabled(true);
+                mTracker.reconnect();
+            }
+        }
+    }
+```
+
+
 ## Four header categories:
 * Wireless & networks
 * Devices
