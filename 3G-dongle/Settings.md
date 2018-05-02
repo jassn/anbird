@@ -1,7 +1,9 @@
 # Settings of Android 7.1
 
 ## Trace ...... setEnabled
+This will go to `reconnect` or `teardown` of EthernetTracker.java  
 packages/apps/Settings/src/com/android/settings/ethernet
+* **setEthEnabled** is controlled from GUI.
 ```java
     private void setEthEnabled(final boolean enable) {
         new AsyncTask<Void, Void, Void>() {
