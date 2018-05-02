@@ -1,4 +1,10 @@
 
+## Take Wifi as reference...
+```java
+field public static final java.lang.String NETWORK_STATE_CHANGED_ACTION = "android.net.wifi.STATE_CHANGE";
+```
+
+
 ## Work of 2018-4-30
 - [ ] **sendStateBroadcast** should be added in proper places to send broadcast.
 - [x] **onReceive** is test OK if use "android.net.wifi.STATE_CHANGE" in EthAskeyService.java.
