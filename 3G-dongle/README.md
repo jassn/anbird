@@ -1,9 +1,18 @@
 
+
+## Work of 2018-5-02
+- [ ] mPppoeStateReceiver ...
+- [ ] How to reach **handlePppoe()** ?
+
+-----------------------------------------------------
+
+
 ## Take Wifi as reference...
 ```java
 field public static final java.lang.String NETWORK_STATE_CHANGED_ACTION = "android.net.wifi.STATE_CHANGE";
 ```
 
+-----------------------------------------------------
 
 ## Work of 2018-4-30
 - [ ] **sendStateBroadcast** should be added in proper places to send broadcast.
