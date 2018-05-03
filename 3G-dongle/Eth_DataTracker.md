@@ -116,6 +116,11 @@ frameworks/base/core/res/AndroidManifest.xml
 
 
 
+
+
+
+
+
 ------------------------------------------
 ## startMonitoring - Begin monitoring connectivity
 
@@ -127,12 +132,16 @@ method | startMonitoring | start
 
 
 ------------------------------------------
-* Reference to Android-7.1.1
-grep **Started tracking interface** in
+* Reference to Android-7.1.1  
+grep **Started tracking interface** in  
 frameworks/opt/net/ethernet/java/com/android/server/ethernet
 
 
 ```java
+
+    /**
+     * Begin monitoring connectivity
+     */
     public void startMonitoring(Context context, Handler target) {
         mContext = context;
         mCsHandler = target;
@@ -142,11 +151,7 @@ frameworks/opt/net/ethernet/java/com/android/server/ethernet
         mNMService = INetworkManagementService.Stub.asInterface(b);
 
         mEthManage = EthernetManager.getInstance();
-
-        if (mEthManage == null)
-            Log.e("SHUGE", "mEthManage is nulllllllllllllllllllllllllllllllllllll");
-        else
-            Log.e("SHUGE", "mEthManage is OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK");
+        
         mInterfaceObserver = new InterfaceObserver(this);
 ```
 
