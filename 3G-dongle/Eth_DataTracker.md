@@ -5,13 +5,15 @@
 - [x] Who call **interfaceAdded** ?
 
 
+
+
 ------------------------------------------
-## who send broadcast? and when ?
+## Who send broadcast? and when ?
 
 * interfaceAdded call reconnect
-* reconnect call ConnectNetwork
+* **reconnect** call ConnectNetwork
 * ConnectNetwork call runDhcp.
-* runDhcp call sendStateBroadcast
+* **runDhcp** call sendStateBroadcast.
 ```java
     private void runDhcp() {
         Thread dhcpThread = new Thread(new Runnable() {
@@ -40,7 +42,8 @@
     }
 ```
 
-* **handleReceive** receives `NETWORK_STATE_CHANGED_ACTION` from broadcast.
+* **handleReceive** receives `NETWORK_STATE_CHANGED_ACTION` from broadcast.  
+* then call `mEthStateReceiver.onReceive`. 
 ```java
     public EthAskeyService(Context context) {
         mContext = context;
