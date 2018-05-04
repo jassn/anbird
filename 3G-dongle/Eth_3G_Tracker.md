@@ -1,6 +1,50 @@
 # Ethernet on Android-7.1.1
 
+## interfaceLinkStateChanged
+```java
+    public void interfaceLinkStateChanged(String iface, boolean up) {
+        updateInterfaceState(iface, up);
+    }
 
+    private void updateInterfaceState(String iface, boolean up) {
+        if (!mIface.equals(iface)) {
+            return;
+        }
+        Log.d(TAG, "updateInterface: " + iface + " link " + (up ? "up" : "down"));
+
+        synchronized(this) {
+            mLinkUp = up;
+            mNetworkInfo.setIsAvailable(up);
+            if (!up) {
+                // Tell the agent we're disconnected. It will call disconnect().
+                mNetworkInfo.setDetailedState(DetailedState.DISCONNECTED, null, mHwAddr);
+                stopIpProvisioningThreadLocked();
+            }
+            updateAgent();
+            // set our score lower than any network could go
+            // so we get dropped.  TODO - just unregister the factory
+            // when link goes down.
+            mFactory.setScoreFilter(up ? NETWORK_SCORE : -1);
+        }
+    }
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------
 ## interfaceAdded
 
 ```java
