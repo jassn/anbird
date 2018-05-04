@@ -1,11 +1,52 @@
 # Ethernet Data Tracker on Android-4.2
 
+- [ ] compare **interfaceLinkStateChanged** between Adroid 4.2 and 7.1.
 - [ ] **startMonitoring** is called from somewhere of framework. 
 - [ ] How to register **interfaceAdded** of EthernetDataTracker ?
 - [x] Who call **interfaceAdded** ?
+------------------------------------------
+## interfaceLinkStateChanged
 
+```java
+    private void interfaceLinkStateChanged(String iface, boolean up) {
+        int tmpStatus = 0;
+        int i=0;
+        Log.d(TAG, "interfaceLinkStateChanged: iface=" + iface + " up=" + up);
+        if (mIface.matches(iface)) {
+            for(i=0; i<3; i++){
+                try{
+                    Thread.sleep(100);
+                }catch(Exception e){ }
+                tmpStatus = mEthManage.CheckLink(iface);
+            }
+            if(tmpStatus == -1){
+                return;
+            }
+            up = (tmpStatus == 1) ? true : false;
+            if(mLinkUp == up)
+                return;
 
-
+            mLinkUp = up;
+            if (up) {
+                reconnect();
+                mContext.sendBroadcast(new Intent(EthernetManager.ETHERNET_LINKED_ACTION));
+            } else {
+                // add by toto
+                Log.d(TAG, "interfaceLinkStateChanged: start to clean Ip .");
+                try{
+                    mNMService.clearInterfaceAddresses(mIface);
+                    NetworkUtils.resetConnections(mIface, NetworkUtils.RESET_ALL_ADDRESSES);
+                } catch (RemoteException e) {
+                    Log.e(TAG, "ERROR: " + e);
+                }
+                teardown();
+            }
+        }
+        else if (iface.matches("ppp0")) {
+        ......
+        }
+    }
+```
 
 ------------------------------------------
 ## Who send broadcast? and when ?
