@@ -4,6 +4,16 @@
 * [android usb解析（一）UsbDeviceManager(and5.1)](https://blog.csdn.net/kc58236582/article/details/47810987)
 
 google: android gadget serial driver
+
+* [Linux USB gadget解析（1）](https://blog.csdn.net/a350203223/article/details/40618431)
+
+* [Linux USB gadget解析（2）](https://blog.csdn.net/a350203223/article/details/40618457)
+
+* [Linux USB gadget解析（3）](https://blog.csdn.net/a350203223/article/details/40618759)
+
+* [Linux USB gadget解析（4）](https://blog.csdn.net/a350203223/article/details/40618779)
+
+
 * [USB gadget设备驱动解析（1） [精华]](https://blog.csdn.net/wujiangguizhen/article/details/16863639)
 
 * [USB gadget设备驱动解析（1）——功能体验](https://blog.csdn.net/aleon_liao/article/details/8573254)
