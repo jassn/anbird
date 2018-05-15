@@ -1,9 +1,19 @@
 
 
+## Android_work
+
+* [枚举 - Android之 MTP框架和流程分析 (3)](https://blog.csdn.net/u011279649/article/details/40950799)
+
+* [USB枚举详细过程剖析](https://blog.csdn.net/u011279649/article/details/41779767)
+
+
+
+
+## Android USB
 
 * [android usb解析（一）UsbDeviceManager(and5.1)](https://blog.csdn.net/kc58236582/article/details/47810987)
 
-google: android gadget serial driver
+## google: android gadget serial driver
 
 * [Linux USB gadget解析（1）](https://blog.csdn.net/a350203223/article/details/40618431)
 
