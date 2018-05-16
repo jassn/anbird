@@ -1,4 +1,26 @@
+## Tasks to do:
+- [ ] How to report endpoints to iPhone?
+- [ ] usbmon (USB sniffer)
+- [ ] Apple Tool for debug (CarPlay)
+- [ ] USB VID and PID from MFi
+- [x] ADB over Wi-Fi.
 
+* [ADB over Wi-Fi TCP](https://stackoverflow.com/questions/2604727/how-can-i-connect-to-android-with-adb-over-tcp?noredirect=1&lq=1)
+
+----------------------------------------------------------
+## usbmon for debug
+
+* [linux下类似Bus Hound的工具](https://blog.csdn.net/liuqz2009/article/details/7886461)
+
+* [linux下usb抓包：wireshark+usbmon](https://blog.csdn.net/jfleecumt/article/details/51944457)
+
+* [wireshark 擷取 USB 訊號](http://twlinuxnotes.blogspot.tw/2013/01/wireshark-usb.html)
+
+
+
+
+
+----------------------------------------------------------
 ## Enable adb trace
 
 
