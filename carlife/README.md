@@ -4,12 +4,43 @@
 
 * [ ADB (Android Debug Bridge)](http://imsardine.simplbug.com/note/android/adb/adb.html)  
 setprop persist.adb.trace_mask 1  
-cat /data/adb/adb-1970-01-01-00-00-05-224
+cat /data/adb/adb-1970-01-01-00-00-05-224  
+source code at **system/core/adb**   
+
+./init.freescale.usb.rc
+```
+on boot
+    write /config/usb_gadget/g1/strings/0x409/serialnumber ${ro.serialno}
+    write /config/usb_gadget/g1/strings/0x409/manufacturer ${ro.product.manufacturer}
+    write /config/usb_gadget/g1/strings/0x409/product ${ro.product.model}
+......
+on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1
+    write /config/usb_gadget/g1/functions/mtp.gs0/os_desc/interface.MTP/compatible_id "MTP"
+    write /config/usb_gadget/g1/os_desc/use 1
+    write /config/usb_gadget/g1/idProduct 0x4ee2
+    write /config/usb_gadget/g1/idVendor 0x18d1
+```
+
+* [Linux USB gadget configured through configfs](https://www.kernel.org/doc/Documentation/usb/gadget_configfs.txt)
 
 
 
 
-===============================================
+### /dev/usb-ffs/adb
+
+* [Linaro - How to enable Android ConfigFS gadgets](https://wiki.linaro.org/LMG/Kernel/AndroidConfigFSGadgets)
+
+* [usb ffs](http://bbs.chinaunix.net/thread-4160536-1-1.html)
+
+
+* [Android USB gadget](https://blog.csdn.net/u012719256/article/details/52611036)
+
+
+
+
+
+
+----------------------------------------------------------
 ## Android_work
 
 * [枚举 - Android之 MTP框架和流程分析 (3)](https://blog.csdn.net/u011279649/article/details/40950799)
