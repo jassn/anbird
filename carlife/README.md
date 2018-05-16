@@ -8,10 +8,33 @@
 
 
 
+## ADB
+* [ADB模块源码分析（二）——adb server的启动](https://blog.csdn.net/xiaoyida11/article/details/51322193)
+
+
+
+
+## Android MTP
+
+* [android的USB MTP](https://blog.csdn.net/zhandoushi1982/article/details/7563702)  
+“composite”是此层的关键字
+
+
+
 
 ## Android USB
 
+* [Series - Linux那些事儿 之 戏说USB(28)设备的生命线(十一)](https://blog.csdn.net/zhqh100/article/details/44652431)
+
+* [Linux那些事儿 之 戏说USB(12)接口是设备的接口(一)](https://blog.csdn.net/zhqh100/article/details/44593981)  
+  Configuration vs Setting  
+  device file = 设备文件  
+  USB_DEVICE_MAJOR  
+  cat /proc/devices  
+
 * [android usb解析（一）UsbDeviceManager(and5.1)](https://blog.csdn.net/kc58236582/article/details/47810987)
+
+
 
 ## google: android gadget serial driver
 
