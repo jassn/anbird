@@ -1,5 +1,15 @@
 
+## Enable adb trace
 
+
+* [ ADB (Android Debug Bridge)](http://imsardine.simplbug.com/note/android/adb/adb.html)  
+setprop persist.adb.trace_mask 1  
+cat /data/adb/adb-1970-01-01-00-00-05-224
+
+
+
+
+===============================================
 ## Android_work
 
 * [枚举 - Android之 MTP框架和流程分析 (3)](https://blog.csdn.net/u011279649/article/details/40950799)
@@ -10,6 +20,10 @@
 
 ## ADB
 * [ADB模块源码分析（二）——adb server的启动](https://blog.csdn.net/xiaoyida11/article/details/51322193)
+
+* [ADB 源码分析(一) ——ADB模块简述](http://www.apkbus.com/blog-50331-54609.html)
+
+* [ADB 源码分析(三) —— adbd daemon](http://www.apkbus.com/blog-50331-54627.html)
 
 
 
