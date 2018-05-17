@@ -1,4 +1,5 @@
 ## Tasks to do:
+- [ ] Study T3 CarPlay to help imx6 Carlife.
 - [ ] How to report endpoints to iPhone?
 - [ ] rewrite adb service to another program.
 - [ ] Study AOA working flow; then apply to iPhone.
@@ -10,11 +11,20 @@
 
 * [ADB over Wi-Fi TCP](https://stackoverflow.com/questions/2604727/how-can-i-connect-to-android-with-adb-over-tcp?noredirect=1&lq=1)
 
+  
+  
+
+----------------------------------------------------------
+## adb log trace
+
+* [android系统中log机制](https://blog.csdn.net/prike/article/details/50214973)  
+(6）c/c++域使用LOG
+
+
 * [android usb adb流程](https://blog.csdn.net/xiaojsj111/article/details/18599653)  
   trace_mask   
   (system/core/adb) apacket   
   adb 出问题时的调试方法
-
 
 ----------------------------------------------------------
 ## android_work
