@@ -1,5 +1,6 @@
 ## Tasks to do:
 - [ ] How to report endpoints to iPhone?
+- [x] adb_open, adb_write are defined as inline.
 - [ ] usbmon (USB sniffer)
 - [ ] Apple Tool for debug (CarPlay)
 - [ ] USB VID and PID from MFi
@@ -16,6 +17,11 @@
 
 * [wireshark 擷取 USB 訊號](http://twlinuxnotes.blogspot.tw/2013/01/wireshark-usb.html)
 
+
+----------------------------------------------------------
+## usb gadget driver
+
+* [USB gadget driver: adb](https://blog.csdn.net/u011279649/article/details/11241783)
 
 
 
