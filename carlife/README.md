@@ -1,5 +1,7 @@
 ## Tasks to do:
 - [ ] How to report endpoints to iPhone?
+- [ ] rewrite adb service to another program.
+- [ ] Study AOA working flow; then apply to iPhone.
 - [x] adb_open, adb_write are defined as inline.
 - [ ] usbmon (USB sniffer)
 - [ ] Apple Tool for debug (CarPlay)
@@ -7,6 +9,21 @@
 - [x] ADB over Wi-Fi.
 
 * [ADB over Wi-Fi TCP](https://stackoverflow.com/questions/2604727/how-can-i-connect-to-android-with-adb-over-tcp?noredirect=1&lq=1)
+
+* [android usb adb流程](https://blog.csdn.net/xiaojsj111/article/details/18599653)  
+  trace_mask   
+  (system/core/adb) apacket   
+  adb 出问题时的调试方法
+
+
+----------------------------------------------------------
+## android_work
+
+* [android下usb框架系列文章---(7)android-kernel gadget框架](https://blog.csdn.net/u011279649/article/details/17420321)  
+  kobject_uevent_env  
+  USB_STATE_MATCH   
+
+
 
 ----------------------------------------------------------
 ## usbmon for debug
@@ -22,6 +39,8 @@
 ## usb gadget driver
 
 * [USB gadget driver: adb](https://blog.csdn.net/u011279649/article/details/11241783)
+
+* [分析android的usb-gadget](https://blog.csdn.net/rain0993/article/details/8461697)
 
 
 
