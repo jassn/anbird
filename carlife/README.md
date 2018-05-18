@@ -1,4 +1,6 @@
 ## Tasks to do:
+- [ ] Examine what is written from adbd to configfs.
+- [ ] usbmon doesn't work on i.mx6 yet.
 - [ ] Study T3 CarPlay to help imx6 Carlife.
 - [ ] How to report endpoints to iPhone?
 - [ ] rewrite adb service to another program.
