@@ -1,3 +1,15 @@
+## i.mx6 USB driver
+
+* [iMX6 USB OTG功能开发与测试](https://blog.csdn.net/freeman1975/article/details/46364319)
+
+* [随笔分类 - imx6](http://www.cnblogs.com/helloworldtoyou/category/813842.html)
+
+
+
+
+-----------------------------------------------
+
+
 ## USB Gadget
 
 * [Kernel USB Gadget Configfs Interface](https://events.static.linuxfound.org/sites/events/files/slides/USB%20Gadget%20Configfs%20API_0.pdf)
