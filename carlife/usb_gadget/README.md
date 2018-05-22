@@ -1,6 +1,23 @@
-##
+## USB Gadget
+
+* [Kernel USB Gadget Configfs Interface](https://events.static.linuxfound.org/sites/events/files/slides/USB%20Gadget%20Configfs%20API_0.pdf)
+
+* [linux之configfs简介和编程入门](https://blog.csdn.net/liumangxiong/article/details/12154865)
+
+
+* [关于配置android configfs gadgets的补充说明](https://blog.csdn.net/csdn66_2016/article/details/79655787)
+
+* [Linux usb gadget configfs用法](https://blog.csdn.net/hktkfly6/article/details/72846218)  
+  /sys/class/udc/ci_hdrc.0/  
+  out/target/product/sabresd_6dq/root/init.freescale.usb.rc
+
+* [Linux USB configfs How-to](https://blog.csdn.net/zoosenpin/article/details/38224149)  
+  gadget_strings_langid_attrs
+
 
 * [Android USB/MTP相关实现 - qualcomm chip](https://blog.csdn.net/kv110/article/details/39934319)
+
+* [android下usb框架系列文章---(7)android-kernel gadget框架](https://blog.csdn.net/u011279649/article/details/17420321)
 
 
 
