@@ -94,7 +94,7 @@ struct gadget_info {
 #ifdef CONFIG_USB_CONFIGFS_UEVENT
 	bool connected;
 	bool sw_connected;
-	struct work_struct work;
+	struct work_struct wor2k;
 	struct device *dev;
 #endif
 };
