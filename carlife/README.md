@@ -1,3 +1,24 @@
+## Create my own USB gadget driver
+- [ ] Who calls make_group?    
+  mkdir _dir_ under **/config/usb_gadget/g1/functions** will enter **function_make**
+  (kernel_imx/drivers/usb/gadget/configfs.c)
+* similar to below commands in **root/init.freescale.usb.rc**    
+  source at **device/fsl/imx6/etc/init.usb.rc**  
+```
+    mkdir /config/usb_gadget/g1/functions/ffs.adb
+    mkdir /config/usb_gadget/g1/functions/mtp.gs0
+    mkdir /config/usb_gadget/g1/functions/ptp.gs1
+    mkdir /config/usb_gadget/g1/functions/accessory.gs2
+    mkdir /config/usb_gadget/g1/functions/audio_source.gs3
+    mkdir /config/usb_gadget/g1/functions/rndis.gs4
+    mkdir /config/usb_gadget/g1/functions/midi.gs5
+```
+
+* [linux之configfs简介和编程入门](https://blog.csdn.net/liumangxiong/article/details/12154865)  
+定义了 configfs_group_operations，这里定义了 make_group 函数，在子系统下 mkdir 就会调用这个函数。
+
+
+-----------------------------------------------------------
 ## Tasks to do:
 - [ ] Examine what is written from adbd to configfs.
 - [ ] usbmon doesn't work on i.mx6 yet.
