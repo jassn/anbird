@@ -1,7 +1,46 @@
 ## Create my own USB gadget driver
+
+### How to let UDC-ISR like to my MFi driver?
+- [ ] Is **android_work** common for all gadget functions?
+- [ ] add my driver to `func_list`.
+- [ ] **usb_add_function** ?
+```cpp
+    list_for_each_entry(f, &cfg->func_list, list) {
+        pr_info("js3n . . . %s:%d: name=%s.\n", __func__, __LINE__, f->name);
+        if (f->fi == fi) {
+            ret = -EEXIST;
+            goto out;
+        }
+    }
+```
+
+
+
+-----------------------------------------------------------
+### config_usb_cfg_link
+- [x] **config_usb_cfg_link** is called when adding a link in filesystem.
+
+See root/init.usb.configfs.rc   
+source at system/core/rootdir/init.usb.configfs.rc
+
+
+
+
+-----------------------------------------------------------
+### Who calls make_group?
 - [ ] Who calls make_group?    
   mkdir _dir_ under **/config/usb_gadget/g1/functions** will enter **function_make**
   (kernel_imx/drivers/usb/gadget/configfs.c)
+```cpp
+
+static struct config_group *function_make(
+        struct config_group *group,
+        const char *name)
+{
+}
+```
+
+
 * similar to below commands in **root/init.freescale.usb.rc**    
   source at **device/fsl/imx6/etc/init.usb.rc**  
 ```
@@ -16,6 +55,11 @@
 
 * [linux之configfs简介和编程入门](https://blog.csdn.net/liumangxiong/article/details/12154865)  
 定义了 configfs_group_operations，这里定义了 make_group 函数，在子系统下 mkdir 就会调用这个函数。
+
+* [Make you own USB gadget(pdf)](https://events.static.linuxfound.org/sites/events/files/slides/LinuxConNA-Make-your-own-USB-gadget-Andrzej.Pietrasiewicz.pdf)
+
+
+
 
 
 -----------------------------------------------------------
