@@ -160,7 +160,7 @@ struct ffs_io_data {
 
 struct ffs_desc_helper {
 	struct ffs_data *ffs;
-	unsigned interfaces_count;
+	unsigned interfaces_hcount;
 	unsigned eps_count;
 };
 
@@ -257,10 +257,6 @@ static ssize_t ffs_ep0_write(struct file *file, const char __user *buf,
 	struct ffs_data *ffs = file->private_data;
 	ssize_t ret;
 	char *data;
-
-pr_info("jsn . . . . . . . call %s.\n", __func__);
-	ENTER();
-
 	/* Fast check if setup was canceled */
 	if (ffs_setup_state_clear_cancelled(ffs) == FFS_SETUP_CANCELLED)
 		return -EIDRM;
@@ -288,7 +284,8 @@ pr_info("jsn . . . . . . . call %s.\n", __func__);
 
 		/* Handle data */
 		if (ffs->state == FFS_READ_DESCRIPTORS) {
-			pr_info("read descriptors\n");
+			pr_info("jsn . . . . read descriptors\n");
+			//pr_info("read descriptors\n");
 			ret = __ffs_data_got_descs(ffs, data, len);
 			if (unlikely(ret < 0))
 				break;
@@ -296,7 +293,8 @@ pr_info("jsn . . . . . . . call %s.\n", __func__);
 			ffs->state = FFS_READ_STRINGS;
 			ret = len;
 		} else {
-			pr_info("read strings\n");
+			pr_info("jsn . . . . read strings\n");
+			//pr_info("read strings\n");
 			ret = __ffs_data_got_strings(ffs, data, len);
 			if (unlikely(ret < 0))
 				break;
@@ -321,6 +319,7 @@ pr_info("jsn . . . . . . . call %s.\n", __func__);
 		break;
 
 	case FFS_ACTIVE:
+pr_info("jsn FFS_ACTIVE . . . . %s: line %d\n", __func__, __LINE__);
 		data = NULL;
 		/*
 		 * We're called from user space, we can use _irq
@@ -689,6 +688,7 @@ static ssize_t ffs_epfile_io(struct file *file, struct ffs_io_data *io_data)
 	ssize_t ret, data_len = -EINVAL;
 	int halt;
 
+pr_info("jsn . . . . . . ENTER %s:%d\n", __func__, __LINE__);
 	/* Are we still active? */
 	if (WARN_ON(epfile->ffs->state != FFS_ACTIVE)) {
 		ret = -ENODEV;
@@ -791,7 +791,25 @@ static ssize_t ffs_epfile_io(struct file *file, struct ffs_io_data *io_data)
 			goto error_lock;
 		}
 
+#if 0
+pr_info("jsn . . . . . . %s:%d: data_len=%d\n", __func__, __LINE__, data_len);
+{
+	int i;
+	
+	if (data_len < 80) {
+		for (i=0; i<data_len; i+=4) {
+			pr_info("%02x %02x %02x %02x\n", data[i],data[i+1],data[i+2],data[i+3]);
+		}
+	}
+	else {
+		// print ASCII for device::ro.product
+		pr_info("%s\n", data);
+	}
+}
+pr_info("\n");
+#endif
 		if (io_data->aio) {
+#if 0
 			req = usb_ep_alloc_request(ep->ep, GFP_KERNEL);
 			if (unlikely(!req))
 				goto error_lock;
@@ -815,6 +833,7 @@ static ssize_t ffs_epfile_io(struct file *file, struct ffs_io_data *io_data)
 			ret = -EIOCBQUEUED;
 
 			spin_unlock_irq(&epfile->ffs->eps_lock);
+#endif
 		} else {
 			DECLARE_COMPLETION_ONSTACK(done);
 
@@ -870,6 +889,7 @@ ffs_epfile_open(struct inode *inode, struct file *file)
 {
 	struct ffs_epfile *epfile = inode->i_private;
 
+pr_info("jsn . . . . %s: line %d\n", __func__, __LINE__);
 	ENTER();
 
 	if (WARN_ON(epfile->ffs->state != FFS_ACTIVE))
@@ -927,6 +947,8 @@ static ssize_t ffs_epfile_write_iter(struct kiocb *kiocb, struct iov_iter *from)
 	if (p->aio)
 		kiocb_set_cancel_fn(kiocb, ffs_aio_cancel);
 
+pr_info("\n");
+pr_info("jsn . . . . %s: line %d\n", __func__, __LINE__);
 	res = ffs_epfile_io(kiocb->ki_filp, p);
 	if (res == -EIOCBQUEUED)
 		return res;
@@ -972,6 +994,8 @@ static ssize_t ffs_epfile_read_iter(struct kiocb *kiocb, struct iov_iter *to)
 	if (p->aio)
 		kiocb_set_cancel_fn(kiocb, ffs_aio_cancel);
 
+pr_info("\n");
+pr_info("jsn . . . . %s: line %d\n", __func__, __LINE__);
 	res = ffs_epfile_io(kiocb->ki_filp, p);
 	if (res == -EIOCBQUEUED)
 		return res;
@@ -1764,6 +1788,7 @@ static int __must_check ffs_do_single_desc(char *data, unsigned len,
 
 	case USB_DT_INTERFACE: {
 		struct usb_interface_descriptor *ds = (void *)_ds;
+		pr_info("jsn.%d . . . . bInterfaceSubClass = 0x%02x\n", __LINE__, ds->bInterfaceSubClass);
 		pr_vdebug("interface descriptor\n");
 		if (length != sizeof *ds)
 			goto inv_length;
@@ -1896,8 +1921,8 @@ static int __ffs_data_do_entity(enum ffs_entity_type type,
 		 * encountered interface "n" then there are at least
 		 * "n+1" interfaces.
 		 */
-		if (*valuep >= helper->interfaces_count)
-			helper->interfaces_count = *valuep + 1;
+		if (*valuep >= helper->interfaces_hcount)
+			helper->interfaces_hcount = *valuep + 1;
 		break;
 
 	case FFS_STRING:
@@ -2181,9 +2206,10 @@ static int __ffs_data_got_descs(struct ffs_data *ffs,
 	raw_descs = data;
 	helper.ffs = ffs;
 	for (i = 0; i < 3; ++i) {
+		pr_info("jsn.%d . . . . . . counts[%d] = %d\n", __LINE__, i, counts[i]);
 		if (!counts[i])
 			continue;
-		helper.interfaces_count = 0;
+		helper.interfaces_hcount = 0;
 		helper.eps_count = 0;
 		ret = ffs_do_descs(counts[i], data, len,
 				   __ffs_data_do_entity, &helper);
@@ -2191,13 +2217,14 @@ static int __ffs_data_got_descs(struct ffs_data *ffs,
 			goto error;
 		if (!ffs->eps_count && !ffs->interfaces_count) {
 			ffs->eps_count = helper.eps_count;
-			ffs->interfaces_count = helper.interfaces_count;
+			ffs->interfaces_count = helper.interfaces_hcount;
+			pr_info("jsn.%d . . . . . . interfaces_count = %d\n", __LINE__, ffs->interfaces_count);
 		} else {
 			if (ffs->eps_count != helper.eps_count) {
 				ret = -EINVAL;
 				goto error;
 			}
-			if (ffs->interfaces_count != helper.interfaces_count) {
+			if (ffs->interfaces_count != helper.interfaces_hcount) {
 				ret = -EINVAL;
 				goto error;
 			}
@@ -2506,6 +2533,7 @@ static int __ffs_func_bind_do_descs(enum ffs_entity_type type, u8 *valuep,
 	}
 	ffs_ep->descs[ep_desc_id] = ds;
 
+pr_info("js2n . . . . %s: line %d\n", __func__, __LINE__);
 	ffs_dump_mem(": Original  ep desc", ds, ds->bLength);
 	if (ffs_ep->ep) {
 		ds->bEndpointAddress = ffs_ep->descs[0]->bEndpointAddress;
@@ -2732,7 +2760,7 @@ static int _ffs_func_bind(struct usb_configuration *c,
 			  struct usb_function *f)
 {
 	struct ffs_function *func = ffs_func_from_usb(f);
-	struct ffs_data *ffs = func->ffs;
+	struct ffs_data     *ff2s = func->ffs;
 
 	const int full = !!func->ffs->fs_descs_count;
 	const int high = gadget_is_dualspeed(func->gadget) &&
@@ -2742,29 +2770,30 @@ static int _ffs_func_bind(struct usb_configuration *c,
 
 	int fs_len, hs_len, ss_len, ret, i;
 
+pr_info("jsn.%d . . . . . . fs_len=%d\n", __LINE__, fs_len);
 	/* Make it a single chunk, less management later on */
 	vla_group(d);
-	vla_item_with_sz(d, struct ffs_ep, eps, ffs->eps_count);
+	vla_item_with_sz(d, struct ffs_ep, eps, ff2s->eps_count);
 	vla_item_with_sz(d, struct usb_descriptor_header *, fs_descs,
-		full ? ffs->fs_descs_count + 1 : 0);
+		full ? ff2s->fs_descs_count + 1 : 0);
 	vla_item_with_sz(d, struct usb_descriptor_header *, hs_descs,
-		high ? ffs->hs_descs_count + 1 : 0);
+		high ? ff2s->hs_descs_count + 1 : 0);
 	vla_item_with_sz(d, struct usb_descriptor_header *, ss_descs,
-		super ? ffs->ss_descs_count + 1 : 0);
-	vla_item_with_sz(d, short, inums, ffs->interfaces_count);
+		super ? ff2s->ss_descs_count + 1 : 0);
+	vla_item_with_sz(d, short, inums, ff2s->interfaces_count);
 	vla_item_with_sz(d, struct usb_os_desc_table, os_desc_table,
-			 c->cdev->use_os_string ? ffs->interfaces_count : 0);
+			 c->cdev->use_os_string ? ff2s->interfaces_count : 0);
 	vla_item_with_sz(d, char[16], ext_compat,
-			 c->cdev->use_os_string ? ffs->interfaces_count : 0);
+			 c->cdev->use_os_string ? ff2s->interfaces_count : 0);
 	vla_item_with_sz(d, struct usb_os_desc, os_desc,
-			 c->cdev->use_os_string ? ffs->interfaces_count : 0);
+			 c->cdev->use_os_string ? ff2s->interfaces_count : 0);
 	vla_item_with_sz(d, struct usb_os_desc_ext_prop, ext_prop,
-			 ffs->ms_os_descs_ext_prop_count);
+			 ff2s->ms_os_descs_ext_prop_count);
 	vla_item_with_sz(d, char, ext_prop_name,
-			 ffs->ms_os_descs_ext_prop_name_len);
+			 ff2s->ms_os_descs_ext_prop_name_len);
 	vla_item_with_sz(d, char, ext_prop_data,
-			 ffs->ms_os_descs_ext_prop_data_len);
-	vla_item_with_sz(d, char, raw_descs, ffs->raw_descs_length);
+			 ff2s->ms_os_descs_ext_prop_data_len);
+	vla_item_with_sz(d, char, raw_descs, ff2s->raw_descs_length);
 	char *vlabuf;
 
 	ENTER();
@@ -2778,18 +2807,18 @@ static int _ffs_func_bind(struct usb_configuration *c,
 	if (unlikely(!vlabuf))
 		return -ENOMEM;
 
-	ffs->ms_os_descs_ext_prop_avail = vla_ptr(vlabuf, d, ext_prop);
-	ffs->ms_os_descs_ext_prop_name_avail =
+	ff2s->ms_os_descs_ext_prop_avail = vla_ptr(vlabuf, d, ext_prop);
+	ff2s->ms_os_descs_ext_prop_name_avail =
 		vla_ptr(vlabuf, d, ext_prop_name);
-	ffs->ms_os_descs_ext_prop_data_avail =
+	ff2s->ms_os_descs_ext_prop_data_avail =
 		vla_ptr(vlabuf, d, ext_prop_data);
 
 	/* Copy descriptors  */
-	memcpy(vla_ptr(vlabuf, d, raw_descs), ffs->raw_descs,
-	       ffs->raw_descs_length);
+	memcpy(vla_ptr(vlabuf, d, raw_descs), ff2s->raw_descs,
+	       ff2s->raw_descs_length);
 
 	memset(vla_ptr(vlabuf, d, inums), 0xff, d_inums__sz);
-	for (ret = ffs->eps_count; ret; --ret) {
+	for (ret = ff2s->eps_count; ret; --ret) {
 		struct ffs_ep *ptr;
 
 		ptr = vla_ptr(vlabuf, d, eps);
@@ -2809,10 +2838,11 @@ static int _ffs_func_bind(struct usb_configuration *c,
 	 */
 	if (likely(full)) {
 		func->function.fs_descriptors = vla_ptr(vlabuf, d, fs_descs);
-		fs_len = ffs_do_descs(ffs->fs_descs_count,
+		fs_len = ffs_do_descs(ff2s->fs_descs_count,
 				      vla_ptr(vlabuf, d, raw_descs),
 				      d_raw_descs__sz,
 				      __ffs_func_bind_do_descs, func);
+		pr_info("jsn.%d . . . . . . fs_len=%d\n", __LINE__, fs_len);
 		if (unlikely(fs_len < 0)) {
 			ret = fs_len;
 			goto error;
@@ -2823,10 +2853,11 @@ static int _ffs_func_bind(struct usb_configuration *c,
 
 	if (likely(high)) {
 		func->function.hs_descriptors = vla_ptr(vlabuf, d, hs_descs);
-		hs_len = ffs_do_descs(ffs->hs_descs_count,
+		hs_len = ffs_do_descs(ff2s->hs_descs_count,
 				      vla_ptr(vlabuf, d, raw_descs) + fs_len,
 				      d_raw_descs__sz - fs_len,
 				      __ffs_func_bind_do_descs, func);
+		pr_info("jsn.%d . . . . . . hs_len=%d\n", __LINE__, hs_len);
 		if (unlikely(hs_len < 0)) {
 			ret = hs_len;
 			goto error;
@@ -2837,7 +2868,7 @@ static int _ffs_func_bind(struct usb_configuration *c,
 
 	if (likely(super)) {
 		func->function.ss_descriptors = vla_ptr(vlabuf, d, ss_descs);
-		ss_len = ffs_do_descs(ffs->ss_descs_count,
+		ss_len = ffs_do_descs(ff2s->ss_descs_count,
 				vla_ptr(vlabuf, d, raw_descs) + fs_len + hs_len,
 				d_raw_descs__sz - fs_len - hs_len,
 				__ffs_func_bind_do_descs, func);
@@ -2854,9 +2885,9 @@ static int _ffs_func_bind(struct usb_configuration *c,
 	 * endpoint numbers rewriting.  We can do that in one go
 	 * now.
 	 */
-	ret = ffs_do_descs(ffs->fs_descs_count +
-			   (high ? ffs->hs_descs_count : 0) +
-			   (super ? ffs->ss_descs_count : 0),
+	ret = ffs_do_descs(ff2s->fs_descs_count +
+			   (high ? ff2s->hs_descs_count : 0) +
+			   (super ? ff2s->ss_descs_count : 0),
 			   vla_ptr(vlabuf, d, raw_descs), d_raw_descs__sz,
 			   __ffs_func_bind_do_nums, func);
 	if (unlikely(ret < 0))
@@ -2864,7 +2895,7 @@ static int _ffs_func_bind(struct usb_configuration *c,
 
 	func->function.os_desc_table = vla_ptr(vlabuf, d, os_desc_table);
 	if (c->cdev->use_os_string)
-		for (i = 0; i < ffs->interfaces_count; ++i) {
+		for (i = 0; i < ff2s->interfaces_count; ++i) {
 			struct usb_os_desc *desc;
 
 			desc = func->function.os_desc_table[i].os_desc =
@@ -2874,7 +2905,7 @@ static int _ffs_func_bind(struct usb_configuration *c,
 				vla_ptr(vlabuf, d, ext_compat) + i * 16;
 			INIT_LIST_HEAD(&desc->ext_prop);
 		}
-	ret = ffs_do_os_descs(ffs->ms_os_descs_count,
+	ret = ffs_do_os_descs(ff2s->ms_os_descs_count,
 			      vla_ptr(vlabuf, d, raw_descs) +
 			      fs_len + hs_len + ss_len,
 			      d_raw_descs__sz - fs_len - hs_len - ss_len,
@@ -2882,10 +2913,13 @@ static int _ffs_func_bind(struct usb_configuration *c,
 	if (unlikely(ret < 0))
 		goto error;
 	func->function.os_desc_n =
-		c->cdev->use_os_string ? ffs->interfaces_count : 0;
+		c->cdev->use_os_string ? ff2s->interfaces_count : 0;
 
 	/* And we're done */
-	ffs_event_add(ffs, FUNCTIONFS_BIND);
+pr_info("jsn . . . . %s:%d: FUNCTIONFS_BIND\n", __func__, __LINE__);
+pr_info("    function.os_desc_n = %d\n", func->function.os_desc_n);
+pr_info("    eps_count = %d\n", ff2s->eps_count);
+	ffs_event_add(ff2s, FUNCTIONFS_BIND);
 	return 0;
 
 error:
@@ -2898,6 +2932,7 @@ static int ffs_func_bind(struct usb_configuration *c,
 {
 	struct f_fs_opts *ffs_opts = ffs_do_functionfs_bind(f, c);
 
+pr_info("jsn . . . . %s:%d: FUNCTIONFS_BIND\n", __func__, __LINE__);
 	if (IS_ERR(ffs_opts))
 		return PTR_ERR(ffs_opts);
 
