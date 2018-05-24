@@ -24,13 +24,15 @@
 ### Incremental update
 * [Android OTA升级原理](http://blog.csdn.net/ylyuanlu/article/details/44457691)
 
-* cd /nmopt/Antec_imx6dl/out/target/product/sabresd_6dq/obj/PACKAGING/target_files_intermediates
+* ./build.sh otapackage  
+
+* cd out/target/product/sabresd_6dq/obj/PACKAGING/target_files_intermediates
 
 
 * build/tools/releasetools/ota_from_target_files.py \
--i ~/Music/sabresd_6dq-target_files-20180317.zip \
-~/Music/sabresd_6dq-target_files-20180318.zip \
-~/Music/incre-ota.zip
+-i sabresd_6dq-target_files-20180317.zip \
+sabresd_6dq-target_files-20180318.zip \
+incre-ota.zip
 
 
 
