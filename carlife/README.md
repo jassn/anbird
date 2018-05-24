@@ -1,5 +1,50 @@
+## Study MTP Service
+
+### when switch USB OTG to device mode
+adb logcat will show
+*starting MTP server in MTP mode*
+
+* source code at 
+packages/providers/MediaProvider/src/com/android/providers/media
+
+```java
+    /**
+     * Manage {@link #mServer}, creating only when running as the current user.
+     */
+    private void manageServiceLocked(StorageVolume primary, String[] subdirs) {
+        final boolean isCurrentUser = UserHandle.myUserId() == ActivityManager.getCurrentUser();
+        if (mServer == null && isCurrentUser) {
+            Log.d(TAG, "starting MTP server in " + (mPtpMode ? "PTP mode" : "MTP mode"));
+            mDatabase = new MtpDatabase(this, MediaProvider.EXTERNAL_VOLUME,
+                    primary.getPath(), subdirs);
+            mServer = new MtpServer(mDatabase, mPtpMode);
+            mDatabase.setServer(mServer);
+            if (!mMtpDisabled) {
+                addStorageDevicesLocked();
+            }
+            mServer.start();
+        } 
+    }
+```
+
+
+* [Android之 MTP框架和流程分析 (3)](https://blog.csdn.net/u011279649/article/details/40950799)   
+  android_mtp_MtpServer_setup  
+  uevent
+
+* [Android USB/MTP相关实现](https://blog.csdn.net/kv110/article/details/39934319)
+
+
+----------------------------------------------------------
 ## Create my own USB gadget driver
 
+### usb_ep_autoconfig
+- [ ] usb_ep_autoconfig is also used in f_serial.c
+
+
+
+
+----------------------------------------------------------
 ### How to let UDC-ISR like to my MFi driver?
 - [ ] Is **android_work** common for all gadget functions?
 - [ ] add my driver to `func_list`.
