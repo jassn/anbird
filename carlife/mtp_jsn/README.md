@@ -3,6 +3,65 @@
 * [枚举 - Android之 MTP框架和流程分析 (3)](https://blog.csdn.net/u011279649/article/details/40950799)
 
 
+
+
+
+----------------------------------------------------------
+### Android Service Activity 通信
+* [Android Service与Activity之间通信的几种方式](https://blog.csdn.net/xiaanming/article/details/9750689)
+
+
+
+
+
+----------------------------------------------------------
+### porting of adb, usb gadgets
+
+* [Adb移植（一）简单分析](https://blog.csdn.net/mirkerson/article/details/32306955)
+
+* [ADB模块源码分析（二）——adb server的启动](http://www.apkbus.com/blog-50331-54621.html)
+
+* [ADB模块源码分析（二）——adb server的启动](https://blog.csdn.net/xiaoyida11/article/details/51322193)   
+(with illustration)
+
+* [Linux USB Gadget 实现我们自己的ADB，Linux下高级调试功能（一）](https://blog.csdn.net/ShuoWangLiangXian/article/details/38363151)
+
+* [Linux-USB Gadget : Part 4: 最简单的 gadget驱动：g_zero](https://blog.csdn.net/zjujoe/article/details/2675095)
+
+
+
+
+
+
+
+----------------------------------------------------------
+### libusbg, configfs and usb gadget
+
+* [怎样配置android configfs gadgets](https://blog.csdn.net/csdn66_2016/article/details/79614807)
+
+* [PATCH 30 usb/gadget: the start of the configfs interface](https://www.spinics.net/lists/linux-usb/msg76388.html)
+
+* [Kernel USB Gadget Configfs Interface](https://events.static.linuxfound.org/sites/events/files/slides/USB%20Gadget%20Configfs%20API_0.pdf)
+
+* [Android O新增的关于usb的三个属性 sys.usb.configfs，sys.usb.ffs.ready，sys.usb.ffs.mtp.ready](https://blog.csdn.net/u014135607/article/details/80011192)
+
+* [usb gadget usb host数据传输](https://blog.csdn.net/weixin_38123672/article/details/75126375)
+
+
+
+
+
+
+
+----------------------------------------------------------
+### workqueue and usb gadget
+
+* [android usb 分析笔记](https://blog.csdn.net/cfy_phonex/article/details/22654439)
+
+* [Android4.0 USB掛載內核驅動層流程分析（一）](https://www.dayexie.com/detail652694.html)
+
+
+
 ----------------------------------------------------------
 ### workqueue, isr, interrupt  
 init calls `INIT_WORK(&gi->work, android_work);`  
@@ -23,6 +82,10 @@ ISR calls `schedule_work(&gi->work);`
 
 * [理解 linux 工作队列](https://blog.csdn.net/sinat_30545941/article/details/72871596)   
 (with illustration)
+
+* [linux中断下半部分——工作队列](https://blog.csdn.net/u013686805/article/details/21003329)
+
+
 
 
 
