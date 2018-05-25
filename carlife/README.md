@@ -68,6 +68,14 @@ packages/providers/MediaProvider/src/com/android/providers/media
 See root/init.usb.configfs.rc   
 source at system/core/rootdir/init.usb.configfs.rc
 
+```
+symlink /config/usb_gadget/g1/functions/mfi.gs6 /config/usb_gadget/g1/configs/b.1/f3
+```
+or 
+```
+  cd /config/usb_gadget/g1
+  ln -s functions/mfi.gs6 configs/b.1/f3
+```
 
 
 
