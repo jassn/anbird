@@ -97,6 +97,7 @@ ISR calls `schedule_work(&gi->work);`
 
 * [Qseecom 8916平台的usb gadget解读（1）](https://blog.csdn.net/u013308744/article/details/52368739)
 
+* [Android USB驱动源码分析（-）](https://blog.csdn.net/weijory/article/details/75500697)
 
 
 
