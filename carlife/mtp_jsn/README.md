@@ -1,9 +1,19 @@
 ## modify from MTP
 
+- [x] How to receive broadcast from **android_work**?  
+      `mFilter.addAction("android.hardware.usb.action.USB_STATE");`
+
+* USB_FUNCTION_MTP  
+  _frameworks/base/core/java/android/hardware/usb/UsbManager.java_   
+  _frameworks/base/services/usb_
+
+* packages/providers/MediaProvider/src/com/android/providers/media
+
 * [枚举 - Android之 MTP框架和流程分析 (3)](https://blog.csdn.net/u011279649/article/details/40950799)
 
+* [Android系统中MTP的一些相关知识](http://www.cnblogs.com/skywang12345/p/3474206.html)
 
-
+* [『BroadcastReceiver』- 廣播接收器的基本用法 by 賽肥膩膩](https://xnfood.com.tw/android-broadcastreceiver/)
 
 
 ----------------------------------------------------------
