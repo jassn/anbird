@@ -1,3 +1,55 @@
+## How to send two USB interfaces?
+
+* see f_ncm.c for `.bAlternateSetting`.
+
+
+
+
+----------------------------------------------------------
+## USB Packet Header
+
+```cpp
+static struct usb_interface_descriptor mtp_interface_desc = {
+    .bLength                = USB_DT_INTERFACE_SIZE,
+    .bDescriptorType        = USB_DT_INTERFACE,
+    .bInterfaceNumber       = 0,
+    .bNumEndpoints          = 3,
+    .bInterfaceClass        = 0x51,
+    .bInterfaceSubClass     = 0x52,
+    .bInterfaceProtocol     = 0,
+};
+```
+
+
+
+----------------------------------------------------------
+## USB Packet String  
+
+* ?? probe_device_descriptor ?? in external/libmtp?
+* kernel_imx/drivers/usb/gadget/function/f_mtp.c   
+  Change "MTP" to other strings, then examine USB packets
+
+```cpp
+static struct usb_string mtp_string_defs[] = {
+    /* Naming interface "MTP" so libmtp will recognize us */
+    [INTERFACE_STRING_INDEX].s  = "MTP",
+    {  },   /* end of list */
+};
+```
+
+----------------------------------------------------------
+
+
+## Who send USB_CONFIGURED ?
+
+* [MTP协议开发入门](https://blog.csdn.net/coroutines/article/details/44341417)   
+  lsusb -v -d 18d1:
+
+
+
+
+----------------------------------------------------------
+
 ## modify from MTP
 
 - [x] How to receive broadcast from **android_work**?  
