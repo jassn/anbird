@@ -1,3 +1,6 @@
+## Path  
+system/core/adb
+
 
 ## Study on usb_ffs_init
 
