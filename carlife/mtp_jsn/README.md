@@ -1,6 +1,23 @@
 ## How to send two USB interfaces?
 
-* see f_ncm.c for `.bAlternateSetting`.
+* see f_ncm.c for `.bAlternateSetting`.  
+* common functions: **usb_interface_id**.   
+  **usb_assign_descriptors**   
+
+----------------------------------------------------------
+
+
+   pp   | NCM                  | MTP                   | MFI
+------- | -------------------- | ----------------------|---------------
+  A1    | ncm_bind             |  mtp_function_bind    | mfi_function_bind
+  A2    |   struct f_ncm *ncm  | struct mtp_dev  *dev  | struct mtp_dev  *dev
+  A3    | ncm_iad_desc.        | mtp_interface_desc    | mfi_data_run_intf.
+  A4    | bFirstInterface      | bInterfaceNumber      | bInterfaceNumber 
+
+
+* [iAP2 USB support with iMX6 Nitrogen](https://community.nxp.com/thread/341689)
+
+* [USB On-The-Go (OTG)](http://trac.gateworks.com/wiki/linux/OTG)
 
 
 
