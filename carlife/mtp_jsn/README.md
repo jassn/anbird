@@ -1,4 +1,13 @@
-## How to send two USB interfaces?
+## How to add interface string to EA Native Transport?
+
+
+   type        | NCM                  | MTP                | MFI
+-------------- | -------------------- | -------------------|---------------
+ *usb_string*  |  ncm_string_defs     |   mtp_string_defs  | 
+
+
+----------------------------------------------------------
+- [x] How to send two USB interfaces?
 
 * see f_ncm.c for `.bAlternateSetting`.  
 * common functions: **usb_interface_id**.   
@@ -11,7 +20,7 @@
 ------- | -------------------- | ----------------------|---------------
   A1    | ncm_bind             |  mtp_function_bind    | mfi_function_bind
   A2    |   struct f_ncm *ncm  | struct mtp_dev  *dev  | struct mtp_dev  *dev
-  A3    | ncm_iad_desc.        | mtp_interface_desc    | mfi_data_run_intf.
+  A3    | ncm_iad_desc.        | **mtp_interface_desc**    | mfi_data_run_intf.
   A4    | bFirstInterface      | bInterfaceNumber      | bInterfaceNumber 
 
 
