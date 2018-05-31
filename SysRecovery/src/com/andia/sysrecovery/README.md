@@ -1,5 +1,22 @@
+### Notice:
+Modification before building project and otapackage.   
+
+* device/fsl/sabresd_6dq/build_id.mk
+```
+export BUILD_NUMBER=20170227
+```
+
+* device/fsl/sabresd_6dq/BoardConfig.mk
+```
+TARGET_BOARD_DTS_CONFIG := imx6q:imx6q-sabresd.dtb
+```
+
+---------------------------------------------------------------
+### Tips
+* It'll be convenient to prepare SysRecovery.apk to USB Storage.
 
 
+---------------------------------------------------------------
 
 ### How to test
 1. no USB inserted, then start app.
@@ -8,6 +25,7 @@
 
 
 
+---------------------------------------------------------------
 ### Android API
 * [RecoverySystem API](https://developer.android.com/reference/android/os/RecoverySystem.html)
 
