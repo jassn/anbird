@@ -1,5 +1,5 @@
 
-# Baidu CarLife Document
+## Baidu CarLife Document
 
 Page    | Baidu                | Apple (R28)
 ------- | -------------------- | ----------------
@@ -12,4 +12,13 @@ Page    | Baidu                | Apple (R28)
 37/157  | Figure 4-2: App Launch                 | p.929
 
 ---------------------------------------------------------
+
+## Apple - R28
+
+* Keyword - Endpoint
+
+Page    | Chapter  | Apple (R28)
+------- | -------- | ----------------
+273     | 26.2.3   | CarPlay over USB
+
 
