@@ -1,16 +1,41 @@
-## How to add interface string to EA Native Transport?
 
+## How to add interface string to EA Native Transport?
 
    type        | NCM                  | MTP                | MFI
 -------------- | -------------------- | -------------------|---------------
- *usb_string*  |  ncm_string_defs     |   mtp_string_defs  | 
+ *usb_string*  |  ncm_string_defs     |   mtp_string_defs  | mfi_string_defs
+ struct usb_interface_descriptor | ncm_control_intf | - | mfi_data_run_intf
 
+
+* common functions:
+  **usb_gstrings_attach**
+```cpp
+  struct usb_string *usb_gstrings_attach(struct usb_composite_dev *cdev,
+        struct usb_gadget_strings **sp, unsigned n_strings)
+```
+
+* common functions:
+  **usb_ep_autoconfig**
+```cpp
+int usb_assign_descriptors(struct usb_function *f,
+        struct usb_descriptor_header **fs,
+        struct usb_descriptor_header **hs,
+        struct usb_descriptor_header **ss)
+```
+
+* Test on Ubuntu   
+  lsusb -v -d 18d1:
+
+- [ ] How to change **bInterfaceNumber**?  
+
+* [NCM - ARM Keil](https://www.keil.com/pack/doc/mw/USB/html/_c_d_c.html)
 
 ----------------------------------------------------------
 - [x] How to send two USB interfaces?
 
 * see f_ncm.c for `.bAlternateSetting`.  
-* common functions: **usb_interface_id**.   
+* common functions:    
+  **usb_interface_id**.   
   **usb_assign_descriptors**   
 
 ----------------------------------------------------------
