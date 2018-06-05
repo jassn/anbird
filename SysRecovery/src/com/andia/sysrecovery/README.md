@@ -17,6 +17,34 @@ TARGET_BOARD_DTS_CONFIG := imx6q:imx6q-sabresd.dtb
 
 
 ---------------------------------------------------------------
+### Trace
+* **BUILT_TARGET_FILES_PACKAGE** in build/core/Makefile
+```
+out/target/product/sabresd_6dq/obj/PACKAGING/target_files_intermediates/sabresd_6dq-target_files.zip
+```
+
+
+
+* [wandbord bsp and freescale official bsp](http://highaltitudeoolong.blogspot.com/2015/12/)   
+  TARGET_BOARD_DTS_CONFIG
+
+* [Android Recovery OTA升级（一）—— make otapackage](https://www.cnblogs.com/cxchanpin/p/7020315.html)    
+  BUILT_TARGET_FILES_PACKAGE   
+  INTERNAL_OTA_PACKAGE_TARGET
+
+* [Android Recovery OTA升级（一）—— make otapackage](https://blog.csdn.net/wzy_1988/article/details/47056035)
+
+* [Android OTA升级（一）之Makefile文件分析](https://blog.csdn.net/wanshilun/article/details/77852486)
+  Illustration
+  
+* [Android OTA系统升级---原理三](https://blog.csdn.net/darwinlong/article/details/78795912)
+
+* [Android下编译OTA升级包](https://blog.csdn.net/llping2011/article/details/9471913)
+
+
+
+
+---------------------------------------------------------------
 
 ### How to test
 1. no USB inserted, then start app.
