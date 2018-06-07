@@ -13,7 +13,7 @@ Page    | Baidu                | Apple (R28)
 
 ---------------------------------------------------------
 
-## Apple - R28
+## Apple - Accessory Interface Specification R28
 
 * Keyword - Endpoint
 
