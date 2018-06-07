@@ -13,22 +13,32 @@ static inline int usb_ep_queue(struct usb_ep *ep,
     return ep->ops->queue(ep, req, gfp_flags);
 }
 ```
-* struct usb_ep_ops (kernel_imx/drivers/usb/chipidea/udc.c)
+* struct usb_ep_ops (kernel_imx/include/linux/usb/gadget.h)
+```cpp
+struct usb_ep_ops {
+    int (*queue) (struct usb_ep *ep, struct usb_request *req,
+        gfp_t gfp_flags);
+};
+```
+
+* register ep_queue into ep_queue (kernel_imx/drivers/usb/chipidea/udc.c)
 ```cpp
 static const struct usb_ep_ops usb_ep_ops = {
     .enable        = ep_enable,
     .disable       = ep_disable,
     .alloc_request = ep_alloc_request,
     .free_request  = ep_free_request,
-    .queu2e        = ep_queue,
+    .queue         = ep_queue,
     .dequeue       = ep_dequeue,
 };
 ```
-* ep_queue
+* ep_queue (chipidea/udc.c)
 ```cpp
 static int ep_queue(struct usb_ep *ep, struct usb_request *req,
             gfp_t __maybe_unused gfp_flags)
 {
+    // debug message can be added here. e.g. hwep->name.
+    retval = _ep_queue(ep, req, gfp_flags);
 }
 ```
 
