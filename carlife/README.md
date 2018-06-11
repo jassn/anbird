@@ -1,3 +1,28 @@
+## Reference
+
+* [自娱自乐5之Linux gadget驱动4（接受发送，complete函数，setup函数）](https://blog.csdn.net/xxxxxlllllxl/article/details/10459721)
+
+* [Android驱动之MTP框架与流程](https://blog.csdn.net/stoic163/article/details/75043934)
+
+* [Android f_rndis 分析笔记](https://blog.csdn.net/cfy_phonex/article/details/22684005)
+
+* [android USB绑定功能实现（framework）](https://blog.csdn.net/kondykuang/article/details/7621791)
+
+* [Android USB Tethering的实现以及代码流程](https://blog.csdn.net/tianshiyalin/article/details/17319627)
+
+* [Android的USB系统简单分析之一](https://www.jianshu.com/p/b267c5cedfa9)
+
+* [Android USB 主机（Host）和配件（Accessory）](https://blog.csdn.net/kjunchen/article/details/52244617)
+
+* [Android 使用 Usb Accessory 模式与 linux 下位机进行通信](https://blog.csdn.net/lj402159806/article/details/69940628)
+
+* [安卓USB开发教程 <三> USB Accessory](https://blog.csdn.net/JAZZSOLDIER/article/details/73849057)
+
+
+
+
+
+-------------------------------------------------------
 ## Study MTP Service
 
 ### when switch USB OTG to device mode
