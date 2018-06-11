@@ -14,13 +14,23 @@
         struct usb_gadget_strings **sp, unsigned n_strings)
 ```
 
-* common functions:
-  **usb_ep_autoconfig**
+* common functions:   
+  **usb_ep_autoconfig**   
 ```cpp
 int usb_assign_descriptors(struct usb_function *f,
         struct usb_descriptor_header **fs,
         struct usb_descriptor_header **hs,
         struct usb_descriptor_header **ss)
+```
+
+* common functions:   
+  **usb_ep_alloc_request** (kernel/include/linux/usb/gadget.h)
+```cpp
+static inline struct usb_request *usb_ep_alloc_request(struct usb_ep *ep,
+                               gfp_t gfp_flags)
+{
+    return ep->ops->alloc_request(ep, gfp_flags);
+}
 ```
 
 * Test on Ubuntu   
