@@ -10,3 +10,7 @@
 
 * [I2C子系统之 adapter driver注册](https://www.linuxidc.com/Linux/2012-08/68267.htm)   
   i2c_register_driver
+
+
+* [i2c-tools](https://git.kernel.org/pub/scm/utils/i2c-tools/i2c-tools.git/)
+
