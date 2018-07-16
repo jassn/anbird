@@ -14,3 +14,11 @@
 
 * [i2c-tools](https://git.kernel.org/pub/scm/utils/i2c-tools/i2c-tools.git/)
 
+-------------------------------------------------------
+#### DTS, Regulator
+
+* [Linux DTS 设备树详解](https://blog.csdn.net/RadianceBlau/article/details/70800076)
+
+* [Linux Regulator Framework(1)概述](http://www.wowotech.net/pm_subsystem/regulator_framework_overview.html)
+
+
