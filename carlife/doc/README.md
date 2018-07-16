@@ -20,6 +20,13 @@
 ----------------------------------------------------
 ###### Reference
 
+* [Android JNI初步☞Java方法和native方法关联](https://blog.csdn.net/x13945/article/details/51938345)
+
+
+* [I.MX6Q(TQIMX6Q/TQE9)学习笔记——新版BSP之USB HOST移植](https://blog.csdn.net/girlkoo/article/details/45652209)
+
+
+
 
 
 ----------------------------------------------------
