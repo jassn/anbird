@@ -11,6 +11,7 @@
   Service      | MtpServer.java        | Iap2Service.java
   s            | -                     | -
   JNI          | -       | frameworks/base/services/core/jni
+  JNI          | -       | onload.cpp
   JNI          | -       | com_android_server_iap2_Service.cpp
   s            | -       | -
  *native*      |    -    |  frameworks/av/media/mtp 
