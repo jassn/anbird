@@ -6,7 +6,7 @@
 
 
 CC       = gcc
-CFLAGS   =  
+CFLAGS   = -Wall
 LDFLAGS  =  `pkg-config gtk+-2.0 --cflags --libs`
 
 SRCS = $(wildcard *.c)
