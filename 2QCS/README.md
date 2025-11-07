@@ -8,9 +8,16 @@
 ## build kernel driver
 若修改了 kernel_platform/common/init/main.c 刪除以下目錄, 就可以看到 new log from both adb and serial console.
 ```
+cd qcm8850
 rm -rf Vendor/device/qcom/kalama-kernel
+rm -rf Vendor/kernel_platform/out
+rm -rf Vendor/out
 ```
 
+然後用 docker build, 要等兩三個小時.
+```
+la_build -a all
+```
 但若修改了 kernel_platform/msm-kernel/drivers/usb/redriver/nb7vpq904m.c, 要如何能看到 new log?
 
 ## 80-79054-200 
