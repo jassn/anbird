@@ -18,12 +18,18 @@ rm -rf Vendor/kernel_platform/out
 rm -rf Vendor/out/msm-kernel-kalama-consolidate
 ```
 
-然後用 docker build, 要等兩三個小時.
+然後用 docker build, 
 ```
 la_build -a all
 ```
-但若修改了 kernel_platform/msm-kernel/drivers/usb/redriver/nb7vpq904m.c, 要如何能看到 new log?
+如果只修改 driver code, 大約要等一個小時,
+如果有修改 DTS, 可能要等兩三個小時.
 
+(已測試下列檔案...)   
+- kernel_platform/msm-kernel/drivers/usb/redriver/nb7vpq904m.c
+
+
+------------------------------------------------------------------------------
 ## 80-79054-200 
 - QCS8550.UBUN.1.0_Linux_Ubuntu_Software_Programming_Guide.pdf
 - 3.3.3  Linux device driver     
