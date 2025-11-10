@@ -5,6 +5,10 @@
 * 80-50450-1
 
 ------------------------------------------------------------------------------
+## modify dr_mode = "host"
+Path: kernel_platform/qcom/proprietary/devicetree/qcom/kalama-usb.dtsi
+
+
 ## build kernel driver
 若修改了 kernel_platform/common/init/main.c 刪除以下目錄, 就可以看到 new log from both adb and serial console.
 ```
