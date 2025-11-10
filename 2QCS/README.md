@@ -15,7 +15,7 @@ Path: kernel_platform/qcom/proprietary/devicetree/qcom/kalama-usb.dtsi
 cd qcm8850
 rm -rf Vendor/device/qcom/kalama-kernel
 rm -rf Vendor/kernel_platform/out
-rm -rf Vendor/out
+rm -rf Vendor/out/msm-kernel-kalama-consolidate
 ```
 
 然後用 docker build, 要等兩三個小時.
