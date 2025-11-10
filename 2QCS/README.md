@@ -20,7 +20,7 @@ rm -rf Vendor/out/msm-kernel-kalama-consolidate
 
 然後用 docker build, 
 ```
-la_build -a all
+/dev_bin/build_tool/la_build.sh -b all
 ```
 如果只修改 driver code, 大約要等一個小時,
 如果有修改 DTS, 可能要等兩三個小時.
