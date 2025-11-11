@@ -1,0 +1,922 @@
+Format: Log Type - Time(microsec) - Message - Optional Info
+Log Type: B - Since Boot(Power On Reset),  D - Delta,  S - Statistic
+S - QC_IMAGE_VERSION_STRING=BOOT.MXF.2.1.1-00399-KAILUA-1
+S - IMAGE_VARIANT_STRING=SocKailuaLAA
+S - OEM_IMAGE_VERSION_STRING=ip-10-195-203-224
+S - Boot Interface: UFS
+S - Secure Boot: Off
+S - Boot Config @ 0x221c8600 = 0x00000001
+S - JTAG ID @ 0x221c8744 = 0x202520e1
+S - OEM ID @ 0x221c8700 = 0x00000000
+S - Serial Number @ 0x221c8610 = 0x000004374b2f9f67
+S - OEM Config Row 0 @ 0x221c2110 = 0x0000000000000000
+S - OEM Config Row 1 @ 0x221c2118 = 0x0000000000000000
+S - Feature Config Row 0 @ 0x221c2138 = 0x003fffffffffbf00
+S - Feature Config Row 1 @ 0x221c2140 = 0x0000000000000000
+S - OEM LCS:PROD
+S - Core 0 Frequency, 1363 MHz
+S - PBL Patch Ver: 3
+S - PBL freq: 600 MHZ
+S - -------------------------
+PBL Timestamps (in usecs)
+-------------------------
+APBL start: 345
+APBL Boot Media Detect Start: 9646
+APBL Boot Media Detect End: 49621
+APBL SHELF Load+Auth Start: 49623
+	APBL ELF MD Load Start: 51951
+	APBL ELF MD Load End: 52198
+	APBL ELF Seg Load Start: 52198
+	APBL ELF Seg Load End: 56163
+		APBL SEQ Valid Set: 56208
+		APBL SEQ SA ACK Rcvd: 58233
+	APBL ELF MD Load Start: 59480
+	APBL ELF MD Load End: 60613
+	APBL ELF Auth Start: 60621
+	APBL ELF Auth End: 70370
+	APBL ELF Seg Load Start: 70371
+	APBL ELF Seg Load End: 82201
+	APBL ELF Seg Verify Start: 82201
+	APBL ELF Seg Verify End: 87586
+	APBL ELF MD Load Start: 88730
+	APBL ELF MD Load End: 89890
+	APBL ELF Auth Start: 89893
+	APBL ELF Auth End: 99670
+	APBL ELF Seg Load Start: 99670
+	APBL ELF Seg Load End: 108058
+	APBL ELF Seg Verify Start: 108060
+	APBL ELF Seg Verify End: 112538
+APBL SHELF Load+Auth End: 112730
+		APBL TME PBL Exit: 112733
+		APBL XBL_SC Exit Check: 113443
+		APBL XBL_SC Exit Ack: 124955
+APBL Exit: 124960
+B -    134840 - SBL1, Start
+B -    323269 - SBL1 BUILD @ 10:28:07 on Oct 11 2024
+B -    334585 - usb: usb_eud_serial  , 0x4b2f9f67
+D -      1372 - sbl1_hw_init
+D -       427 - media_init:1
+D -         0 - blacklist disable
+B -    344528 - OEM_MISC -  Image Load, Start
+D -      2654 - Auth Metadata
+D -      9333 - OEM_MISC -  Image Loaded, Delta - (5016 Bytes)
+B -    354654 - QTI_MISC -  Image Load, Start
+D -     10156 - Auth Metadata
+D -     17873 - QTI_MISC -  Image Loaded, Delta - (4624 Bytes)
+B -    373533 - APDP -  Image Load, Start
+D -      5765 - APDP -  Image Loaded, Delta - (64 Bytes)
+D -        30 - boot_dload_dump_security_regions
+D -         0 - EUD Init
+D -         0 - blacklist enable
+D -      3752 - DP_Milestone
+D -      3294 - Auth Metadata
+D -      4697 - sbl1_xblconfig_init
+B -    405192 - XBL Config -  Image Load, Start
+B -    409920 - DTB  Found: [pre-ddr-soc][7f025b02000000][0]
+D -      4392 - boot_pre_ddr_dtb_load
+D -        61 - boot_check_device_temp
+B -    432398 - BUS: 0, PMIC A:2.1 B:2.1 C:2.0 D:2.0 E:2.0 F:2.0 G:2.0 H:2.1
+B -    438132 - BUS: 1, PMIC
+B -    442128 - PM: xVdd reset
+B -    442128 - PM: PON by PWR key DEB
+B -    446428 - PM: PBS_RAM 0 reloading for sid 0
+B -    467443 - PM: PBS_RAM 1 reloading for sid 0
+B -    595604 - PM: PBS_RAM 2 reloading for sid 0
+B -    617442 - PM: PBS_RAM 3 reloading for sid 7
+B -    634918 - PM: SET_VAL:Skip
+B -    635223 - PM: PSI: b0x00_v0x96
+B -    641171 - PM: OEM_PSI Start
+B -    641384 - PM: OEM_PSI Done
+B -    644526 - PM: Device Init # SPMI Transn: 7734
+D -    225639 - pm_device_init, Delta
+B -    652303 - pm_driver_init, Start
+B -    670664 - PM: Driver Init # SPMI Transn: 1036
+D -     14915 - pm_driver_init, Delta
+D -    253485 - sbl1_pmic_init
+D -     28792 - media_init:2
+B -    835273 - UFS Spec Version: 3.10
+B -    843477 - UFS INQUIRY ID: PHISON  PSUF31L29-G128US01.1
+B -    846924 - UFS Boot LUN: 1
+B -    854823 - UFS Total Size: 128 GB
+B -    886177 - UFS Speed: Gear 4 Lane 2 Rate B
+D -    184952 - media_init:3
+D -        31 - boot_wdog_disable_check
+B -    895571 - LOG_START-0000000003
+D -      3874 - init-logstomedia
+D -         0 - shrm_load_cancel
+B -    905606 - SHRM -  Image Load, Start
+D -     12963 - Auth Metadata
+D -     19459 - SHRM -  Image Loaded, Delta - (53440 Bytes)
+D -        92 - boot_cdt_init
+B -    930524 - CDT -  Image Load, Start
+B -    933300 - CDT Version:3,Platform ID:31,Major ID:1,Minor ID:1,Subtype:2
+D -     10827 - sbl1_hw_platform_pre_ddr
+B -    944890 - usb: chgr -  SDP_CHARGER
+B -    947909 - usb: qusb_dci_eud_init
+B -    953369 - PM: Battery ID: 204700000 Ohm
+B -    955290 - PM: battery missing
+B -    959530 - PM: ICL final: 0mA
+B -    962763 - PM: CHG Init # SPMI Transn: 8875
+B -    965996 - vsense_init, Start
+D -         0 - vsense_init, Delta
+D -     41297 - sbl1_hw_pre_ddr_init
+D -       122 - boot_fedl_check
+D -        30 - boot_dload_handle_forced_dload_timeout
+D -       274 - sbl1_load_ddr_training_data
+B -    996831 - Pre_DDR_clock_init, Start
+D -        31 - Pre_DDR_clock_init, Delta
+D -     12932 - sbl1_ddr_set_params
+B -   1008543 - sbl1_ddr_init, Start
+B -   1015467 - DDR_INIT with shrm.elf
+B -   1015467 - INFO: PXI based read & write training enabled
+B -   1030320 - eCDT MRR - Data Starting Address: 0x24056D00
+B -   1031327 - Returning from DDR_FW_Init
+B -   1035871 - ddr_init = 1 cold boot
+D -     27938 - sbl1_ddr_init, Delta
+B -   1043405 - DSF version = 034.00.00
+B -   1046790 - Manufacturer ID = 0xff, Device Type = 0x8
+B -   1050450 - Rank 0 size = 8192 MB, Rank 1 size = 8192 MB
+D -     47519 - sbl1_ddr_init
+D -       214 - store-logstomedia
+B -   1064084 - do_ddr_training, Start
+B -   1089948 - DDR: Start of DDR Training Restore
+B -   1100043 - Returning from DDR_FW_Restore
+B -   1100074 - Max enabled DDR Freq = 4224 MHz
+B -   1104283 - DDR: End of DDR Training Restore
+D -     41541 - do_ddr_training, Delta
+B -   1114958 - SecLib initiate DARE sequence start
+B -   1117123 - SecLib initiate DARE sequence successful
+B -   1127066 - Returning from DDR_FW_Exit
+B -   1127432 - DDR:set boot freq from device tree
+D -     66978 - xbl_trng_ddi_seq
+D -       214 - store-logstomedia
+D -      1677 - xbl_map_smem
+D -         0 - boot_smem_debug_init
+D -      2257 - boot_smem_init
+D -       122 - boot_ddr_share_data_to_aop
+D -        61 - boot_populate_ddr_details_shared_table
+D -         0 - boot_recovery_partitions_info_smem_init
+B -   1159762 - MTE is DISABLED
+D -      5093 - boot_update_ram_partition_table
+B -   1167784 - Pimem init cmd, entry
+B -   1172481 - (50000e)
+D -      3508 - Pimem init cmd, exit
+B -   1180807 - External heap init, Start
+B -   1181417 - External heap init, End
+D -     29951 - sbl1_post_ddr_init
+D -         0 - sbl1_hw_init_secondary
+B -   1200998 - DDR -  Image Load, Start
+B -   1206854 - DTB  Found: [soc][7f025b02000000][1f02010100000000]
+D -      9455 - boot_post_ddr_dtb_load
+B -   1214662 - usb: UFS Serial - d777a4c0
+D -      3568 - boot_usb_update_serial
+D -         0 - boot_usb_handle_charger
+D -        61 - sbl1_hw_platform_smem
+D -         0 - ramdump_load_cancel
+B -   1232749 - RamDump -  Image Load, Start
+D -      3324 - RamDump -  Image Loaded, Delta - (0 Bytes)
+D -         0 - boot_update_abnormal_reset_status
+D -         0 - boot_cache_set_memory_barrier
+D -        30 - boot_smem_alloc_for_minidump
+D -         0 - boot_shrm_mini_dump_init
+D -        61 - boot_minidump_register_regions
+D -        61 - boot_smem_store_pon_status
+D -        31 - boot_clock_init_rpm
+D -         0 - boot_vsense_copy_to_smem
+D -       244 - sbl1_tlmm_init
+D -         0 - sbl1_efs_handle_cookies
+B -   1296921 - PM: PM Total Mem Allocated: 9851 
+D -     16958 - sbl1_pm_aop_pre_init_wrapper
+B -   1301496 - AOP Config -  Image Load, Start
+D -      2531 - Auth Metadata
+D -     13084 - AOP Config -  Image Loaded, Delta - (12852 Bytes)
+B -   1320314 - AOP -  Image Load, Start
+D -     13603 - Auth Metadata
+D -     34557 - AOP -  Image Loaded, Delta - (275996 Bytes)
+D -         0 - aop_loaded
+D -        31 - boot_prepare_cpucp
+B -   1362862 - CPUCPFW -  Image Load, Start
+D -     13817 - Auth Metadata
+D -     68503 - CPUCPFW -  Image Loaded, Delta - (175760 Bytes)
+B -   1437099 - CPUCP_DTB -  Image Load, Start
+D -        91 - CPUCP_DTB -  Image Loaded, Delta - (0 Bytes)
+D -         0 - boot_reset_cpucp
+B -   1447011 - QSEE Dev Config -  Image Load, Start
+D -      3172 - Auth Metadata
+D -     11438 - QSEE Dev Config -  Image Loaded, Delta - (50576 Bytes)
+B -   1464152 - QSEE -  Image Load, Start
+D -     14518 - Auth Metadata
+D -     86010 - QSEE -  Image Loaded, Delta - (3994363 Bytes)
+B -   1550772 - DTB: Vibration Enabled
+D -      7168 - sbl1_hw_play_vibr
+B -   1559373 - SEC -  Image Load, Start
+D -      3233 - SEC -  Image Loaded, Delta - (64 Bytes)
+B -   1566266 - QHEE -  Image Load, Start
+D -     13756 - Auth Metadata
+D -     36021 - QHEE -  Image Loaded, Delta - (1585912 Bytes)
+B -   1602287 - APPSBL -  Image Load, Start
+D -      2837 - Auth Metadata
+D -     28944 - APPSBL -  Image Loaded, Delta - (2752376 Bytes)
+D -         0 - sbl1_save_appsbl_index
+B -   1637911 - SBL1, End
+D -   1505816 - SBL1, Delta
+S - Flash Throughput, 232628 KB/s  (9072517 Bytes,  39836 us)
+S - DDR Frequency, 2092 MHz
+0       1.871598 Hypervisor cold boot, version: gunyah-98c1f640c prod (Wed Jun 19 05:27:42 2024 UTC)
+[RM]Starting Resource Manager, version: ffcec468 (Wed Jun 19 05:59:26 2024 UTC)
+[RM]MPD Sanitiser: Unexpected MPD version, skipping.
+[RM]init completed, disabling UART
+0       1.932053 Hypervisor UART is disabled!
+
+
+
+UEFI Start     [ 1937]
+ - 0x0A7001000 [ 1942] Sec.efi
+ASLR          : ON
+DEP           : ON (RTB)
+Timer Delta   : +3 mS
+RAM Entry 0   : Base 0x0080000000  Size 0x0000E00000
+RAM Entry 1   : Base 0x00811D0000  Size 0x0056E30000
+RAM Entry 2   : Base 0x00D8140000  Size 0x0000020000
+RAM Entry 3   : Base 0x00D8800000  Size 0x0000000000
+RAM Entry 4   : Base 0x00E1BB0000  Size 0x001E450000
+RAM Entry 5   : Base 0x0880000000  Size 0x0038400000
+RAM Entry 6   : Base 0x0A00000000  Size 0x0200000000
+RAM Entry 7   : Base 0x08C0000000  Size 0x0140000000
+RAM Available : 16100 MB (0x03EE4A0000)
+RAM Installed : 16384 MB (0x0400000000)
+Minidump      : ON
+Continue booting UEFI on Core 0
+UEFI Ver      : 6.0.250926.BOOT.MXF.2.1.1-00399-KAILUA-1
+Build Info    : 64b Sep 26 2025 17:03:51
+Boot Device   : UFS
+PROD Mode     : TRUE
+Retail        : TRUE
+IsArmV8Smc() return TRUE 
+ Protective MBR validation might be needed. 
+ Protective MBR validation might be needed. 
+HW Wdog Setting from PCD : Disabled
+DisplayFeatureEnablerExecute FeatureEnablerSendCommandTAs failed: eStatus=0, rsp.status=3
+DisplayUtils: Platform HDK
+Failed to get QseeDiagLogEnableFlag, Status=Success
+Failed to get QseeDiagLogEnableFlag, Status=Success
+ RemoteObj_invoke  count 1 
+time for license check including RTIC and qwes TA 5179 uS 
+Overriding PIL cfg by caller
+UsbConfigLibOpenProtocols: PMI version (0x47)
+platform: : 310002
+Platform :: 31
+UsbConfigLibOpenProtocols: PMI version (0x47)
+ConnectSts : Attach, Data Role : UFP (DEVICE Mode), Lane : CC1, CoreNum : 0
+ButtonsDxeTest: Keypress SDAM data payload 0 
+ RemoteObj_invoke  count 1 
+WaitParallelThreads InIt [ 2395] 
+Dedicated Core Enabled not found 
+UEFI Ver           : 6.0.250926.BOOT.MXF.2.1.1-00399-KAILUA-1
+Platform           : HDK
+Subtype            : 2
+Boot Device        : UFS
+Chip Name          : QCS_KAILUA
+Chip Ver           : 2.0
+Chip ECID          : 0x04374B2F9F67
+-----------------------------
+UEFI Total : 480 ms
+POST Time      [ 2417] OS Loader
+[2423]Loader Build Info: Nov 10 2025 08:17:31
+VB: Non-secure device: Security State: (0xDDD3F)
+VB: RWDeviceState: Succeed using devinfo!
+[2431]Failed to get recovery status, Not Found
+[2432]Total DDR Size: 0x00000003EE4A0000 
+[2432]KeyPress:0, BootReason:0
+[2432]Fastboot=0, Recovery:0
+[2432]SilentBoot Mode:11
+[2433]Loading Image recovery_a Done : 1 ms, Image size : 4096 Bytes
+[2433]Loading Image init_boot_a Done : 0 ms, Image size : 4096 Bytes
+[2438]Active Slot _a is bootable, retry count 5
+[2439]Booting from slot (_a)
+[2439]Booting Into Mission Mode
+[2439]Loading Image boot_a Done : 0 ms, Image size : 4096 Bytes
+[2440]Load Image vbmeta_a total time: 1 ms 
+[2443]Load Image boot_a total time: 0 ms 
+[2444]Load Image boot_a total time: 1 ms 
+[2519]Load Image boot_a total time: 66 ms 
+[2564]Load Image recovery_a total time: 0 ms 
+[2565]Load Image recovery_a total time: 0 ms 
+[2569]Load Image vbmeta_system_a total time: 1 ms 
+[2586]Load Image dtbo_a total time: 15 ms 
+[2606]Load Image init_boot_a total time: 6 ms 
+[2683]Load Image vendor_boot_a total time: 68 ms 
+[2699]ReadPersistentValue 0xE 
+[2700]Ftr OsVer:0x34000 SPL:0x298B
+QseeResponse->result = 0xE
+Status = 0x7
+[2705]VB2: Authenticate complete! boot state is: orange
+[2705]VB2: boot state: orange(1)
+[2706]Failed to get the graphics output protocol.
+[2706]Failed to get the graphics output protocol.
+[2706]Failed to get width or height
+[2706]Failed to get the graphics output protocol.
+[2706]Failed to get the graphics output protocol.
+[2706]Unable to show verified menu on screen: Out of Resources
+[2706]Device is unlocked, Skipping boot verification
+QseeResponse->result = 0xE
+Status = 0x7
+[2707]Hyp version: 1
+[2707]Silent Mode value: 11
+[2707]Memory Base Address: 0x80000000
+[2714]Override DTB: GetBlkIOHandles failed loading user_dtbo!
+[2971]Apply Overlay total time: 257 ms 
+[2974]Unable to get hw fence Config, Not Found
+[2974]Unable to get GPU Preempt Config, Not Found
+[2974]Cmdline: video=vfb:640x400,bpp=32,memsize=3072000 bootconfig buildvariant=userdebug dsi_ext_bridge_1080p rootwait ro init=/init mem=12587761664B memhp_default_state=online movable_node silent_boot.mode=nonsilent
+[2976]Final RAM Partitions
+[2976]Add Base: 0x0000000080000000 Available Length: 0x0000000000E00000 
+[2976]Add Base: 0x00000000811D0000 Available Length: 0x0000000056E30000 
+[2976]Add Base: 0x00000000D8140000 Available Length: 0x0000000000020000 
+[2976]Add Base: 0x00000000D8800000 Available Length: 0x0000000000000000 
+[2977]Add Base: 0x00000000E1BB0000 Available Length: 0x000000001E450000 
+[2977]Add Base: 0x0000000880000000 Available Length: 0x0000000038400000 
+[2977]Add Base: 0x0000000A00000000 Available Length: 0x0000000200000000 
+[2977]Add Base: 0x00000008C0000000 Available Length: 0x0000000140000000 
+[2997]PartialGoods Value: 0x0
+[3004]Update Device Tree total time: 28 ms 
+[3004]
+Shutting Down UEFI Boot Services: 3004 ms
+Start EBS        [ 3004] 
+BDS: LogFs sync skipped, Unsupported
+App Log Flush : 80 ms
+ RemoteObj_invoke  count 1 
+ RemoteObj_invoke  count 1 
+ RemoteObj_invoke  count 1 
+ RemoteObj_invoke  count 1 
+ScmArmV8ExitBootServicesHandler, Status = 0x0. 
+ExitBootServicesScmDxeV8EventHandler TZ SMC call t=123ms
+Exit EBS        [ 3107] UEFI End
+[    0.000000][    T0] Linux version 5.15.153-qki-consolidate-android13-8-g25fb1c436822-dirty (build-user@build-host) (Android (8508608, based on r450784e) clang version 14.0.7 (https://android.googlesource.com/toolchain/llvm-project 4c603efb0cca074e9238af8b4106c30add4418f6), LLD 14.0.7) #1 SMP PREEMPT Fri Oct 31 06:28:47 UTC 2025
+[    0.000000][    T0] random: crng init done
+[    0.000000][    T0] **********************************************************
+[    0.000000][    T0] **   NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE   **
+[    0.000000][    T0] **                                                      **
+[    0.000000][    T0] ** This system shows unhashed kernel memory addresses   **
+[    0.000000][    T0] ** via the console, logs, and other interfaces. This    **
+[    0.000000][    T0] ** might reduce the security of your system.            **
+[    0.000000][    T0] **                                                      **
+[    0.000000][    T0] ** If you see this message and you are not debugging    **
+[    0.000000][    T0] ** the kernel, report this immediately to your system   **
+[    0.000000][    T0] ** administrator!                                       **
+[    0.000000][    T0] **                                                      **
+[    0.000000][    T0] **   NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE   **
+[    0.000000][    T0] **********************************************************
+[    0.000000][    T0] Memory limited to 12004MB
+[    0.000000][    T0] Kernel Nov10c jjsn123 am08:12
+[    0.000000][    T0] Kernel command line: kasan.stacktrace=off stack_depot_disable=off page_owner=on no_hash_pointers panic_on_taint=0x20 cgroup_disable=pressure slub_debug=FZP,zs_handle,zspage;FZPU console=ttyMSM0,115200n8 loglevel=6 kpti=0 log_buf_len=256K kernel.panic_on_rcu_stall=1 service_locator.enable=1 msm_rtb.filter=0x237 rcupdate.rcu_expedited=1 rcu_nocbs=0-7 ftrace_dump_on_oops swiotlb=noforce loop.max_part=7 fw_devlink.strict=1 allow_mismatched_32bit_el0 cpufreq.default_governor=performance printk.console_no_auto_verbose=1 kasan=off sysctl.kernel.sched_pelt_multiplier=4 can.stats_timer=0 pcie_ports=compat irqaffinity=0-2 disable_dma32=on no-steal-acc cgroup.memory=nokmem,nosocket slub_debug=- video=vfb:640x400,bpp=32,memsize=3072000 bootconfig buildvariant=userdebug dsi_ext_bridge_1080p rootwait ro init=/init mem=12587761664B memhp_default_state=online movable_node silent_boot.mode=nonsilent
+[    0.000000][    T0] Unknown kernel command line parameters "buildvariant=userdebug", will be passed to user space.
+[    0.000000][    T0] ITS@0x0000000017140000: Devices Table too large, reduce ids 32->19
+[    0.000000][    T0] ITS@0x0000000017140000: Devices too large, reduce ITS pages 1024->256
+[    0.014994][    T0] CPU features: SANITY CHECK: Unexpected variation in SYS_ID_AA64MMFR1_EL1. Boot CPU: 0x00000011212122, CPU3: 0x00000010212122
+[    0.015004][    T0] CPU features: Unsupported CPU feature variation detected.
+[    0.017164][    T0] CPU features: SANITY CHECK: Unexpected variation in SYS_ID_AA64MMFR1_EL1. Boot CPU: 0x00000011212122, CPU4: 0x00000010212122
+[    0.018963][    T0] CPU features: SANITY CHECK: Unexpected variation in SYS_ID_AA64MMFR1_EL1. Boot CPU: 0x00000011212122, CPU5: 0x00000010212122
+[    0.018968][    T0] CPU features: SANITY CHECK: Unexpected variation in SYS_ID_MMFR4_EL1. Boot CPU: 0x00000001021111, CPU5: 0x00000001021110
+[    0.020653][    T0] CPU features: SANITY CHECK: Unexpected variation in SYS_ID_AA64MMFR1_EL1. Boot CPU: 0x00000011212122, CPU6: 0x00000010212122
+[    0.020657][    T0] CPU features: SANITY CHECK: Unexpected variation in SYS_ID_MMFR4_EL1. Boot CPU: 0x00000001021111, CPU6: 0x00000001021110
+[    0.022426][    T0] CPU features: SANITY CHECK: Unexpected variation in SYS_ID_AA64MMFR1_EL1. Boot CPU: 0x00000011212122, CPU7: 0x00000010212122
+[    0.156719][   T91] audit: type=2000 audit(0.136:1): state=initialized audit_enabled=0 res=1
+[    0.174730][    T1] OF: /soc/qcom,qupv3_i2c_geni_se@9c0000/i2c@988000/ch101_1@45: could not get #gpio-cells for /soc/syscon@1fc0000
+[    0.178533][    T1] OF: /soc/qcom,pcie@1c08000/pcie1_rp/pcie1_bus1_dev0_fn0/pcie1_bus2_dev3_fn0/qps615_eth1_25,qps615_eth1@pcie1_rp: could not get #gpio-cells for /soc/interrupt-controller@17100000
+[    0.182657][    T1] OF: /soc/spf_core_platform/lpass-cdc/va-macro@6D44000: could not get #gpio-cells for /soc/interrupt-controller@17100000
+[    0.239065][    T1] SCSI subsystem initialized
+[    0.250180][    T1] VFS: Disk quotas dquot_6.6.0
+[    0.269926][    T1] Initialise system trusted keyrings
+[    0.282841][    T1] Key type asymmetric registered
+[    0.282851][    T1] Asymmetric key parser 'x509' registered
+[    0.303293][    T1] Loading compiled-in X.509 certificates
+[    0.304227][    T1] Loaded X.509 cert 'Build time autogenerated kernel key: 0c27c4e5335996861a5a05bf2549484d420c526c'
+[    0.306023][    T1] Key type .fscrypt registered
+[    0.306026][    T1] Key type fscrypt-provisioning registered
+[    0.306063][    T1] pstore: Invalid compression size for deflate: 0
+[    0.310296][    T1] Warning: unable to open an initial console.
+[    0.313619][    T1] qcom_hwspinlock: module verification failed: signature and/or required key missing - tainting kernel
+[    0.334511][    T1] qtee shmbridge registered default bridge with size 4194304 bytes
+[    0.335417][    T1] shmbridge is enabled
+[    0.336595][    T1] qcom-scm: scm_mem_protection_init_do: SCM call failed 0, resp 7
+[    0.336597][    T1] MEM protection Not enabled, 7
+[    0.388852][    T1] qcom,rpmh-regulator 17a00000.apps_rsc:drv@2:rpmh-regulator-ldob11: supply proxy not found, using dummy regulator
+[    0.389175][    T1] qcom,rpmh-regulator 17a00000.apps_rsc:drv@2:rpmh-regulator-ldob12: supply proxy not found, using dummy regulator
+[    0.395696][    T1] rpmh_regulator_probe: ldok1: could not find RPMh address for resource
+[    0.395714][    T1] rpmh_regulator_probe: ldok2: could not find RPMh address for resource
+[    0.395728][    T1] rpmh_regulator_probe: ldok3: could not find RPMh address for resource
+[    0.395743][    T1] rpmh_regulator_probe: ldok4: could not find RPMh address for resource
+[    0.395760][    T1] rpmh_regulator_probe: ldok5: could not find RPMh address for resource
+[    0.395777][    T1] rpmh_regulator_probe: ldok6: could not find RPMh address for resource
+[    0.395790][    T1] rpmh_regulator_probe: ldok7: could not find RPMh address for resource
+[    0.395816][    T1] rpmh_regulator_probe: ldol3: could not find RPMh address for resource
+[    0.395831][    T1] rpmh_regulator_probe: ldol4: could not find RPMh address for resource
+[    0.395848][    T1] rpmh_regulator_probe: ldol5: could not find RPMh address for resource
+[    0.395861][    T1] rpmh_regulator_probe: ldol6: could not find RPMh address for resource
+[    0.395881][    T1] rpmh_regulator_probe: ldol7: could not find RPMh address for resource
+[    0.395896][    T1] rpmh_regulator_probe: ldom1: could not find RPMh address for resource
+[    0.395913][    T1] rpmh_regulator_probe: ldom2: could not find RPMh address for resource
+[    0.395929][    T1] rpmh_regulator_probe: ldom3: could not find RPMh address for resource
+[    0.396740][    T1] rpmh_regulator_probe: ldom4: could not find RPMh address for resource
+[    0.396755][    T1] rpmh_regulator_probe: ldom5: could not find RPMh address for resource
+[    0.396770][    T1] rpmh_regulator_probe: ldom6: could not find RPMh address for resource
+[    0.396786][    T1] rpmh_regulator_probe: ldom7: could not find RPMh address for resource
+[    0.396801][    T1] rpmh_regulator_probe: ldon1: could not find RPMh address for resource
+[    0.396818][    T1] rpmh_regulator_probe: ldon2: could not find RPMh address for resource
+[    0.396834][    T1] rpmh_regulator_probe: ldon3: could not find RPMh address for resource
+[    0.396848][    T1] rpmh_regulator_probe: ldon4: could not find RPMh address for resource
+[    0.396866][    T1] rpmh_regulator_probe: ldon5: could not find RPMh address for resource
+[    0.397621][    T1] rpmh_regulator_probe: ldon6: could not find RPMh address for resource
+[    0.397637][    T1] rpmh_regulator_probe: ldon7: could not find RPMh address for resource
+[    0.574845][    T8] qcom-bwmon: Zone thres larger than hw limit: hi:267 med:400 lo:0
+[    0.588865][   T10] spmi spmi-0: pmic_arb_wait_for_done: 0xa 0x104: transaction failed (0x3)
+[    0.590257][   T10] spmi spmi-0: pmic_arb_wait_for_done: 0xc 0x104: transaction failed (0x3)
+[    0.612577][    T1] arm-smmu 15000000.apps-smmu: probing hardware configuration...
+[    0.612580][    T1] arm-smmu 15000000.apps-smmu: SMMUv2 with:
+[    0.612599][    T1] arm-smmu 15000000.apps-smmu: 	stage 1 translation
+[    0.612602][    T1] arm-smmu 15000000.apps-smmu: 	coherent table walk
+[    0.612604][    T1] arm-smmu 15000000.apps-smmu: 	stream matching with 105 register groups
+[    0.612614][    T1] arm-smmu 15000000.apps-smmu: 	70 context banks (0 stage-2 only)
+[    0.612640][    T1] arm-smmu 15000000.apps-smmu: 	Supported page sizes: 0x61311000
+[    0.612643][    T1] arm-smmu 15000000.apps-smmu: 	Stage-1: 36-bit VA -> 36-bit IPA
+[    0.736790][   T10] scsi 0:0:0:49488: Well-known LUN    PHISON   PSUF31L29-G128US 01.1 PQ: 0 ANSI: 6
+[    0.753595][   T10] scsi 0:0:0:49476: Well-known LUN    PHISON   PSUF31L29-G128US 01.1 PQ: 0 ANSI: 6
+[    1.501530][   T10] scsi 0:0:0:49456: Well-known LUN    PHISON   PSUF31L29-G128US 01.1 PQ: 0 ANSI: 6
+[    1.513519][   T10] scsi 0:0:0:0: Direct-Access     PHISON   PSUF31L29-G128US 01.1 PQ: 0 ANSI: 6
+[    1.525527][   T10] scsi 0:0:0:1: Direct-Access     PHISON   PSUF31L29-G128US 01.1 PQ: 0 ANSI: 6
+[    1.526568][    T8] sd 0:0:0:0: [sda] 28046336 4096-byte logical blocks: (115 GB/107 GiB)
+[    1.536782][   T10] scsi 0:0:0:2: Direct-Access     PHISON   PSUF31L29-G128US 01.1 PQ: 0 ANSI: 6
+[    1.538526][  T152] sd 0:0:0:1: [sdb] 5120 4096-byte logical blocks: (21.0 MB/20.0 MiB)
+[    1.539096][  T152] sd 0:0:0:1: [sdb] Write Protect is off
+[    1.540236][  T152] sd 0:0:0:1: [sdb] Disabling FUA
+[    1.540239][  T152] sd 0:0:0:1: [sdb] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.543557][    T8] sd 0:0:0:0: [sda] Write Protect is off
+[    1.553823][  T152] sd 0:0:0:1: [sdb] Attached SCSI disk
+[    1.561195][    T8] sd 0:0:0:0: [sda] Disabling FUA
+[    1.567396][   T10] scsi 0:0:0:3: Direct-Access     PHISON   PSUF31L29-G128US 01.1 PQ: 0 ANSI: 6
+[    1.570859][    T8] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.583391][   T10] scsi 0:0:0:4: Direct-Access     PHISON   PSUF31L29-G128US 01.1 PQ: 0 ANSI: 6
+[    1.583393][  T177] sd 0:0:0:2: [sdc] 5120 4096-byte logical blocks: (21.0 MB/20.0 MiB)
+[    1.583937][  T177] sd 0:0:0:2: [sdc] Write Protect is off
+[    1.585096][  T177] sd 0:0:0:2: [sdc] Disabling FUA
+[    1.585099][  T177] sd 0:0:0:2: [sdc] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.588203][  T178] sd 0:0:0:3: [sdd] 8192 4096-byte logical blocks: (33.6 MB/32.0 MiB)
+[    1.595447][   T10] scsi 0:0:0:5: Direct-Access     PHISON   PSUF31L29-G128US 01.1 PQ: 0 ANSI: 6
+[    1.597216][  T178] sd 0:0:0:3: [sdd] Write Protect is off
+[    1.598189][  T103] sd 0:0:0:4: [sde] 1048576 4096-byte logical blocks: (4.29 GB/4.00 GiB)
+[    1.598796][  T103] sd 0:0:0:4: [sde] Write Protect is off
+[    1.598819][   T10] scsi 0:0:0:6: Direct-Access     PHISON   PSUF31L29-G128US 01.1 PQ: 0 ANSI: 6
+[    1.599978][  T103] sd 0:0:0:4: [sde] Disabling FUA
+[    1.599982][  T103] sd 0:0:0:4: [sde] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.600138][  T177] sd 0:0:0:2: [sdc] Attached SCSI disk
+[    1.601594][  T179] sd 0:0:0:5: [sdf] 8192 4096-byte logical blocks: (33.6 MB/32.0 MiB)
+[    1.602175][   T10] scsi 0:0:0:7: Direct-Access     PHISON   PSUF31L29-G128US 01.1 PQ: 0 ANSI: 6
+[    1.602178][  T179] sd 0:0:0:5: [sdf] Write Protect is off
+[    1.603507][  T179] sd 0:0:0:5: [sdf] Disabling FUA
+[    1.603511][  T179] sd 0:0:0:5: [sdf] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.604968][  T177] sd 0:0:0:6: [sdg] 1048576 4096-byte logical blocks: (4.29 GB/4.00 GiB)
+[    1.605560][  T177] sd 0:0:0:6: [sdg] Write Protect is off
+[    1.606850][  T177] sd 0:0:0:6: [sdg] Disabling FUA
+[    1.612590][    T8] sd 0:0:0:0: [sda] Attached SCSI disk
+[    1.617376][  T178] sd 0:0:0:3: [sdd] Disabling FUA
+[    1.618565][  T103] sd 0:0:0:4: [sde] Attached SCSI disk
+[    1.618566][  T180] sd 0:0:0:7: [sdh] 1048576 4096-byte logical blocks: (4.29 GB/4.00 GiB)
+[    1.619138][  T180] sd 0:0:0:7: [sdh] Write Protect is off
+[    1.620260][  T180] sd 0:0:0:7: [sdh] Disabling FUA
+[    1.620262][  T180] sd 0:0:0:7: [sdh] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.625113][  T177] sd 0:0:0:6: [sdg] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.625686][  T179] sd 0:0:0:5: [sdf] Attached SCSI disk
+[    1.630801][  T180] sd 0:0:0:7: [sdh] Attached SCSI disk
+[    1.633364][  T178] sd 0:0:0:3: [sdd] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.648383][  T177] sd 0:0:0:6: [sdg] Attached SCSI disk
+[    1.874726][  T178] sd 0:0:0:3: [sdd] Attached SCSI disk
+[    1.886070][  T180] arm-scmi soc:qcom,scmi: SCMI protocol 129 not implemented
+[    1.896678][  T180] arm-scmi soc:qcom,scmi: version 1.0
+[    1.970665][    T1] F2FS-fs (sda9): Disable nat_bits due to incorrect cp_ver (9207748287084513906, 10533407573835663981)
+[    1.987346][    T1] F2FS-fs (sda9): Mounted with checkpoint version = 48e24a72
+[    2.014010][    T1] EXT4-fs (dm-7): mounting with "discard" option, but the device does not support discard
+[    2.031245][    T1] EXT4-fs (dm-8): mounting with "discard" option, but the device does not support discard
+[    2.045332][    T1] EXT4-fs (dm-9): mounting with "discard" option, but the device does not support discard
+[    2.060362][    T1] EXT4-fs (dm-10): mounting with "discard" option, but the device does not support discard
+[    2.075350][    T1] EXT4-fs (dm-11): mounting with "discard" option, but the device does not support discard
+[    2.089916][    T1] EXT4-fs (dm-12): mounting with "discard" option, but the device does not support discard
+[    2.104665][    T1] EXT4-fs (dm-13): mounting with "discard" option, but the device does not support discard
+[    2.149759][    T1] printk: init: 253 output lines suppressed due to ratelimiting
+[    2.243572][    T1] init: Failed to open package /system/etc/selinux/apex/SEPolicy.zip: No such file or directory
+[    2.360687][   T91] audit: type=1403 audit(6.255:2): auid=4294967295 ses=4294967295 lsm=selinux res=1
+[    2.372118][   T91] audit: type=1404 audit(6.271:3): enforcing=1 old_enforcing=0 auid=4294967295 ses=4294967295 enabled=1 old-enabled=1 lsm=selinux res=1
+[    2.427086][    T1] init: Couldn't load property file '/vendor/default.prop': open() failed: No such file or directory: No such file or directory
+[    2.441625][    T1] init: Overriding previous property 'dalvik.vm.heapsize':'36m' with new value '512m'
+[    2.451477][    T1] init: Do not have permissions to set 'persist.backup.ntpServer' to '0.pool.ntp.org' in property file '/vendor/build.prop': SELinux permission check failed
+[    2.467695][    T1] init: Do not have permissions to set 'ro.qc.sdk.audio.fluencetype' to 'none' in property file '/vendor/build.prop': SELinux permission check failed
+[    2.483102][    T1] init: Do not have permissions to set 'persist.audio.fluence.voicecall' to 'true' in property file '/vendor/build.prop': SELinux permission check failed
+[    2.498807][    T1] init: Do not have permissions to set 'persist.audio.fluence.voicerec' to 'false' in property file '/vendor/build.prop': SELinux permission check failed
+[    2.514567][    T1] init: Do not have permissions to set 'persist.audio.fluence.speaker' to 'true' in property file '/vendor/build.prop': SELinux permission check failed
+[    2.530150][    T1] init: Do not have permissions to set 'persist.vendor.bt.a2dp_offload_cap' to 'sbc-aptx-aptxtws-aptxhd-aac-ldac' in property file '/vendor/build.prop': SELinux permission check failed
+[    2.684690][  T226] linkerconfig: Unable to access VNDK APEX at path: /apex/com.android.vndk.v33: No such file or directory
+[    2.696167][  T226] linkerconfig: Unable to access VNDK APEX at path: /apex/com.android.vndk.v33: No such file or directory
+[    2.756834][  T227] ueventd: /vendor/etc/ueventd.rc: 69: ignoring duplicate subsystem entry
+[    2.767168][  T227] ueventd: /vendor/etc/ueventd.rc: 235: /sys/ lines must have 5 or 6 entries
+[    2.776209][  T227] ueventd: /vendor/etc/ueventd.rc: 423: /sys/ lines must have 5 or 6 entries
+[    2.837311][  T228] printk: apexd: 26 output lines suppressed due to ratelimiting
+[    2.913406][   T91] audit: type=1400 audit(6.811:4): avc:  denied  { mounton } for  pid=1 comm="init" path="/sys/kernel/tracing" dev="tracefs" ino=1 scontext=u:r:init:s0 tcontext=u:object_r:debugfs_tracing_debug:s0 tclass=dir permissive=0
+[    3.362477][  T322] msm_hang_detect_probe: Missing cluster-id.
+[    3.391380][  T318] cdsp-loader soc:qcom,msm-cdsp-loader: cdsp_loader_probe: rproc not found
+[    3.418510][  T103] cdsp-loader soc:qcom,msm-cdsp-loader: cdsp_loader_probe: rproc not found
+[    3.442292][  T103] cdsp-loader soc:qcom,msm-cdsp-loader: cdsp_loader_probe: rproc not found
+[    3.500302][  T369] spi_geni 88c000.spi: Property qcom,vote-index not found or invalid
+[    3.519506][  T103] cdsp-loader soc:qcom,msm-cdsp-loader: cdsp_loader_probe: rproc not found
+[    3.546115][  T282] spmi spmi-0: pmic_arb_wait_for_done: 0xa 0x8804: transaction failed (0x3)
+[    3.560800][  T370] spmi spmi-2: pmic_arb_debug_wait_for_done: transaction failed (0x3)
+[    3.582737][  T282] qcom-spmi-gpio c42d000.qcom,spmi:qcom,pmr735d@a:pinctrl@8800: read 0x4 failed
+[    3.583529][  T370] spmi spmi-2: pmic_arb_debug_wait_for_done: transaction failed (0x3)
+[    3.594534][  T103] cdsp-loader soc:qcom,msm-cdsp-loader: cdsp_loader_probe: rproc not found
+[    3.601402][  T103] cdsp-loader soc:qcom,msm-cdsp-loader: cdsp_loader_probe: rproc not found
+[    3.628265][  T180] sdhci_msm 8804000.sdhci: Failed to get bus_scale data
+[    3.635344][  T282] spmi spmi-0: pmic_arb_wait_for_done: 0xb 0x8804: transaction failed (0x3)
+[    3.654732][  T103] cdsp-loader soc:qcom,msm-cdsp-loader: cdsp_loader_probe: rproc not found
+[    3.656436][  T369] spi_geni a88000.spi: Property qcom,vote-index not found or invalid
+[    3.675905][  T282] qcom-spmi-gpio c42d000.qcom,spmi:qcom,pmr735d@b:pinctrl@8800: read 0x4 failed
+[    3.677317][  T103] cdsp-loader soc:qcom,msm-cdsp-loader: cdsp_loader_probe: rproc not found
+[    3.750383][  T103] cdsp-loader soc:qcom,msm-cdsp-loader: cdsp_loader_probe: rproc not found
+[    3.779128][  T404] ssusb-redriver 0-001c: writing reg 0x00 failure
+[    3.790832][  T348] arm-scmi soc:qcom,scmi: Failed. SCMI protocol 129 not active.
+[    3.810789][  T271] msm_pcie_get_reg: PCIe: RC0: no tcsr resource found.
+[    3.817787][  T271] msm_pcie_get_reg: PCIe: RC0: no rumi resource found.
+[    3.876803][  T271] msm_pcie_probe: PCIe: RC0 use_pinctrl
+[    3.909359][  T358] msm_geni_serial a90000.uart: IRQ index 1 not found
+[    3.949452][  T492] Error registering TZ zone:-19 for dt_ch:68
+[    3.964227][  T103] cdsp-loader soc:qcom,msm-cdsp-loader: cdsp_loader_probe: rproc not found
+[    3.989656][  T418] spmi spmi-0: pmic_arb_wait_for_done: 0xa 0xa04: transaction failed (0x3)
+[    4.002606][  T418] spmi-temp-alarm c42d000.qcom,spmi:qcom,pmr735d@a:pmr735d-k-temp-alarm@a00: could not read type
+[    4.084077][  T271] msm_pcie_link_train: PCIe RC0 link initialization failed
+[    4.095472][  T271] msm_pcie_enumerate: PCIe: RC0: failed to enable
+[    4.103377][  T418] spmi spmi-0: pmic_arb_wait_for_done: 0xb 0xa04: transaction failed (0x3)
+[    4.121973][  T271] msm_pcie_probe: PCIe: RC0 is not enabled during bootup; it will be enumerated upon client request.
+[    4.174066][  T385] msm-dwc3 a600000.ssusb: IRQ hs_phy_irq not found
+[    4.207927][  T418] spmi-temp-alarm c42d000.qcom,spmi:qcom,pmr735d@b:pmr735d-l-temp-alarm@a00: could not read type
+[    4.220134][  T271] msm_pcie_get_reg: PCIe: RC1: no tcsr resource found.
+[    4.236251][  T271] msm_pcie_get_reg: PCIe: RC1: no rumi resource found.
+[    4.255069][  T418] spmi spmi-0: pmic_arb_wait_for_done: 0xc 0x2404: transaction failed (0x3)
+[    4.270805][  T418] spmi-temp-alarm c42d000.qcom,spmi:qcom,pm8010@c:pm8010-m-temp-alarm@2400: could not read type
+[    4.271663][  T271] msm_pcie_probe: PCIe: RC1 use_pinctrl
+[    4.319847][  T385] msm-dwc3 a600000.ssusb: jjsn dr_mode = 1
+[    4.325936][  T385] msm-dwc3 a600000.ssusb: Unable to get vbus regulator err: -19
+[    4.333884][  T539] uaudio-qmi soc:usb_audio_qmi_dev: failed to register disconnect callback ret = 0
+[    4.351112][  T418] spmi spmi-0: pmic_arb_wait_for_done: 0xd 0x2404: transaction failed (0x3)
+[    4.360422][  T418] spmi-temp-alarm c42d000.qcom,spmi:qcom,pm8010@d:pm8010-n-temp-alarm@2400: could not read type
+[    4.380827][  T657] smcinvoke: smcinvoke_start_adci_thread: ADCI feature is not supported on this chipsets, ret = 2
+[    4.397175][  T636] [NVT-ts] nvt_driver_init 2000: start
+[    4.417898][  T606] (NULL device *): msm_gsi_probe:5903 No MSIs configured
+[    4.451244][  T636] [NVT-ts] nvt_driver_init 2008: finished
+[    4.463328][  T543] cfg80211: Problem loading in-kernel X.509 certificate (-13)
+[    4.475942][  T543] cfg80211: Problem loading in-kernel X.509 certificate (-13)
+[    4.498913][  T602] bt_dt_parse_clk_info: clocks is not provided in device tree
+[    4.526595][  T550] spf_core_platform_driver_probe
+[    4.534547][  T603] btfm_slim_probe: is_laddr_valid is true
+[    4.544672][  T603] btfmslim-driver btfmslim_slave: 
+[    4.597642][  T516] tmc_etr_usb_init: ETR usb property is not configured!
+console:/ $ [    4.776884][  T271] tc956x_pci-eth 0001:05:00.0: of_irq_parse_pci: failed with rc=-22
+[    4.785489][  T271] tc956x_pci-eth 0001:05:00.0: Failed to get phy port interface
+[    4.793245][  T271] tc956x_pci-eth 0001:05:00.0: -->tc956x_config_tamap
+[    4.800139][  T271] tc956x_pci-eth 0001:05:00.0: <--tc956x_config_tamap
+[    4.807162][  T271] tc956x_pci-eth 0001:05:00.0: tc956xmac_pci_probe : Allocated MSI Vectors : 1
+[    4.925740][  T530] Error: adsprpc (4513): audioadsprpcd: fastrpc_get_info_from_dsp: could not obtain dsp information, err val -19
+[   66.544795][  T271] tc956x_pci-eth 0001:05:00.0: TC956X: Error in calling request_firmware
+[   66.553323][  T271] tc956x_pci-eth 0001:05:00.0: Firmware load failed
+[   66.560085][  T271] tc956x_pci-eth 0001:05:00.0: Enabling all eMAC clocks for Port 0 Bus number 5
+[   66.560997][  T680] [drm:msm_drm_component_init [msm_drm]] *ERROR* component_bind_all failed: -517
+[   66.561230][  T680] [drm:dsi_display_init [msm_drm]] *ERROR* [msm-dsi-error]: component add failed, rc=-517
+[   66.609479][  T271] Mac configuration file not found
+[   67.143633][  T271] tc956x_pci-eth 0001:05:00.0: TC956X: [1] Phy detected C22 at ID/ADDR 28
+[   67.152359][  T271] tc956x_pci-eth 0001:05:00.0: TC956X: [1] Phy detected C22 at ID/ADDR 29
+[   67.165168][  T271] tc956x_pci-eth 0001:05:00.0: <--tc956xmac_pci_probe : Adding DSP Cut Through Settings
+[   67.175069][  T271] tc956x_pci-eth 0001:05:00.0: tc956xmac_pci_probe : Setting B : Adding DSP Cut Through Settings for DSP2
+[   67.186571][  T271] tc956x_pci-eth 0001:05:00.0: tc956xmac_pci_probe : (Device Usage Count = [1])
+[   67.196593][  T271] tc956x_pci-eth 0001:05:00.1: of_irq_parse_pci: failed with rc=-22
+[   67.204942][  T271] tc956x_pci-eth 0001:05:00.1: Failed to get phy port interface
+[   67.212847][  T271] tc956x_pci-eth 0001:05:00.1: tc956xmac_pci_probe : Allocated MSI Vectors : 1
+[   67.221935][  T271] tc956x_pci-eth 0001:05:00.1: Enabling all eMAC clocks for Port 1 Bus number-5
+[   67.251516][  T271] Mac configuration file not found
+[   67.801119][  T271] tc956x_pci-eth 0001:05:00.1: TC956X: [1] Phy detected C22 at ID/ADDR 28
+[   67.809875][  T271] tc956x_pci-eth 0001:05:00.1: TC956X: [1] Phy detected C22 at ID/ADDR 29
+[   67.827107][  T271] tc956x_pci-eth 0001:05:00.1: <--tc956xmac_pci_probe : Adding DSP Cut Through Settings
+[   67.836987][  T271] tc956x_pci-eth 0001:05:00.1: tc956xmac_pci_probe : Setting B : Adding DSP Cut Through Settings for DSP2
+[   67.848526][  T271] tc956x_pci-eth 0001:05:00.1: tc956xmac_pci_probe : (Device Usage Count = [2])
+[   67.858997][  T271] msm_pcie_probe: RC1 is enabled in bootup
+[   67.949786][  T179] ipa ipa_smmu_perph_cb_probe:10982 cb 1 is disabled
+[   67.956525][  T179] ipa ipa_smmu_perph_cb_probe:10982 cb 2 is disabled
+[   67.963259][  T179] ipa ipa_smmu_uc_cb_probe:11096 UC SMMU is disabled
+[   67.963265][  T179] ipa ipa_smmu_11ad_cb_probe:11429 11AD SMMU is disabled
+[   67.963274][  T179] ipa ipa_smmu_perph_cb_probe:10982 cb 5 is disabled
+[   67.963278][  T179] ipa ipa_smmu_perph_cb_probe:10982 cb 6 is disabled
+[   67.997944][  T610] [0x0 mhi_dma_provide_ops] MHI is NULL, defering
+[   68.030535][  T179] gsi soc:qcom,msm_gsi: gsi_register_device:1548 GSI irq is wake enabled 292
+[   68.064001][  T179] ipa ipa_init_teth_stats:894 prod 1 doesn't have cons
+[   68.070946][  T179] ipa ipa_hw_stats_init:434 init teth stats fails
+[   68.077983][  T179] ipa ipa3_post_init:8239 fail to init stats -22
+[   68.079537][  T943] ipa ipa3_ioctl:2868 IPA not ready, waiting for init completion
+[   68.086085][  T179] ipa ipa3_register_rmnet_ctl_cb:137 low lat pipes are not supported
+[   68.092331][  T179] rmnet_ctl_ipa_ready: -6
+[   68.104881][  T179] ipa ipa3_register_rmnet_ll_cb:294 low lat data pipes are not supported
+[   68.104889][  T179] rmnet_ll_ipa_ready(): Registering IPA LL callback failed with rc -6
+[   68.124645][  T179] ipa-lnx-stats ipa_tlpd_stats_ioctl_init:1905 IPA ipa_lnx_stats_ioctl major(466) initial ok :>>>>
+[   68.135608][  T179] ipa-lnx-stats ipa_tlpd_stats_init:1928 IPA_LNX_STATS_IOCTL init success
+[   68.152360][  T966] Error: adsprpc (4513): sscrpcd: fastrpc_get_info_from_dsp: could not obtain dsp information, err val -19
+[   68.415353][  T834] vold: keystore2 Keystore generateKey returned service specific error: -67
+[   68.656795][  T703] logd: Cannot read /data/misc/logd/event-log-tags
+[   68.666300][  T703] logd: FrameworkListener: read() failed (Connection reset by peer)
+[   68.821708][  T834] vold: keystore2 Keystore generateKey returned service specific error: -67
+[   68.851348][  T834] vold: keystore2 Keystore generateKey returned service specific error: -67
+[   69.602062][    T1] WARNING: Unprivileged eBPF is enabled, data leaks possible via Spectre v2 BHB attacks!
+[   69.942047][ T1084] update_verifier: /data/ota_package/care_map.pb doesn't exist
+[   70.335423][ T1130] synx: session 0 not available, pid: 1130
+[   70.341293][ T1130] synx: synx_uninitialize: invalid session id 0
+[   70.661147][ T1297] smcinvoke: process_accept_req: Setting pid:1297, server id : 32 state to defunct
+[   71.446358][  T974] spf_core_probe
+[   71.450375][  T498] spf_core_add_child_devices:enumarate machine driver
+[   71.457543][  T498] spf-core-platform soc:spf_core_platform: __spf_core_is_apm_ready: send_command ret
+[   71.467415][  T498] gpr_send_pkt: q6 state is down
+[   71.475991][  T974] audio_prm_probe: prm probe success
+[   71.523322][  T498] spf-core-platform soc:spf_core_platform: __spf_core_is_apm_ready: send_command ret
+[   71.527647][ T1364] remoteproc remoteproc3: request_firmware failed: -2
+[   71.540958][  T498] spf-core-platform soc:spf_core_platform: spf_core_add_child_devices: apm is up
+[   71.574106][  T498] msm-audio-ion soc:spf_core_platform:qcom,msm-audio-ion: msm_audio_ion_probe: msm_audio_ion_probe
+[   71.597812][  T498] msm-audio-ion soc:spf_core_platform:qcom,msm-audio-ion-cma: msm_audio_ion_probe: msm_audio_ion_probe
+[   71.744200][   T24] msm_cdc_pinctrl_get_gpiodata: platform device not found!
+[   71.752411][   T24] lpass_cdc_va_macro va-macro: lpass_cdc_va_macro_probe: failed to get swr pin state
+[   71.926503][  T177] msm_cdc_pinctrl_get_gpiodata: platform device not found!
+[   71.970661][  T177] lpass_cdc_va_macro va-macro: lpass_cdc_va_macro_probe: failed to get swr pin state
+[   71.989345][   T24] lpass_cdc_tx_macro tx-macro: lpass_cdc_tx_macro_probe: va-macro not registered yet, defer
+[   72.017880][  T179] msm_cdc_pinctrl_get_gpiodata: platform device not found!
+[   72.025255][  T179] lpass_cdc_va_macro va-macro: lpass_cdc_va_macro_probe: failed to get swr pin state
+[   72.096718][   T24] spf-core-platform soc:spf_core_platform: __spf_core_is_apm_ready: send_command ret
+[   72.124073][  T179] platform va_swr_ctrl: swrm_wcd_notify: swrm is NULL
+[   72.159306][  T179] msm_set_upd_config component is NULL
+[   72.596164][ T1385] msm_mem_dump soc:mem_dump: Couldn't add system reg config, no enough memory
+[   72.678517][ T1914] swr-wcd wsa_swr_ctrl: swr_mstr_interrupt: SWR CMD error, fifo status 0x4200c00f, flushing fifo
+[   72.689487][ T1919] swr-wcd rx_swr_ctrl: swr_mstr_interrupt: SWR CMD error, fifo status 0x4600c00f, flushing fifo
+[   72.700437][ T1914] swr-wcd wsa_swr_ctrl: swr_mstr_interrupt: SWR CMD error, fifo status 0x200c000, flushing fifo
+[   72.711457][ T1919] swr-wcd rx_swr_ctrl: swr_mstr_interrupt: SWR CMD error, fifo status 0x600c000, flushing fifo
+[   72.722309][ T1914] swr-wcd wsa_swr_ctrl: swr_mstr_interrupt: SWR CMD error, fifo status 0x200c000, flushing fifo
+[   72.733262][ T1919] swr-wcd rx_swr_ctrl: swr_mstr_interrupt: SWR CMD error, fifo status 0x600c000, flushing fifo
+[   72.744083][ T1914] swr-wcd wsa_swr_ctrl: swr_mstr_interrupt: SWR CMD error, fifo status 0x200c000, flushing fifo
+[   72.755045][ T1919] swr-wcd rx_swr_ctrl: swr_mstr_interrupt: SWR CMD error, fifo status 0x600c000, flushing fifo
+[   72.765940][ T1914] swr-wcd wsa_swr_ctrl: swr_mstr_interrupt: SWR CMD error, fifo status 0x200c000, flushing fifo
+[   72.776960][ T1919] swr-wcd rx_swr_ctrl: swr_mstr_interrupt: SWR CMD error, fifo status 0x600c000, flushing fifo
+[   72.857840][  T498] swr-wcd rx_swr_ctrl: swrm_check_link_status: link status not disconnected
+[   72.867950][   T24] swr-wcd wsa_swr_ctrl: swrm_check_link_status: link status not disconnected
+[   72.878874][    T6] ucsi_glink soc:qcom,pmic_glink:qcom,ucsi: con:1: failed to set usb role:2
+[   72.914033][  T733] ucsi_glink soc:qcom,pmic_glink:qcom,ucsi: con:1: failed to set usb role:2
+[   72.923651][  T733] ucsi_glink soc:qcom,pmic_glink:qcom,ucsi: con:1: failed to set usb role:2
+[   72.926392][  T720] swr-wcd va_swr_ctrl: swrm_check_link_status: link status not disconnected
+[   73.167154][ T2227] UDC core: couldn't find an available UDC or it's busy: -19
+[   73.639472][    T1] init: Control message: Could not find 'android.frameworks.sensorservice@1.0::ISensorManager/default' for ctl.interface_start from pid: 655 (/system/bin/hwservicemanager)
+[   73.776188][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   73.784177][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   73.791838][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   73.799448][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   73.807045][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   73.814673][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   73.822176][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   73.829686][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   73.837199][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   74.640128][    T1] init: Control message: Could not find 'android.frameworks.sensorservice@1.0::ISensorManager/default' for ctl.interface_start from pid: 655 (/system/bin/hwservicemanager)
+[   74.681050][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   74.688798][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   74.696426][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   74.703965][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   74.965336][ T2340] libprocessgroup: JoinCgroup: controller schedtune is not found
+[   75.701085][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   75.708662][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   75.716227][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   75.723732][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   75.885656][ T2371] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   75.901354][ T2371] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   75.917201][ T2371] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   75.933181][ T2380] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   75.949200][ T2380] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   75.965552][ T2380] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   75.989650][  T729] type=1400 audit(79.462:34): avc: denied { read } for comm="binder:2371_2" name="/" dev="debugfs" ino=1 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:debugfs:s0 tclass=dir permissive=0
+[   76.009031][  T729] type=1400 audit(79.462:35): avc: denied { read } for comm="binder:2371_2" name="/" dev="debugfs" ino=1 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:debugfs:s0 tclass=dir permissive=0
+[   76.757785][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   76.765391][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   76.772987][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   76.780546][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   76.788160][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   76.795793][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   76.803316][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   77.772901][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   77.780673][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   77.788377][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   77.795990][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   78.642439][    T1] init: Control message: Could not find 'android.frameworks.sensorservice@1.0::ISensorManager/default' for ctl.interface_start from pid: 655 (/system/bin/hwservicemanager)
+[   78.780964][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   78.788712][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   78.796384][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   78.803957][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   78.811532][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   79.642922][    T1] init: Control message: Could not find 'android.frameworks.sensorservice@1.0::ISensorManager/default' for ctl.interface_start from pid: 655 (/system/bin/hwservicemanager)
+[   79.796933][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   79.804688][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   79.812406][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   79.820058][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   79.827729][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   80.837324][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   80.844854][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   80.848810][ T2603] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   80.852421][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   80.868015][ T2603] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   80.875509][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   80.891272][ T2603] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   80.921572][ T2612] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   80.937238][ T2612] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   80.952927][ T2612] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   80.977630][  T729] type=1400 audit(84.450:36): avc: denied { read } for comm="binder:2603_2" name="/" dev="debugfs" ino=1 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:debugfs:s0 tclass=dir permissive=0
+[   80.997039][  T729] type=1400 audit(84.450:37): avc: denied { read } for comm="binder:2603_2" name="/" dev="debugfs" ino=1 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:debugfs:s0 tclass=dir permissive=0
+[   81.685336][ T1226] kalama-pinctrl f000000.pinctrl: pin GPIO_105 already requested by soc:qcom,cam-res-mgr; cannot claim for ac15000.qcom,cci0:qcom,cam-sensor4
+[   81.700063][ T1226] kalama-pinctrl f000000.pinctrl: pin-105 (ac15000.qcom,cci0:qcom,cam-sensor4) status -22
+[   81.710307][ T1226] kalama-pinctrl f000000.pinctrl: could not request pin 105 (GPIO_105) from group gpio105  on device f000000.pinctrl
+[   81.722897][ T1226] qcom,camera ac15000.qcom,cci0:qcom,cam-sensor4: Error applying setting, reverse things back
+[   81.865130][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   81.872739][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   81.880581][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   81.888103][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   82.067648][ T1226] kalama-pinctrl f000000.pinctrl: pin GPIO_105 already requested by soc:qcom,cam-res-mgr; cannot claim for ac15000.qcom,cci0:qcom,cam-sensor4
+[   82.082366][ T1226] kalama-pinctrl f000000.pinctrl: pin-105 (ac15000.qcom,cci0:qcom,cam-sensor4) status -22
+[   82.092419][ T1226] kalama-pinctrl f000000.pinctrl: could not request pin 105 (GPIO_105) from group gpio105  on device f000000.pinctrl
+[   82.104965][ T1226] qcom,camera ac15000.qcom,cci0:qcom,cam-sensor4: Error applying setting, reverse things back
+[   82.140989][ T1226] kalama-pinctrl f000000.pinctrl: pin GPIO_105 already requested by soc:qcom,cam-res-mgr; cannot claim for ac15000.qcom,cci0:qcom,cam-sensor5
+[   82.155749][ T1226] kalama-pinctrl f000000.pinctrl: pin-105 (ac15000.qcom,cci0:qcom,cam-sensor5) status -22
+[   82.165866][ T1226] kalama-pinctrl f000000.pinctrl: could not request pin 105 (GPIO_105) from group gpio105  on device f000000.pinctrl
+[   82.178395][ T1226] qcom,camera ac15000.qcom,cci0:qcom,cam-sensor5: Error applying setting, reverse things back
+[   82.515372][ T1226] kalama-pinctrl f000000.pinctrl: pin GPIO_105 already requested by soc:qcom,cam-res-mgr; cannot claim for ac15000.qcom,cci0:qcom,cam-sensor5
+[   82.530142][ T1226] kalama-pinctrl f000000.pinctrl: pin-105 (ac15000.qcom,cci0:qcom,cam-sensor5) status -22
+[   82.540209][ T1226] kalama-pinctrl f000000.pinctrl: could not request pin 105 (GPIO_105) from group gpio105  on device f000000.pinctrl
+[   82.552704][ T1226] qcom,camera ac15000.qcom,cci0:qcom,cam-sensor5: Error applying setting, reverse things back
+[   82.872877][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   82.880683][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   82.888328][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   83.660331][    T1] init: Control message: Could not find 'android.frameworks.sensorservice@1.0::ISensorManager/default' for ctl.interface_start from pid: 655 (/system/bin/hwservicemanager)
+[   83.888930][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   83.896618][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   83.904264][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   83.911888][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   84.660929][    T1] init: Control message: Could not find 'android.frameworks.sensorservice@1.0::ISensorManager/default' for ctl.interface_start from pid: 655 (/system/bin/hwservicemanager)
+[   84.904817][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   84.912563][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   84.920220][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   84.927779][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   85.843680][ T2814] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   85.859360][ T2814] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   85.875025][ T2814] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   85.923522][ T2823] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   85.939212][ T2823] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   85.954991][ T2823] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   85.978244][  T729] type=1400 audit(89.450:38): avc: denied { read } for comm="binder:2814_2" name="/" dev="debugfs" ino=1 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:debugfs:s0 tclass=dir permissive=0
+[   85.997582][  T729] type=1400 audit(89.450:39): avc: denied { read } for comm="binder:2814_2" name="/" dev="debugfs" ino=1 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:debugfs:s0 tclass=dir permissive=0
+[   86.021416][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   86.029296][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   86.037066][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   86.044687][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   87.028951][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   87.036725][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   87.044349][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   88.044812][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   88.052619][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   88.060257][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   88.067840][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   88.075417][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   88.673329][    T1] init: Control message: Could not find 'android.frameworks.sensorservice@1.0::ISensorManager/default' for ctl.interface_start from pid: 655 (/system/bin/hwservicemanager)
+[   89.056856][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   89.064634][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   89.072256][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   89.079839][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   89.673853][    T1] init: Control message: Could not find 'android.frameworks.sensorservice@1.0::ISensorManager/default' for ctl.interface_start from pid: 655 (/system/bin/hwservicemanager)
+[   89.978199][ T2995] libprocessgroup: JoinCgroup: controller schedtune is not found
+[   90.109121][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   90.116647][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   90.124224][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   90.131726][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   90.844769][ T3025] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   90.860419][ T3025] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   90.876071][ T3025] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   90.929185][ T3034] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   90.944860][ T3034] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   90.960667][ T3034] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   90.985138][  T729] type=1400 audit(94.458:40): avc: denied { read } for comm="binder:3025_2" name="/" dev="debugfs" ino=1 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:debugfs:s0 tclass=dir permissive=0
+[   91.004570][  T729] type=1400 audit(94.458:41): avc: denied { read } for comm="binder:3025_2" name="/" dev="debugfs" ino=1 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:debugfs:s0 tclass=dir permissive=0
+[   91.124974][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   91.132745][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   91.140388][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   91.147972][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   91.913171][ T1226] kalama-pinctrl f000000.pinctrl: pin GPIO_105 already requested by soc:qcom,cam-res-mgr; cannot claim for ac15000.qcom,cci0:qcom,cam-sensor4
+[   91.928014][ T1226] kalama-pinctrl f000000.pinctrl: pin-105 (ac15000.qcom,cci0:qcom,cam-sensor4) status -22
+[   91.938155][ T1226] kalama-pinctrl f000000.pinctrl: could not request pin 105 (GPIO_105) from group gpio105  on device f000000.pinctrl
+[   91.950698][ T1226] qcom,camera ac15000.qcom,cci0:qcom,cam-sensor4: Error applying setting, reverse things back
+[   91.972546][ T1226] kalama-pinctrl f000000.pinctrl: pin GPIO_105 already requested by soc:qcom,cam-res-mgr; cannot claim for ac15000.qcom,cci0:qcom,cam-sensor4
+[   91.987303][ T1226] kalama-pinctrl f000000.pinctrl: pin-105 (ac15000.qcom,cci0:qcom,cam-sensor4) status -22
+[   91.997422][ T1226] kalama-pinctrl f000000.pinctrl: could not request pin 105 (GPIO_105) from group gpio105  on device f000000.pinctrl
+[   92.009906][ T1226] qcom,camera ac15000.qcom,cci0:qcom,cam-sensor4: Error applying setting, reverse things back
+[   92.020875][ T1226] kalama-pinctrl f000000.pinctrl: pin GPIO_105 already requested by soc:qcom,cam-res-mgr; cannot claim for ac15000.qcom,cci0:qcom,cam-sensor4
+[   92.035603][ T1226] kalama-pinctrl f000000.pinctrl: pin-105 (ac15000.qcom,cci0:qcom,cam-sensor4) status -22
+[   92.045712][ T1226] kalama-pinctrl f000000.pinctrl: could not request pin 105 (GPIO_105) from group gpio105  on device f000000.pinctrl
+[   92.058257][ T1226] qcom,camera ac15000.qcom,cci0:qcom,cam-sensor4: Error applying setting, reverse things back
+[   92.075087][ T1226] kalama-pinctrl f000000.pinctrl: pin GPIO_105 already requested by soc:qcom,cam-res-mgr; cannot claim for ac15000.qcom,cci0:qcom,cam-sensor4
+[   92.089837][ T1226] kalama-pinctrl f000000.pinctrl: pin-105 (ac15000.qcom,cci0:qcom,cam-sensor4) status -22
+[   92.099901][ T1226] kalama-pinctrl f000000.pinctrl: could not request pin 105 (GPIO_105) from group gpio105  on device f000000.pinctrl
+[   92.112352][ T1226] qcom,camera ac15000.qcom,cci0:qcom,cam-sensor4: Error applying setting, reverse things back
+[   92.161116][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   92.168841][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   92.176665][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   92.184287][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   93.172873][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   93.180723][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   93.188317][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   93.195882][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   94.184760][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   94.192597][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   94.200257][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   94.207861][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   94.676784][    T1] init: Control message: Could not find 'android.frameworks.sensorservice@1.0::ISensorManager/default' for ctl.interface_start from pid: 655 (/system/bin/hwservicemanager)
+[   94.981076][ T3221] libprocessgroup: JoinCgroup: controller schedtune is not found
+[   95.225200][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   95.232733][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   95.240316][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   95.247861][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   95.847110][ T3254] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   95.862832][ T3254] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   95.878617][ T3254] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   95.936926][ T3263] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   95.952596][ T3263] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   95.968370][ T3263] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[   95.992303][  T729] type=1400 audit(99.462:42): avc: denied { read } for comm="binder:3254_2" name="/" dev="debugfs" ino=1 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:debugfs:s0 tclass=dir permissive=0
+[   96.011643][  T729] type=1400 audit(99.462:43): avc: denied { read } for comm="binder:3254_2" name="/" dev="debugfs" ino=1 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:debugfs:s0 tclass=dir permissive=0
+[   96.269083][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   96.276873][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   96.284587][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   96.292209][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   97.288890][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   97.296790][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   97.304389][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   98.308933][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   98.316573][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   98.324251][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   98.331838][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   99.328841][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   99.336673][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   99.344294][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   99.351886][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[   99.682794][    T1] init: Control message: Could not find 'android.frameworks.sensorservice@1.0::ISensorManager/default' for ctl.interface_start from pid: 655 (/system/bin/hwservicemanager)
+[   99.982109][ T3433] libprocessgroup: JoinCgroup: controller schedtune is not found
+[  100.038298][  T227] selinux: SELinux:  Could not stat /sys/devices/virtual/net/ipsec_test/queues/rx-0: No such file or directory.
+[  100.050329][  T227] selinux: 
+[  100.369135][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  100.376736][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  100.384284][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  100.391800][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  100.399324][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  100.407143][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  100.414693][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  100.849038][ T3462] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[  100.864753][ T3462] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[  100.880593][ T3462] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[  100.978124][ T3490] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[  100.993810][ T3490] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[  101.009672][ T3490] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[  101.033862][  T729] type=1400 audit(104.506:44): avc: denied { read } for comm="binder:3462_2" name="/" dev="debugfs" ino=1 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:debugfs:s0 tclass=dir permissive=0
+[  101.053332][  T729] type=1400 audit(104.506:45): avc: denied { read } for comm="binder:3462_2" name="/" dev="debugfs" ino=1 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:debugfs:s0 tclass=dir permissive=0
+[  101.393075][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  101.400852][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  101.408614][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  101.416231][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  102.428947][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  102.436790][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  102.444376][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  103.444879][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  103.452708][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  103.460325][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  103.467916][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  104.464883][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  104.472652][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  104.480255][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  104.487838][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  104.685954][    T1] init: Control message: Could not find 'android.frameworks.sensorservice@1.0::ISensorManager/default' for ctl.interface_start from pid: 655 (/system/bin/hwservicemanager)
+[  104.985085][ T3656] libprocessgroup: JoinCgroup: controller schedtune is not found
+[  105.509156][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  105.516697][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  105.524280][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  105.531778][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  105.861485][ T3683] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[  105.877145][ T3683] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[  105.892808][ T3683] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[  105.941310][ T3692] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[  105.956996][ T3692] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[  105.972955][ T3692] msm-ext-disp-audio-codec-rx soc:qcom,msm-ext-disp:qcom,msm-ext-disp-audio-codec-rx: msm_ext_disp_audio_type_get: cable_status() or get_intf_id is NULL
+[  105.996546][  T729] type=1400 audit(109.466:46): avc: denied { read } for comm="binder:3683_2" name="/" dev="debugfs" ino=1 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:debugfs:s0 tclass=dir permissive=0
+[  106.016010][  T729] type=1400 audit(109.470:47): avc: denied { read } for comm="binder:3683_2" name="/" dev="debugfs" ino=1 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:debugfs:s0 tclass=dir permissive=0
+[  106.537044][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  106.544847][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  106.552579][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
+[  106.560140][ T2317] UDC core: couldn't find an available UDC or it's busy: -19
