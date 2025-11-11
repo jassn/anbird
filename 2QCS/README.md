@@ -10,15 +10,19 @@ Path: kernel_platform/qcom/proprietary/devicetree/qcom/kalama-usb.dtsi
 
 
 ## build kernel driver
-若修改了 kernel_platform/common/init/main.c 刪除以下目錄, 就可以看到 new log from both adb and serial console.
+* 若修改了 kernel_platform/common/init/main.c 刪除以下目錄, 就可以看到 new log from both adb and serial console.
 ```
 cd qcm8850
 rm -rf Vendor/device/qcom/kalama-kernel
 rm -rf Vendor/kernel_platform/out
 rm -rf Vendor/out/msm-kernel-kalama-consolidate
 ```
+* 進入 docker
+```
+docker_run.sh -s
+```
 
-然後用 docker build, 
+* 然後用 docker build, 
 ```
 /dev_bin/build_tool/la_build.sh -b all
 ```
