@@ -10,7 +10,8 @@ Path: kernel_platform/qcom/proprietary/devicetree/qcom/kalama-usb.dtsi
 
 
 ## build kernel driver
-* 若修改了 kernel_platform/common/init/main.c 刪除以下目錄, 就可以看到 new log from both adb and serial console.
+* 若修改了 kernel_platform/common/init/main.c
+* 刪除以下目錄, 再下指令 build code, 就可以看到 new log from both adb and serial console.
 ```
 cd qcm8850
 rm -rf Vendor/device/qcom/kalama-kernel
