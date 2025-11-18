@@ -46,7 +46,8 @@ docker_run.sh -s
 - 3.3.3  Linux device driver     
   To add a new driver in the kernel, the workspace is in <workspace>/src/kernel-5.15/kernel_platform/msm-kernel.
 
-
+## 80-88500-1
+- 2.5 USB Hub
 
 
 == END ==
