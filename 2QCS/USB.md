@@ -7,12 +7,14 @@
  - [x] 接上 USB Mouse, 是否會動作? *USB2.1*
  - [ ] 異常 reboot, 解決了嗎?
  - [x] 每次都能順利開機嗎? 要長按 power button 才行.
+ - [ ] 123
 
 
 # 問題
 - 我有一個 USB type-C DTS file , 要如何改成 USB Type-A?
 - 在高通平台上 extcon 用於 USB OTG 的實作細節
 
+https://docs.qualcomm.com/bundle/publicresource/topics/80-88500-3/66_Configure_AI_ML_modules.html
 
 -----------------------------------------------------------------------
 ## 變因
@@ -27,7 +29,9 @@
 test usb camera    
 camx-hal3-test, 80-42028-300 QRB5156    
 build yavta, 80-50450-2 QCS8550 LE     
-build yavta, 80-79054-200 QCS8550 UBUNTU    
+build yavta, 80-79054-200 QCS8550 UBUNTU     
+yavta, 80-70022-8 Qualcomm Linux Interfaces Guide 1.6  
+yavta, 80-88500-3
 
 
 
@@ -69,5 +73,6 @@ add tag for testing
 ## 80-35348-100
 - USB Power Delivery
 ## SP80-PT831-4
-- Build Android
- == END ==
+- Build Android     
+
+== END ==
