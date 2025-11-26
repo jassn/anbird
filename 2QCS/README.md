@@ -1,7 +1,7 @@
 
 # QCS8550
 
-## work
+## work - reboot issue
 - [ ] Slot _a is unbootable, trying alternate slot.
 
 
