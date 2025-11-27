@@ -3,6 +3,7 @@
 
 ## work - reboot issue
 - [ ] Slot _a is unbootable, trying alternate slot.
+- [ ] fastboot
 
 
 ------------------------------------------------------------------------------
