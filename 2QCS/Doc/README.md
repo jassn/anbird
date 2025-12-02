@@ -1,17 +1,29 @@
 
-# QCS8550
 
-## work 
-Reboot Issue
-- [ ] Slot _a is unbootable, trying alternate slot.
+# Overview
+* [RB5 Dev Kit User Guide](
+https://docs.qualcomm.com/bundle/publicresource/topics/80-88500-5)
+
+
+-------------------------------------------------------------------
+# 80-PF777-138 QSSI
+Qualcomm Single System Image 
+
+
+
+```
+Vendor/build.sh -> 
+Vendor/vendor/qcom/opensource/core-utils/build/build.sh
+```
+
+# 80-33919-14  Android T
+Google requirement freeze (GRF)
+
 
 
 ------------------------------------------------------------------------------
-## DTS
-* See 80-50450-1
+# 80-others
 
-
-------------------------------------------------------------------------------
 ## modify dr_mode = "host"
 Path: kernel_platform/qcom/proprietary/devicetree/qcom/kalama-usb.dtsi
 

@@ -5,6 +5,8 @@
 - [ ] Slot _a is unbootable, trying alternate slot.
 - [ ] fastboot
 
+* [Qualcomm Linux 1.6](https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-115/qualcomm-linux-docs-home.html)
+
 
 ------------------------------------------------------------------------------
 ## DTS
