@@ -4,12 +4,29 @@
 ## work - reboot issue
 - [ ] Slot _a is unbootable, trying alternate slot.
 - [ ] fastboot
+- [ ] How to modify/flash bootloader and take effect?
 
 * [Qualcomm Linux 1.6](https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-115/qualcomm-linux-docs-home.html)
+* [Kernel documentation 80-70022-3](https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-3)
 
 
 ------------------------------------------------------------------------------
-## DTS
+
+# Thermal
+* [Thermal testing 80-70015-251](https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-251/thermal_testing.html)
+* 80-50430-800 Chipset System Guide
+* [stress-ng](https://github.com/ColinIanKing/stress-ng)
+* [NEWS-compute intensive](https://www.qualcomm.com/news/onq/2023/04/qualcomm-qcm8550-and-qcs8550-processors-for-compute-intensive-apps)
+
+## 80-88970-100
+24.1.4 Read the thermistor
+```
+cat /sys/devices/virtual/thermal/...
+```
+
+
+------------------------------------------------------------------------------
+# DTS
 * See 80-50450-1
 
 

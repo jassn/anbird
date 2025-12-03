@@ -7,9 +7,14 @@
  - [x] 接上 USB Mouse, 是否會動作? *USB2.1*
  - [ ] 異常 reboot, 解決了嗎?
  - [x] 每次都能順利開機嗎? 要長按 power button 才行.
- - [ ] 123
+ - [ ] yavta, 沒權限 V4L2 STREAM_ON.
 
 
+# APK for Camera Test
+https://f-droid.org/zh_Hant/packages/humer.uvc_camera/
+
+
+------------------------------------------------------------------
 # 問題
 - 我有一個 USB type-C DTS file , 要如何改成 USB Type-A?
 - 在高通平台上 extcon 用於 USB OTG 的實作細節
