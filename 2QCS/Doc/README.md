@@ -20,6 +20,13 @@ Vendor/vendor/qcom/opensource/core-utils/build/build.sh
 Google requirement freeze (GRF)
 
 
+-------------------------------------------------------------------
+
+# 80-88970-100  PMIC 
+(364 pages) QCM6690_QCS6690_PMIC_Software_User_Guide.pdf    
+6.1 USB Power Delivery
+
+
 
 ------------------------------------------------------------------------------
 # 80-others

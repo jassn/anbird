@@ -5,6 +5,8 @@
 - [ ] Slot _a is unbootable, trying alternate slot.
 - [ ] fastboot
 - [ ] How to modify/flash bootloader and take effect?
+- [ ] DUT-8550 跟 PC 接 Ethernet 互通.
+- [ ] 如何用 adb over ethernet?
 
 * [Qualcomm Linux 1.6](https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-115/qualcomm-linux-docs-home.html)
 * [Kernel documentation 80-70022-3](https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-3)
@@ -44,7 +46,9 @@ rm -rf Vendor/device/qcom/kalama-kernel
 rm -rf Vendor/kernel_platform/out
 rm -rf Vendor/out/msm-kernel-kalama-consolidate
 ```
-* 進入 docker
+
+------------------------------------------------------------------------------
+# 進入 docker
 ```
 docker_run.sh -s
 ```

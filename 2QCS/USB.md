@@ -5,9 +5,11 @@
  - [x] adb 是否偵測到 GenesysLogic Chip? FW 版本正確嗎?
  - [x] 可以偵測 USB 3.2 (Sandisk)
  - [x] 接上 USB Mouse, 是否會動作? *USB2.1*
+ - [x] 接上 USB Camera, 用 humer.uvc_camera.APK 測試.
+ - [ ] yavta, 沒權限 V4L2 STREAM_ON.
  - [ ] 異常 reboot, 解決了嗎?
  - [x] 每次都能順利開機嗎? 要長按 power button 才行.
- - [ ] yavta, 沒權限 V4L2 STREAM_ON.
+ - [ ] others
 
 
 # APK for Camera Test
