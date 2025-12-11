@@ -29,6 +29,7 @@ https://docs.qualcomm.com/bundle/publicresource/topics/80-88500-3/66_Configure_A
 
 ## DTS
  - kernel_platform/msm-kernel/arch/arm64/boot/dts/vendor/qcom/kalamap-rb5-gen2.dtsi
+ - 其中 **vendor** -> kernel_platform/qcom/proprietary/devicetree 
 
 
 -----------------------------------------------------------------------

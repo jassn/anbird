@@ -15,6 +15,13 @@
 ------------------------------------------------------------------------------
 
 # Thermal
+glmark2
+- [ ] 80-70022-19
+- [ ] 80-70022-10A
+- [ ] 是否會降頻?
+- [ ] QPS615 到 98度
+
+
 * [Thermal testing 80-70015-251](https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-251/thermal_testing.html)
 * 80-50430-800 Chipset System Guide
 * [stress-ng](https://github.com/ColinIanKing/stress-ng)
