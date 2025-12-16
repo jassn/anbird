@@ -12,14 +12,53 @@
 * [Kernel documentation 80-70022-3](https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-3)
 
 
+
+------------------------------------------------------------------------------
+# RTC
+## 80-50445-63 PMK8550
+PM8550 provides VREG_COIN to PMK8550
+
+## 80-50445-100
+```
+vbat-thd-rtc-pon = <3600>;
+```
+
+## 80-PT831-64
+Question: fail to write RTC.
+
+
+```
+$ hwclock -w
+hwclock: ioctl 4024700a: Permission denied
+```
+
+RTC-name
+```
+$ cat /sys/class/rtc/rtc0/name
+rtc-pm8xxx c42d000.qcom,spmi:qcom,pmk8550@0:rtc@6100
+```
+
+
+------------------------------------------------------------------------------
+# TMP1075
+Temperature sensor
+- [ ] /dev/i2c4 如何跟 dts 對應 qupv3_hub_i2c5?
+
+```
+$ i2cdetect -a 4
+
+$ i2cdump 4 0x49
+```
+
+
 ------------------------------------------------------------------------------
 
 # Thermal
 glmark2
 - [ ] 80-70022-19
 - [ ] 80-70022-10A
-- [ ] 是否會降頻?
-- [ ] QPS615 到 98度
+- [ ] 若 stress-ng 跑 100% 會發生降頻。
+- [ ] QPS615 到 98度.
 
 
 * [Thermal testing 80-70015-251](https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-251/thermal_testing.html)
@@ -38,6 +77,11 @@ cat /sys/devices/virtual/thermal/...
 # DTS
 * See 80-50450-1
 
+```
+$ cd /sys/firmware/devicetree/base
+    or
+$ cd /sys/class/i2c-dev
+```
 
 ------------------------------------------------------------------------------
 ## modify dr_mode = "host"

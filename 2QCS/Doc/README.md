@@ -4,6 +4,7 @@
 * [RB5 Dev Kit User Guide](
 https://docs.qualcomm.com/bundle/publicresource/topics/80-88500-5)
 
+* [Robotics RB5 Dev Kit](https://www.qualcomm.com/developer/hardware/robotics-rb5-development-kit)
 
 -------------------------------------------------------------------
 # 80-PF777-138 QSSI
