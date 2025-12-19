@@ -7,6 +7,7 @@
 - [ ] How to modify/flash bootloader and take effect?
 - [ ] DUT-8550 跟 PC 接 Ethernet 互通.
 - [ ] 如何用 adb over ethernet?
+- [ ] DTBO 在哪一個 block device? partition?
 
 * [Qualcomm Linux 1.6](https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-115/qualcomm-linux-docs-home.html)
 * [Kernel documentation 80-70022-3](https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-3)
@@ -15,8 +16,16 @@
 
 ------------------------------------------------------------------------------
 # RTC
+Keywords:
+* kernel_platform/msm-kernel/arch/arm64/boot/dts/vendor/qcom/pmk8550.dtsi
+* dtbo_a
+
+
 ## 80-50445-63 PMK8550
 PM8550 provides VREG_COIN to PMK8550
+
+## 80-50445-64 PMIC Overview
+* Linux HLOS Software Stack
 
 ## 80-50445-100
 ```

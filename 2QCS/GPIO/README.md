@@ -2,6 +2,7 @@
 # GPIO
 - [ ] /sys/class/i2c-dev 不應出現 984000(qupv3_hub_i2c1) 及 988000(qupv3_hub_i2c2).
 - [ ] SP80-PT831-6, qupv3_se5_2uart
+- [ ] 80-88500-1, Debug UART in kernel
 
 
 ----------------------------------------------------------
@@ -72,10 +73,12 @@ struct msm_function kalama_functions[] = {
 
 
 -------------------------------------------------------
-# SP80-PT831-6 
+# SP80-PT831-6 QCS6490
 Linux Android Software Porting User Guide
 
 ## 5.2 UART
+5.2.1 Configure UART in the boot loader
+
 5.2.2 Configure low-speed UART in the kernel
 
 Code modification
