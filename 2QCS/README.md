@@ -20,6 +20,9 @@ Keywords:
 * kernel_platform/msm-kernel/arch/arm64/boot/dts/vendor/qcom/pmk8550.dtsi
 * dtbo_a
 
+Official Kernel    
+https://github.com/torvalds/linux/blame/master/drivers/rtc/rtc-pm8xxx.c
+
 
 ## 80-50445-63 PMK8550
 PM8550 provides VREG_COIN to PMK8550
@@ -68,6 +71,7 @@ glmark2
 - [ ] 80-70022-10A
 - [ ] 若 stress-ng 跑 100% 會發生降頻。
 - [ ] QPS615 到 98度.
+- [ ] 高到幾度會開始降頻?
 
 
 * [Thermal testing 80-70015-251](https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-251/thermal_testing.html)
@@ -75,11 +79,36 @@ glmark2
 * [stress-ng](https://github.com/ColinIanKing/stress-ng)
 * [NEWS-compute intensive](https://www.qualcomm.com/news/onq/2023/04/qualcomm-qcm8550-and-qcs8550-processors-for-compute-intensive-apps)
 
+
+## 80-50445-35
+Thermal Mitigation Software Concept Architecture
+
+Cooling Devices in Thermal Framework for Kernel – Sysfs Node
+
+
+
 ## 80-88970-100
 24.1.4 Read the thermistor
 ```
 cat /sys/devices/virtual/thermal/...
 ```
+
+
+## 80-70022-30
+[Customize a thermal zone](https://docs.qualcomm.com/doc/80-70022-30/topic/thermalzone.html)
+
+
+Below: Provides the names of thermal zones.
+```
+cat /sys/class/thermal/thermal_zone<x>/type
+```
+
+
+Reads the existing mitigation state of the cooling device
+```
+cat /sys/class/thermal/cooling_device<x>/cur_state
+```
+
 
 
 ------------------------------------------------------------------------------
