@@ -11,7 +11,7 @@
 
 * [Qualcomm Linux 1.6](https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-115/qualcomm-linux-docs-home.html)
 * [Kernel documentation 80-70022-3](https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-3)
-
+* [Boot documentation 80-70022-4](https://docs.qualcomm.com/doc/80-70022-4/topic/landing-page.html)
 
 
 ------------------------------------------------------------------------------
@@ -27,10 +27,21 @@ https://github.com/torvalds/linux/blame/master/drivers/rtc/rtc-pm8xxx.c
 ## 80-50445-63 PMK8550
 PM8550 provides VREG_COIN to PMK8550
 
+### PMIC Software Drivers
+
+### SPMI
+The PMIC arbiter hardware on the QCS8550 now includes two SPMI buses: Primary and Secondary SPMI.
+
+RPM - Resource Power Manager
+
+
 ## 80-50445-64 PMIC Overview
 * Linux HLOS Software Stack
 
+
 ## 80-50445-100
+19.3 Each PMIC has its own unique SID(Slave ID), which can be used for PMIC register access.
+
 ```
 vbat-thd-rtc-pon = <3600>;
 ```
@@ -109,6 +120,11 @@ Reads the existing mitigation state of the cooling device
 cat /sys/class/thermal/cooling_device<x>/cur_state
 ```
 
+## 80-P9301-88
+Linux Android PMIC GPIO Software
+User Guide
+
+- SPMI
 
 
 ------------------------------------------------------------------------------
