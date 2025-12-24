@@ -69,6 +69,7 @@ struct msm_function kalama_functions[] = {
 
 ## 3.3.4 Configure defconfig
 
+Do not modify `gki_defconfig` directly.
 
 
 

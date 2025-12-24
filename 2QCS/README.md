@@ -16,6 +16,10 @@
 
 ------------------------------------------------------------------------------
 # RTC
+- [ ] I2C RTC, 電池也可由 PMIC 提供嗎?
+- [ ] 有哪些外接 5G modem 可以用?
+- [ ] /dev/rtc0 or /dev/rtc1?
+ 
 Keywords:
 * kernel_platform/msm-kernel/arch/arm64/boot/dts/vendor/qcom/pmk8550.dtsi
 * dtbo_a
