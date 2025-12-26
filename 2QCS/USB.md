@@ -1,14 +1,15 @@
 
 # USB
 
-## 測項
- - [x] adb 是否偵測到 GenesysLogic Chip? FW 版本正確嗎?
+## 測項 GL3590
+ - [x] adb 是否偵測到 GenesysLogic Chip? FW 版本正確嗎? (bcdDevice=94.06)
  - [x] 可以偵測 USB 3.2 (Sandisk)
  - [x] 接上 USB Mouse, 是否會動作? *USB2.1*
  - [x] 接上 USB Camera, 用 humer.uvc_camera.APK 測試.
  - [ ] yavta, 沒權限 V4L2 STREAM_ON.
  - [ ] 異常 reboot, 解決了嗎?
  - [x] 每次都能順利開機嗎? 要長按 power button 才行.
+ - [x] 量產會預先燒錄 16-bit FLASH, 但要收費. (VickieLiu)
  - [ ] others
 
 

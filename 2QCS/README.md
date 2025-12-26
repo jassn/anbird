@@ -19,6 +19,7 @@
 - [ ] I2C RTC, 電池也可由 PMIC 提供嗎?
 - [ ] 有哪些外接 5G modem 可以用?
 - [ ] /dev/rtc0 or /dev/rtc1?
+- [ ] 80-ND960-1 Time Service
  
 Keywords:
 * kernel_platform/msm-kernel/arch/arm64/boot/dts/vendor/qcom/pmk8550.dtsi
@@ -27,9 +28,20 @@ Keywords:
 Official Kernel    
 https://github.com/torvalds/linux/blame/master/drivers/rtc/rtc-pm8xxx.c
 
+## 80-ND960-1 Time Service
+RTC write is disabled in the kernel by policy.     
+To maintain the persistent time across reboots, a proprietary solution is provided.
+```
+ANDROID_ALARM_SET_RTC
+fd = open("/dev/alarm", O_RDWR);
+```
+As long as the files are present and contain the correct values, the system time is preserved after system reboot. See vendor/qcom/proprietary/time-services/time_daemon_qmi.c.
+
+
 
 ## 80-50445-63 PMK8550
 PM8550 provides VREG_COIN to PMK8550
+
 
 ### PMIC Software Drivers
 
