@@ -94,6 +94,11 @@ Code modification
 -------------------------------------------------------
 
 # Others
+
+## QUD
+- [x] 2025-12-29 version: 1.0.5.6
+
+
 如果 PCAT 找不到 devices, 重新安裝 qud.
 ```
 qpm-cli --install qud
