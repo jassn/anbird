@@ -68,9 +68,6 @@ struct msm_function kalama_functions[] = {
 - Sample for configuring pins on the UART
 
 
-## 3.3.4 Configure defconfig
-
-Do not modify `gki_defconfig` directly.
 
 
 

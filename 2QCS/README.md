@@ -20,6 +20,7 @@
 - [ ] 有哪些外接 5G modem 可以用?
 - [ ] /dev/rtc0 or /dev/rtc1?
 - [ ] 80-ND960-1 Time Service
+- [ ] persistent wall clock time.
  
 Keywords:
 * kernel_platform/msm-kernel/arch/arm64/boot/dts/vendor/qcom/pmk8550.dtsi
