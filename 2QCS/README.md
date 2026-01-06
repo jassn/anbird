@@ -160,6 +160,12 @@ $ cd /sys/firmware/devicetree/base
 $ cd /sys/class/i2c-dev
 ```
 
+## fixed-regulator    
+https://wiki.st.com/stm32mpu/wiki/Regulator_overview
+
+https://elixir.bootlin.com/linux/v6.18.3/source/Documentation/devicetree/bindings/regulator/fixed-regulator.yaml
+
+
 ------------------------------------------------------------------------------
 ## modify dr_mode = "host"
 Path: kernel_platform/qcom/proprietary/devicetree/qcom/kalama-usb.dtsi
