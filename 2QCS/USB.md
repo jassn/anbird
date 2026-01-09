@@ -12,7 +12,28 @@
  - [x] 量產會預先燒錄 16-bit FLASH, 但要收費. (VickieLiu)
  - [ ] others
 
+## USB 2.1 vs 3.2
+若 USB 2.1 (USB mouse) 不行, 但 USB 3.2 (storage) 可以, 就要檢查 (hardware) smarc board 上的 switch 是否有接通?
 
+```
+01-01 00:09:49.809   178   178 I usb 1-1 : New USB device found, idVendor=05e3, idProduct=0610, bcdDevice=94.04
+01-01 00:09:49.816   178   178 I usb 1-1 : New USB device strings: Mfr=1, Product=2, SerialNumber=0
+01-01 00:09:49.816   178   178 I usb 1-1 : Product: USB2.1 Hub
+01-01 00:09:49.816   178   178 I usb 1-1 : Manufacturer: GenesysLogic
+01-01 00:09:49.820   178   178 I hub 1-1 : 1.0: USB hub found
+01-01 00:09:49.828   178   178 I hub 1-1 : 1.0: 4 ports detected
+
+01-01 00:09:49.924   609   609 I usb 2-1 : new SuperSpeed USB device number 2 using xhci_hcd
+01-01 00:09:49.946   609   609 I usb 2-1 : New USB device found, idVendor=05e3, idProduct=0625, bcdDevice=94.04
+01-01 00:09:49.946   609   609 I usb 2-1 : New USB device strings: Mfr=1, Product=2, SerialNumber=0
+01-01 00:09:49.946   609   609 I usb 2-1 : Product: USB3.2 Hub
+01-01 00:09:49.946   609   609 I usb 2-1 : Manufacturer: GenesysLogic
+01-01 00:09:49.951   609   609 I hub 2-1 : 1.0: USB hub found
+01-01 00:09:49.952   609   609 I hub 2-1 : 1.0: 4 ports detected
+
+```
+
+-----------------------------------------------------------------
 # APK for Camera Test
 https://f-droid.org/zh_Hant/packages/humer.uvc_camera/
 
