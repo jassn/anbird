@@ -1,6 +1,12 @@
 
 # GPIO
+
+UART
 - [ ] /sys/class/i2c-dev 不應出現 984000(qupv3_hub_i2c1) 及 988000(qupv3_hub_i2c2).
+- [ ] TCAL6416 每次編號不同? gpioinfo.
+
+CAN
+- [ ] CAN0 vs CAN1 相反?
 - [ ] SP80-PT831-6, qupv3_se5_2uart
 - [ ] 80-88500-1, Debug UART in kernel
 - [ ] 80-NM328-78, Linux_Android_APSS_Debug_Guide

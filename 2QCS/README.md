@@ -1,6 +1,14 @@
 
 # QCS8550
 
+# RS232
+- [x] 目標: 可以看到 /dev/ttyHS*
+- [ ] gpioset 操作後, 為什麼 ttyHS5 不見了?
+- [ ] adb logcat, a88000.uart, ~/RB5/uart/jan13pm1620.
+- [ ] io_expander, TCAL6416, 為何每次編號不一樣?
+- [ ] 實測 RS232
+- [ ] 實測 RS485
+
 ## work - reboot issue
 - [ ] Slot _a is unbootable, trying alternate slot.
 - [ ] fastboot
@@ -143,11 +151,16 @@ Reads the existing mitigation state of the cooling device
 cat /sys/class/thermal/cooling_device<x>/cur_state
 ```
 
+Regulate temperature with fan controller
+* PWM fan controller
+
+
 ## 80-P9301-88
 Linux Android PMIC GPIO Software
 User Guide
 
 - SPMI
+- PWM
 
 
 ------------------------------------------------------------------------------
