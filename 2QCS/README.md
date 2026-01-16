@@ -115,6 +115,10 @@ glmark2
 - [ ] QPS615 到 98度.
 - [ ] 高到幾度會開始降頻?
 
+```
+adb shell "cd /data/; nohup stress-ng --cpu 0 --cpu-method=all -vm 4 --vm-bytes 75% --hdd 3 --hdd-bytes 15G -t 172800 &"
+```
+
 
 * [Thermal testing 80-70015-251](https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-251/thermal_testing.html)
 * 80-50430-800 Chipset System Guide
