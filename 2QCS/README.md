@@ -6,8 +6,8 @@
 - [ ] gpioset 操作後, 為什麼 ttyHS5 不見了?
 - [ ] adb logcat, a88000.uart, ~/RB5/uart/jan13pm1620.
 - [ ] io_expander, TCAL6416, 為何每次編號不一樣?
-- [ ] 實測 RS232
-- [ ] 實測 RS485
+- [x] 實測 RS232
+- [x] 實測 RS485 / RS422
 
 ## work - reboot issue
 - [ ] Slot _a is unbootable, trying alternate slot.
