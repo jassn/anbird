@@ -28,6 +28,10 @@ $ cd qcs8550_le_1_0/LE.PRODUCT.2.1.r1/apps_proc
 
 a. Set up the build environment:
 ```
+export PREBUILT_SRC_DIR="$(pwd)/prebuilt_HY11"
+```
+then
+```
 MACHINE=kalama DISTRO=qti-distro-rb-debug source setup-environment
 ```
 

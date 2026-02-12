@@ -24,6 +24,16 @@
 
 
 ------------------------------------------------------------------------------
+# Partition
+- [ ] 80-70023-27
+
+## Partition tool (Ptool)
+
+
+
+
+
+------------------------------------------------------------------------------
 # RTC
 - [ ] I2C RTC, 電池也可由 PMIC 提供嗎?
 - [ ] 有哪些外接 5G modem 可以用?
@@ -109,7 +119,7 @@ $ i2cdump 4 0x49
 ------------------------------------------------------------------------------
 
 # Thermal
-glmark2
+glmark2 (for Linux)
 - [ ] 80-70022-19
 - [ ] 80-70022-10A
 - [ ] 若 stress-ng 跑 100% 會發生降頻。
@@ -127,6 +137,13 @@ adb shell "cd /data/; nohup stress-ng --cpu 0 --cpu-method=all -vm 4 --vm-bytes 
 * [NEWS-compute intensive](https://www.qualcomm.com/news/onq/2023/04/qualcomm-qcm8550-and-qcs8550-processors-for-compute-intensive-apps)
 
 
+## HDMI Resolution
+Let icons look smaller.
+```
+adb shell wm density 200
+```
+
+
 ## 80-50445-35
 Thermal Mitigation Software Concept Architecture
 
@@ -139,6 +156,18 @@ Cooling Devices in Thermal Framework for Kernel – Sysfs Node
 ```
 cat /sys/devices/virtual/thermal/...
 ```
+
+
+## 80-70022-10
+
+
+
+### Configure GPU
+Watch GPU usage:
+```
+cat /sys/class/kgsl/kgsl-3d0/gpu_busy_percentage
+```
+
 
 
 ## 80-70022-30
