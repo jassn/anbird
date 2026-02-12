@@ -133,8 +133,8 @@ If ipk files needs to be deployed to device connected to another pc, then ipk fi
 ### Linux
 
 Script location: \<snapdragon-iot-qimsdk\>/sdk-tools/scripts/local/linux.sh    
-Sync cmd: qimsdk-local-sync - Sync packages with the device from specified folder    
-Uninstall cmd: qimsdk-local-packages-remove - Uninstall packages previously installed on the device    
+Sync cmd: **qimsdk-local-sync** - Sync packages with the device from specified folder    
+Uninstall cmd: **qimsdk-local-packages-remove** - Uninstall packages previously installed on the device    
 
 ```bash
 source <snapdragon-iot-qimsdk>/sdk-tools/scripts/local/linux.sh
@@ -152,9 +152,9 @@ Example for adding adb to powershell path
 $Env:PATH += ";<path to adb>"
 ```
 
-Script location: \<snapdragon-iot-qimsdk\>/sdk-tools/scripts/local/win.ps1
-Sync cmd: qimsdk-local-sync - Sync packages with the device from specified folder
-Uninstall cmd: qimsdk-local-packages-remove - Uninstall packages previously installed on the device
+Script location: \<snapdragon-iot-qimsdk\>/sdk-tools/scripts/local/win.ps1    
+Sync cmd: qimsdk-local-sync - Sync packages with the device from specified folder    
+Uninstall cmd: qimsdk-local-packages-remove - Uninstall packages previously installed on the device    
 
 ```powershell
 .\<snapdragon-iot-qimsdk>\sdk-tools\scripts\local\win.ps1
