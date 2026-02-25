@@ -1,6 +1,9 @@
 
 # QCS8550
 
+# QIMSDK
+- [ ] LE, 如何加大 partition? 
+
 # RS232
 - [x] 目標: 可以看到 /dev/ttyHS*
 - [ ] gpioset 操作後, 為什麼 ttyHS5 不見了?
