@@ -1,6 +1,12 @@
 
 # GPIO
 
+GPIO
+- [ ] [KBA-170206194442](https://docs.qualcomm.com/doc/KBA-170206194442/KBA-170206194442_REV_8_How_to_configure_gpio_in_kernel.pdf)
+- [ ] kalama.dtsi - tlmm: pinctrl@f000000
+- [ ] kalama-pinctrl.dtsi - drive-strength
+
+
 UART
 - [ ] /sys/class/i2c-dev 不應出現 984000(qupv3_hub_i2c1) 及 988000(qupv3_hub_i2c2).
 - [ ] TCAL6416 每次編號不同? gpioinfo.
@@ -30,9 +36,12 @@ GPIO as interrupt request (IRQ)
 10.3 Configure GPIOS from the user space
 
 ----------------------------------------------------------
-# 80-70022-8
+# 80-70023-8
 - [ ] How to test?
 - [ ] gpiochip? where?
+
+
+- [x] aDSP SSC - Snapdragon Sensor Core
 
 
 
