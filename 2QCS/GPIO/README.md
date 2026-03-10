@@ -5,6 +5,11 @@ GPIO
 - [ ] [KBA-170206194442](https://docs.qualcomm.com/doc/KBA-170206194442/KBA-170206194442_REV_8_How_to_configure_gpio_in_kernel.pdf)
 - [ ] kalama.dtsi - tlmm: pinctrl@f000000
 - [ ] kalama-pinctrl.dtsi - drive-strength
+- [ ] [libgpiod](https://libgpiod.readthedocs.io/)
+- [ ] 80-80020-3, pinctrl driver
+
+HWID
+- [ ] gpioget
 
 
 UART
@@ -16,6 +21,20 @@ CAN
 - [ ] SP80-PT831-6, qupv3_se5_2uart
 - [ ] 80-88500-1, Debug UART in kernel
 - [ ] 80-NM328-78, Linux_Android_APSS_Debug_Guide
+
+
+----------------------------------------------------------
+# HWID (SSC)
+Get (kalama) GPIO Status
+```
+gpioget -c 0 188 189 190 191
+```
+We can see "190" = active ...
+
+- (smarc 20250815) only "191"=active.
+- (smarc 20251119) only "190"=active.
+
+
 
 
 ----------------------------------------------------------

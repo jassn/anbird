@@ -36,7 +36,7 @@ Wait for data receiving ...
 ```
 kalama#
 ip link set can0 up type can bitrate 1000000
-can dumpcan0
+candump can0
 ```
 
 Windows PC sending data ...
@@ -90,6 +90,31 @@ https://www.forlinx.com/article-new-c22/1323.html
 
 ## 80-Y8950-108
 * cansend
+
+## CSDN
+https://blog.csdn.net/s261676224/article/details/149174018
+
+
+
+------------------------------------------------------------
+# References 2026m03
+
+## ITHELP
+* [STM32-18 CAN-BUS (上)](https://ithelp.ithome.com.tw/articles/10284525)
+  - MX_CAN1_INIT
+
+* [STM32-12 CANBus概念介紹](https://ithelp.ithome.com.tw/articles/10284348)
+
+* [STM32 FDCAN Tutorial: Normal Mode Communication](https://www.youtube.com/watch?v=sY1ie-CnOR0)
+
+* Implement CAN Firmware with STM32 ARM Cortex-M MCU
+https://www.youtube.com/watch?v=appV7spFUJQ
+
+* STM32CubeIDE MCP2551 CAN BUS with STM32 F103C8T6
+https://www.youtube.com/watch?v=xGF5onNLZJs
+
+* Interfacing MCP2515 CAN Module with ESP32
+https://www.youtube.com/watch?v=spVgKZkNpT8
 
 
 

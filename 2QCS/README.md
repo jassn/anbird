@@ -20,6 +20,7 @@
 - [ ] 如何用 adb over ethernet?
 - [ ] DTBO 在哪一個 block device? partition?
 
+* [Qualcomm Linux 2.0](https://docs.qualcomm.com/doc/80-80020-115)
 * [Qualcomm Linux 1.7](https://docs.qualcomm.com/doc/80-70023-115/topic/qualcomm-linux-docs-home.html)
 * [Qualcomm Linux 1.6](https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-115/qualcomm-linux-docs-home.html)
 * [Kernel documentation 80-70022-3](https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-3)
