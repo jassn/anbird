@@ -1,5 +1,7 @@
 # CAN bus
 
+- [ ] kalama 有 cangen 可以測試.
+- [ ] canfdtest, 要另外 build/install.
 - [ ] can0 and can1, 因為 CAN1_SPI_MISO @884000 先被 probe, 系統指定為 can0.
 - [x] cansend can0, 然後 ifconfig can0 會有一堆 ERROR, 可能是接線不正確, 導致訊號一直反射; 改用 waveshare USB dongle, 接線正確後, 還要開啟 	Windows上的接收模式, 才不會出現 errors.
 - [ ] 測試 aliases in kalama.dtsi, 對 spi0 / spi1 有效, 但 can0 / can1 仍無法改變.
@@ -93,6 +95,12 @@ https://www.forlinx.com/article-new-c22/1323.html
 
 ## CSDN
 https://blog.csdn.net/s261676224/article/details/149174018
+
+## Kernel
+https://docs.kernel.org/networking/can.html
+
+## Kvaser
+* https://kvaser.com/lesson/can-error-handling/
 
 
 

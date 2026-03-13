@@ -5,11 +5,13 @@
 - [ ] LE, 如何加大 partition? 
 
 # RS232
+- [ ] (2026/3/11) baud 57600 有問題...
+- [ ]  How? Debug UART issues of 80-70023-8
+- [ ]  io_expander, TCAL6416, 為何每次編號不一樣?
 - [x] 目標: 可以看到 /dev/ttyHS*
-- [ ] gpioset 操作後, 為什麼 ttyHS5 不見了?
+- [x] gpioset 操作後, 為什麼 ttyHS5 不見了? (後面沒再出現問題)
 - [ ] adb logcat, a88000.uart, ~/RB5/uart/jan13pm1620.
-- [ ] io_expander, TCAL6416, 為何每次編號不一樣?
-- [x] 實測 RS232
+- [x] 實測 RS232, 用兩台 DUT 互傳?
 - [x] 實測 RS485 / RS422
 
 ## work - reboot issue
@@ -129,6 +131,14 @@ glmark2 (for Linux)
 - [ ] 若 stress-ng 跑 100% 會發生降頻。
 - [ ] QPS615 到 98度.
 - [ ] 高到幾度會開始降頻?
+
+
+## LMH (80-88500-4)    
+- [Thermal core framework](https://docs.qualcomm.com/doc/80-88500-4/topic/54_Thermal_core_framework.html)
+- 
+
+The thermal core emergency frequency mitigation is handled by limits management hardware (LMH).
+
 
 ```
 adb shell "cd /data/; nohup stress-ng --cpu 0 --cpu-method=all -vm 4 --vm-bytes 75% --hdd 3 --hdd-bytes 15G -t 172800 &"

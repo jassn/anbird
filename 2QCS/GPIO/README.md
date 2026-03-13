@@ -34,7 +34,16 @@ We can see "190" = active ...
 - (smarc 20250815) only "191"=active.
 - (smarc 20251119) only "190"=active.
 
-
+numeric option
+```bash
+gpioget --numeric -c 0 188 189 190 191
+```
+You might get:   
+```text
+0 0 0 1    (smarc-20250815)     
+    or       
+0 0 1 0    (smarc-20251119)     
+```
 
 
 ----------------------------------------------------------
