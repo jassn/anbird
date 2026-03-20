@@ -36,7 +36,13 @@
 ## Partition tool (Ptool)
 
 
+# Fastboot
+From the LA release note
+```
+adb reboot bootloader
+```
 
+[CSDN - ](https://blog.csdn.net/weixin_29306571/article/details/158903856?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-158903856-blog-140344941.235^v43^pc_blog_bottom_relevance_base7&spm=1001.2101.3001.4242.1&utm_relevant_index=2)
 
 
 ------------------------------------------------------------------------------
@@ -112,14 +118,32 @@ time_daemon
 
 ------------------------------------------------------------------------------
 # TMP1075
-Temperature sensor
-- [ ] /dev/i2c4 如何跟 dts 對應 qupv3_hub_i2c5?
+I2C Temperature Sensor.
 
 ```
 $ i2cdetect -a 4
 
 $ i2cdump 4 0x49
+
+$ i2cget 4 0x49 0
 ```
+
+
+/dev/i2c4 如何跟 DTS 對應 qupv3_hub_i2c5?
+
+```
+ls -al /sys/class/i2c-dev
+
+.../devices/platform/soc/9c0000.qcom,qupv3_i2c_geni_se/994000.i2c/i2c-4/i2c-dev/i2c-4
+```
+然後到 DTS directory, grep `994000`:
+```
+./kalama-qupv3.dtsi:  qupv3_hub_i2c5: i2c@994000 {
+```
+
+
+
+
 
 
 ------------------------------------------------------------------------------
