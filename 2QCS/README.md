@@ -32,6 +32,13 @@
 ------------------------------------------------------------------------------
 # Partition
 - [ ] 80-70023-27
+- [ ] 80-PT831-20
+
+UFS Provisioning Layout
+- Customers can configure the last two LUNs, 
+  but they must create all partitions at the same time.
+- LUN: Logical Unit Numbers.
+
 
 ## Partition tool (Ptool)
 
