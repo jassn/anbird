@@ -5,7 +5,7 @@
 - [ ] LE, 如何加大 partition? 
 
 # RS232
-- [ ] (2026/3/11) baud 57600 有問題...
+- [x] (2026/3/11) baud 57600 有問題...
 - [ ]  How? Debug UART issues of 80-70023-8
 - [ ]  io_expander, TCAL6416, 為何每次編號不一樣?
 - [x] 目標: 可以看到 /dev/ttyHS*
@@ -39,10 +39,12 @@ UFS Provisioning Layout
   but they must create all partitions at the same time.
 - LUN: Logical Unit Numbers.
 
+80-80021-27
+* Manage partitions in Qualcomm Linux
+* Partition tool (Ptool)
 
-## Partition tool (Ptool)
 
-
+------------------------------------------------------------------------
 # Fastboot
 From the LA release note
 ```

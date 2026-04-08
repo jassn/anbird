@@ -3,9 +3,20 @@
 - [ ] weston-terminal permission
 - [ ] Qcom-Paddy (build toybox)
 
+
+# yocto
+https://forums.raspberrypi.com/viewtopic.php?t=365274#p2191158
+
+* [Raspberry pi 4b using Yocto](https://hackmd.io/@sss22213/Bk9KwQ5d_)
+
+---------------------------------------------------
+
 # Openclaw
 - [ ] how to install on Raspberry Pi?
 - [ ] how to build
+
+
+* [Secure OpenClaw Install on Raspberry Pi — systemd](https://www.youtube.com/watch?v=P6JeQHnwnAY)
 
 
 # Reference
