@@ -1,5 +1,8 @@
 
 # QCS8550
+- [ ] 2026m0415 - docker
+- [ ] PingKUO - why wlan0(ap6275) 不是 random MAC?
+
 
 # QIMSDK
 - [ ] LE, 如何加大 partition? 
